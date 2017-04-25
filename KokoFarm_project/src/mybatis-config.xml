@@ -6,7 +6,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
+		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+		
 	</typeAliases>
+	
+	
+	
 	
 	<environments default="development">
 		<environment id="development">
@@ -19,6 +24,8 @@
 	
 	<mappers>
 		<mapper resource="kokofarm/product/xml/Product.xml"/>
+		<mapper resource="kokofarm/member/xml/Member.xml"/>
+		
 	</mappers>
 	
 </configuration>
