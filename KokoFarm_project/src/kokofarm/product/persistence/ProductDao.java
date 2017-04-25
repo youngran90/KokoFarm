@@ -40,7 +40,7 @@ public class ProductDao {
 		int re = -1;
 		
 		try {
-			re = seession.getMapper(ProductMapper.class).insertProcut(product);
+			re = seession.getMapper(ProductMapper.class).insertProdcut(product);
 			if(re> 0){
 				seession.commit();
 			}else{

@@ -4,12 +4,14 @@
 <mapper namespace="kokofarm.product.mapper.ProductMapper">
 	<cache />
 		
-	<insert id="insertProcut" parameterType="Product">
+	<insert id="insertProdcut" parameterType="Product">
 		insert into product(
-			product_no, product_name, product_unit, product_price, seller_no, product_date, review_number
+			product_no, product_name, product_unit, product_price, seller_no, product_uploaddate, PROUDCT_HARVESTDATE, review_number, 
+			product_mainimage, product_detailimage , product_sellerimage 
 		)
 		values(
-		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate, 0
+		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate, sysdate, 0, 
+		#{product_mainimage}, #{product_detailimage}, #{product_sellerimage}
 		)	
 	</insert>
 	
