@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <mapper namespace="kokofarm.member.mapper.MemberMapper">
 	<cache />
 
 <insert id="insertMember" parameterType="Member">
-	insert into member(
-							member_id, member_name, member_email,
-							 member_password, member_phoneNum, member_address, member_ account, member_grade
-							)
-			values(
-					#{member_id}, #{member_name},#{member_email},#{member_password},
-					#{member_phoneNum,#{member_address},#{member_account},"일반"	
-					)						
+	insert into Member values(#{member_id}, #{member_name},#{member_email},
+					#{member_password}, #{member_phoneNum},#{member_address},
+					#{member_account}, '일반')			
+					
 </insert>
-
-	
-	
-	
 	</mapper>

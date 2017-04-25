@@ -22,8 +22,9 @@ public class MemberService {
 	}
 	
 	
-	public int insertMemberService(MemberDTO member){
-		return MemberServiceSingleton.memberDao.insertMember(member);
+	public int insertMemberService(MemberDTO member) throws Exception {
+		int re = MemberServiceSingleton.memberDao.insertMember(member);
+		return re;
 	}
 	
 }

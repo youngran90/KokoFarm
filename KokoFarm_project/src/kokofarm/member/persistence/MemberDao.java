@@ -2,6 +2,8 @@ package kokofarm.member.persistence;
 
 import java.io.InputStream;
 
+import javax.websocket.Session;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -35,7 +37,7 @@ public class MemberDao {
 	
 	// sql 연결 
 	
-	public int insertMember(MemberDTO member){
+	public int insertMember(MemberDTO member) throws Exception{
 		SqlSession sqlSession = getSqlSessionFaction().openSession();
 		int re = -1;
 		try {
@@ -48,7 +50,10 @@ public class MemberDao {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			sqlSession.close();
 		}
+		
 		return re;
 	}
 	
