@@ -8,7 +8,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="insertMember.do" method="post">
+<table border ="1" width = "700px">
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name = "member_name" id = "member_name"></td>
+	</tr>
+	<tr>
+		<td>아이디</td>
+		<td><input type = "text" name = "member_id" id = "member_id"></td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td><input type ="password" name = "member_password"></td>
+	<tr>
+	<tr>
+		<td>비밀번호 확인</td>
+
+</table>
+<form action="member/insertMember.do" method="post">
 아 이 디&nbsp; : <input type="text" name = "member_id"><br>
 비밀번호 :  <input type="text" name = "member_password"><br>
 이     름&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name = "member_name"><br>
