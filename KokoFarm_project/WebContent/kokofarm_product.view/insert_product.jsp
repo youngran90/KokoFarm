@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="Product.do" method="post" enctype="multipart/form-data">
+	<form action="Product.product" method="post" enctype="multipart/form-data">
 		<br>
 
 		<table border="1" cellpadding="0" cellspacing="0">

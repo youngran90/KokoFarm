@@ -15,7 +15,7 @@ import kokofarm.product.action.InsertProductAction;
 /**
  * Servlet implementation class ProductController
  */
-@WebServlet("*.do")
+@WebServlet("*.product")
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,17 +28,19 @@ public class ProductController extends HttpServlet {
 
 	public void doProcess(HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
+		System.out.println("insert!!");
 		String requestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = requestURI.substring(contextPath.length() + 1);
 		int le = command.indexOf("/");
 
 		String jspname = command.substring(le + 1, command.length());
-
+		System.out.println(jspname);
+		
 		ActionForward forward = null;
 		Action action = null;
 
-		if (jspname.equals("Product.do")) {
+		if (jspname.equals("Product.product")) {
 			// insertForm.jsp로 이동하기 위한 목적
 			action = new InsertProductAction();
 
