@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="insert.do" method="post">
+	<form action="insert.c" method="post">
 		상품이름<input type="text" name="product_name"><br>
 		상품단위<input type="text" name="product_unit"><br>
 		상품가격<input type="text" name="product_price"><br>

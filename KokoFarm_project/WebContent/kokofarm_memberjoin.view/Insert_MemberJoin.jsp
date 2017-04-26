@@ -25,7 +25,7 @@
 		<td>비밀번호 확인</td>
 
 </table>
-<form action="member/insertMember.do" method="post">
+<form action="member/insertMember.b" method="post">
 아 이 디&nbsp; : <input type="text" name = "member_id"><br>
 비밀번호 :  <input type="text" name = "member_password"><br>
 이     름&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name = "member_name"><br>

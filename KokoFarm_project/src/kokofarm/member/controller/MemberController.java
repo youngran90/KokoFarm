@@ -12,7 +12,7 @@ import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
 import kokofarm.member.action.insertFormAction;
 
-@WebServlet({ "/MemberController", "*.do" })
+@WebServlet({ "/MemberController", "*.b" })
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +35,7 @@ public class MemberController extends HttpServlet {
 		ActionForward forward = null;
 		Action action = null;
 
-		if (command.equals("insertMember.do")) {
+		if (command.equals("insertMember.b")) {
 			action = new insertFormAction();
 			try {
 				forward = action.execute(request, response);

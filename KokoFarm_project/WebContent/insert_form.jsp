@@ -12,7 +12,7 @@
 <body>
 <h3>글쓰기</h3>
 <hr>
-<form action="insertAction.do" method="post">
+<form action="insertAction.a" method="post">
 	작성자 : <input type="text" name="writer"><br>
 	제목 : <input type="text" name="title"><br>
 	내용 <br>

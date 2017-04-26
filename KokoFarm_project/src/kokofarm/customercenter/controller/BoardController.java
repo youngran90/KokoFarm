@@ -20,7 +20,7 @@ import kokofarm.customercenter.action.deleteAction;
 import kokofarm.customercenter.action.updateAction;
 
 
-@WebServlet("*.do")
+@WebServlet("*.a")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,7 +42,7 @@ public class BoardController extends HttpServlet {
     	Action action = null;
     	
     	
-    	if(command.equals("insertForm.do")){
+    	if(command.equals("insertForm.a")){
     		//insertForm.jsp로 이동하기 위한 목적
     		action = new InsertFormAction();
     		try {
@@ -54,7 +54,7 @@ public class BoardController extends HttpServlet {
     		
     		
     		
-    	}else if(command.equals("insertAction.do")){
+    	}else if(command.equals("insertAction.a")){
     		action = new InsertAction();
     		try {
 				forward = action.execute(request, response);
@@ -63,7 +63,7 @@ public class BoardController extends HttpServlet {
 					e.printStackTrace();
 			}
     		
-    	}else if(command.equals("listAction.do")){
+    	}else if(command.equals("listAction.a")){
     		action = new ListAction();
     		
     		try {
@@ -73,7 +73,7 @@ public class BoardController extends HttpServlet {
 				e.printStackTrace();
 			}
     		
-    	}else if(command.equals("DetailAction.do")){
+    	}else if(command.equals("DetailAction.a")){
     		action = new DetailAction();
     		try {
 				forward = action.execute(request, response);
@@ -82,7 +82,7 @@ public class BoardController extends HttpServlet {
 				e.printStackTrace();
 			}
     		
-    	}else if (command.equals("UpdateFormAction.do")) {
+    	}else if (command.equals("UpdateFormAction.a")) {
 			action = new UpdateFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -91,7 +91,7 @@ public class BoardController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			}else if(command.equals("updateAction.do")){
+			}else if(command.equals("updateAction.a")){
 			   action = new updateAction();
 			   
 				try {
@@ -100,7 +100,7 @@ public class BoardController extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-		}else if(command.equals("deleteAction.do")){
+		}else if(command.equals("deleteAction.a")){
 			action = new deleteAction();
 			
 			try {
