@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
+import kokofarm.member.action.idcheckAction;
 import kokofarm.member.action.insertFormAction;
 
-@WebServlet({ "/MemberController", "*.b" })
+@WebServlet("*.member" )
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +36,7 @@ public class MemberController extends HttpServlet {
 		ActionForward forward = null;
 		Action action = null;
 
-		if (command.equals("insertMember.b")) {
+		if (command.indexOf("insertMember.member") !=-1) {
 			action = new insertFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -43,6 +44,16 @@ public class MemberController extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		}else if (command.indexOf("idcheck.member") !=-1){
+			action = new idcheckAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			//사용자가 입력한 아이디
+			//String userid = request.getParameter("member_id");
 		}
 
 		if (forward != null) {

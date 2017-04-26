@@ -56,6 +56,24 @@ public class MemberDao {
 		
 		return re;
 	}
+	public boolean idcheck(String userid) throws Exception{
+		
+		SqlSession session = getSqlSessionFaction().openSession();
+		boolean result = false;
+		try {
+			if (session.getMapper(MemberMapper.class).idcheck(userid)==0){
+				return result = true;
+			}else{
+				return false;
+			}		
+		}catch (Exception e) {
+			e.printStackTrace();
+			return result = true;
+		}finally {
+			session.close();
+		}
+		
+	}
 	
 	
 }

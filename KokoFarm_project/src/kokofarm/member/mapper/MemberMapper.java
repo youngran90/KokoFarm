@@ -5,4 +5,5 @@ import kokofarm.member.domain.MemberDTO;
 public interface MemberMapper {
 	
 	public int insertMember(MemberDTO member);
+	public int idcheck(String userid);
 }
