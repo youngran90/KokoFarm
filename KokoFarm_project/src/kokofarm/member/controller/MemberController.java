@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
+import kokofarm.member.action.idcheckAction;
 import kokofarm.member.action.insertFormAction;
+import kokofarm.member.action.loginCheckAction1;
+import kokofarm.member.action.logincheckAction;
 
-@WebServlet({ "/MemberController", "*.b" })
+@WebServlet("*.member" )
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +23,6 @@ public class MemberController extends HttpServlet {
 		super();
 
 	}
-
 	public void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String requestURI = request.getRequestURI();
@@ -35,7 +37,7 @@ public class MemberController extends HttpServlet {
 		ActionForward forward = null;
 		Action action = null;
 
-		if (command.equals("insertMember.b")) {
+		if (command.indexOf("insertMember.member") !=-1) {
 			action = new insertFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -43,7 +45,34 @@ public class MemberController extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		}else if (command.indexOf("idcheck.member") !=-1){
+			action = new idcheckAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+		}else if(requestURI.indexOf("loginCheck.member") !=-1){
+				action = new logincheckAction();
+			try {
+				forward = action.execute(request, response);
+								
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(requestURI.indexOf("loginCheck1.member") != -1){
+			action = new loginCheckAction1();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+				
+		
 
 		if (forward != null) {
 			if (forward.isRedirect()) {

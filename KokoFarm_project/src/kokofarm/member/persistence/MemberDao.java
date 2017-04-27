@@ -1,6 +1,7 @@
 package kokofarm.member.persistence;
 
 import java.io.InputStream;
+import java.util.HashMap;
 
 import javax.websocket.Session;
 
@@ -56,6 +57,54 @@ public class MemberDao {
 		
 		return re;
 	}
+	public boolean idcheck(String userid) throws Exception{
+		
+		SqlSession session = getSqlSessionFaction().openSession();
+		boolean result = false;
+		try {
+			if (session.getMapper(MemberMapper.class).idcheck(userid)==0){
+				return result = true;
+			}else{
+				return false;
+			}		
+		}catch (Exception e) {
+			e.printStackTrace();
+			return result = true;
+		}finally {
+			session.close();
+		}
+		
+	}
+	
+	public int logincheck(HashMap<String, String> map) throws Exception{
+		SqlSession session = getSqlSessionFaction().openSession();
+		MemberDTO member = null;
+		int re  =-1;
+		try{
+			 re =session.getMapper(MemberMapper.class).logincheck(map);
+		}		catch (Exception e) {
+			e.printStackTrace();
+					
+		}finally {
+			session.close();
+		}
+		return re;
+		
+	}
+	
+	public MemberDTO selectMember(String member_id) throws Exception{
+		SqlSession session = getSqlSessionFaction().openSession();
+		MemberDTO member = null;
+		try {
+			member = session.getMapper(MemberMapper.class).selectMember(member_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return member;
+	}
+	
 	
 	
 }

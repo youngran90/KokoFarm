@@ -24,7 +24,18 @@ public class MemberService {
 	
 	public int insertMemberService(MemberDTO member) throws Exception {
 		int re = MemberServiceSingleton.memberDao.insertMember(member);
+		
 		return re;
 	}
+	
+	public boolean idcheckService(String userid) throws Exception{
+		boolean result = MemberServiceSingleton.memberDao.idcheck(userid);
+		return result;
+	}
+
+	/*public boolean logincheckService(String member_id,String member_password) throws Exception{
+		boolean result = MemberServiceSingleton.memberDao.logincheck(member_id,member_password);
+		return result;
+	}*/
 	
 }

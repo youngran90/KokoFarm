@@ -1,13 +1,16 @@
 package kokofarm.member.domain;
 
-public class MemberDTO {
- 
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable{
 	private String member_id;
+	private String member_password;
 	private String member_name;
 	private String member_email;
-	private String member_password;
 	private String member_phoneNum;
-	private String member_address;
+	private String member_zipcode;
+	private String member_address1;
+	private String member_address2;
 	private String member_account;
 	private String member_grade;
 	
@@ -16,6 +19,12 @@ public class MemberDTO {
 	}
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
+	}
+	public String getMember_password() {
+		return member_password;
+	}
+	public void setMember_password(String member_password) {
+		this.member_password = member_password;
 	}
 	public String getMember_name() {
 		return member_name;
@@ -29,23 +38,29 @@ public class MemberDTO {
 	public void setMember_email(String member_email) {
 		this.member_email = member_email;
 	}
-	public String getMember_password() {
-		return member_password;
-	}
-	public void setMember_password(String member_password) {
-		this.member_password = member_password;
-	}
 	public String getMember_phoneNum() {
 		return member_phoneNum;
 	}
 	public void setMember_phoneNum(String member_phoneNum) {
 		this.member_phoneNum = member_phoneNum;
 	}
-	public String getMember_address() {
-		return member_address;
+	public String getMember_zipcode() {
+		return member_zipcode;
 	}
-	public void setMember_address(String member_address) {
-		this.member_address = member_address;
+	public void setMember_zipcode(String member_zipcode) {
+		this.member_zipcode = member_zipcode;
+	}
+	public String getMember_address1() {
+		return member_address1;
+	}
+	public void setMember_address1(String member_address1) {
+		this.member_address1 = member_address1;
+	}
+	public String getMember_address2() {
+		return member_address2;
+	}
+	public void setMember_address2(String member_address2) {
+		this.member_address2 = member_address2;
 	}
 	public String getMember_account() {
 		return member_account;
@@ -59,12 +74,16 @@ public class MemberDTO {
 	public void setMember_grade(String member_grade) {
 		this.member_grade = member_grade;
 	}
+	
 	@Override
 	public String toString() {
-		return "MemberDTO [member_id=" + member_id + ", member_name=" + member_name + ", member_email=" + member_email
-				+ ", member_password=" + member_password + ", member_phoneNum=" + member_phoneNum + ", member_address="
-				+ member_address + ", member_account=" + member_account + ", member_grade=" + member_grade + "]";
+		return "MemberDTO [member_id=" + member_id + ", member_password=" + member_password + ", member_name="
+				+ member_name + ", member_email=" + member_email + ", member_phoneNum=" + member_phoneNum
+				+ ", member_zipcode=" + member_zipcode + ", member_address1=" + member_address1 + ", member_address2="
+				+ member_address2 + ", member_account=" + member_account + ", member_grade=" + member_grade + "]";
 	}
+
+	
 	
 	
 }
