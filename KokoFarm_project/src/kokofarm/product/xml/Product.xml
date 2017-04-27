@@ -15,6 +15,44 @@
 		)	
 	</insert>
 	
+	<select id="listProduct" resultType="Product">
+		select * from product
+		<if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+				${item} LIKE #{seachKey}
+				</foreach>
+			</where>
+		</if>
+		order by product_uploaddate	
+		
+		
+	</select>
 	
+	<select id="detailProduct" parameterType="String" resultType="Product">
+	 select * from product
+	 where product_no = #{product_no}
+	</select>
+	
+	<select id="countProduct" resultType="int" parameterType="Search">
+	select count(*) from product
+	<if test="area !=null">
+				<where>
+					<foreach collection="area" item="item" separator="OR" 
+					open="(" close=")">
+					${item} LIKE #{searchKey}
+					</foreach>
+				</where>
+			</if>
+	</select>
+	
+	<insert id="InsertPost" parameterType="Post">
+	insert into post (post_no, product_no, member_id, post_content, post_date)
+	value(#{post_no}, #{product_no}, #{member_id}, #{post_content}, sysdate) 
+	</insert>
+	
+	<select id="listPost" parameterType="int" resultType="Post">
+	
+	</select>
 	
 	</mapper>

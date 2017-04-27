@@ -2,23 +2,23 @@ package kokofarm.product.action;
 
 public class ActionForward {
 
-	private boolean isRdirect;
+	private boolean isRedirect;
 	private String path;
 	
 	public ActionForward(){};
 	
-	public ActionForward(boolean isRdirect, String path) {
+	public ActionForward(boolean isRedirect, String path) {
 		super();
-		this.isRdirect = isRdirect;
+		this.isRedirect = isRedirect;
 		this.path = path;
 	}
 
 	public boolean isRdirect() {
-		return isRdirect;
+		return isRedirect;
 	}
 
-	public void setRdirect(boolean isRdirect) {
-		this.isRdirect = isRdirect;
+	public void setRedirect(boolean isRedirect) {
+		this.isRedirect = isRedirect;
 	}
 
 	public String getPath() {

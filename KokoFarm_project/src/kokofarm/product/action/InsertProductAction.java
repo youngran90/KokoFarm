@@ -22,8 +22,19 @@ public class InsertProductAction implements Action {
 
 		//String uploadPath = Application.getRealPath("ImageUpload");
 		int size = 20 * 1024 * 1024; // 20MB
-		String uploadPath = request.getRealPath("upload");
-			
+		//String uploadPath = request.getRealPath("upload");
+		String uploadPath = "C:\\Users\\youngran\\git\\KokoFarm_Project1\\KokoFarm_project\\WebContent\\upload";
+		System.out.println(uploadPath);
+	   
+		 File file = new File(uploadPath);
+	        //!표를 붙여주어 파일이 존재하지 않는 경우의 조건을 걸어줌
+	        if(!file.exists()){
+	            //디렉토리 생성 메서드
+	            file.mkdirs();
+	            System.out.println("created directory successfully!");
+	        }
+
+		
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8",
 				new DefaultFileRenamePolicy());
 
@@ -34,46 +45,49 @@ public class InsertProductAction implements Action {
 
 		Enumeration files = multi.getFileNames();
 		 
-		
-		String mainimage = (String)files.nextElement();
-		String product_mainimage = multi.getFilesystemName(mainimage);
-		System.out.println("1"+mainimage); //1sellerimage
-		System.out.println("2"+product_mainimage);
+		//서브
+		String file1 = (String)files.nextElement();
+		String Name1 = multi.getFilesystemName(file1);
+		System.out.println("1"+file1); //1sellerimage
+		System.out.println("2"+Name1);
 		//217934376_441214739549616_2980281302797778944_n2.jpg
+	
+		String file2 = (String)files.nextElement();
+		String Name2  = multi.getFilesystemName(file2);
+		System.out.println("파일2"+file2);
+		System.out.println("네임2"+Name2);
 		
-		String detailimage = (String)files.nextElement();
-		String product_detailimage  = multi.getFilesystemName(detailimage);
+		String file3 = (String)files.nextElement();
+		String Name3  = multi.getFilesystemName(file3);
+		System.out.println();
 		
-		String sellerimage = (String)files.nextElement();
-		String product_sellerimage  = multi.getFilesystemName(sellerimage);
+		product.setProduct_mainimage(Name3);
+		product.setProduct_detailimage(Name1);
+		product.setProduct_sellerimage(Name2);
 		
-		product.setProduct_mainimage(product_mainimage);
-		product.setProduct_detailimage(product_detailimage);
-		product.setProduct_sellerimage(product_sellerimage);
-		
-		/*if(detailimage == null){
-			product.setProduct_detailimage("");
-		}else if(sellerimage == null){
+		if(file2 == null){
 			product.setProduct_sellerimage("");
+		}else if(file1 == null){
+			product.setProduct_mainimage("");
 
-		}*/
+		}
 		
-		//���� �̹��� �����
-		if(multi.getFilesystemName("product_mainimage") != null){
-			String pattern = product_mainimage.substring(product_mainimage.lastIndexOf(".")+1); //gif
-			String headName = product_mainimage.substring(0, product_mainimage.lastIndexOf(".")); //aa
+		//작은 이미지 만들기
+		if(Name3 != null){
+			String pattern = Name3.substring(Name3.lastIndexOf(".")+1); //gif
+			System.out.println("pattern"+ pattern);
 			
 			
-			String imagePath = uploadPath + "\\" + product_mainimage;
+			String imagePath = uploadPath + "\\" + Name3;
 			File src = new File(imagePath); 
-			System.out.println(imagePath);
+			System.out.println("imagePath"+imagePath);
 			
-			String thumImagePath = uploadPath + "\\" + headName + "_small" + pattern;
+			String thumImagePath = uploadPath + "\\small_" + Name3;
 			File dest = new File(thumImagePath);
-			System.out.println(thumImagePath);
+			System.out.println("thumImagePath"+thumImagePath);
 		
 			if(pattern.equals("jpg") || pattern.equals("gif")){
-				ImageUtil.resize(src, dest, 100, ImageUtil.RATIO);
+				ImageUtil.resize(src, dest, 300, ImageUtil.RATIO);
 			}
 			
         }
@@ -82,9 +96,10 @@ public class InsertProductAction implements Action {
 		service.insertProdectService(product);
 
 		ActionForward forward = new ActionForward();
-		forward.setRdirect(false);
-		forward.setPath("list.jsp");
-
+		forward.setRedirect(true);
+		forward.setPath("listproductAction.product");
+		System.out.println("list로 넘어간다");
+	
 		return forward;
 	}
 

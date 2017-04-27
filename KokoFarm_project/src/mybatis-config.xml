@@ -7,7 +7,8 @@
 	<typeAliases>
 		<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
 		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
-		
+		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
+  		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/> 
 	</typeAliases>
 	
 	
@@ -24,7 +25,7 @@
 	
 	<mappers>
 		<mapper resource="kokofarm/product/xml/Product.xml"/>
-		<mapper resource="kokofarm/member/xml/Member.xml"/>
+		<mapper resource="kokofarm/member/mapper/Member.xml"/>
 		
 	</mappers>
 	
