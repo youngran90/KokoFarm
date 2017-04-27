@@ -24,7 +24,7 @@
 	
 	<mappers>
 		<mapper resource="kokofarm/product/xml/Product.xml"/>
-		<mapper resource="kokofarm/member/xml/Member.xml"/>
+		<mapper resource="kokofarm/member/mapper/Member.xml"/>
 		
 	</mappers>
 	

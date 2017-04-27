@@ -17,5 +17,14 @@
 	select count(*) from member where member_id = #{member_id}
 </select>
 
+<select id = "logincheck" parameterType="java.util.HashMap" resultType="int">
+	select count(*) from member 
+		where member_id=#{member_id} and member_password=#{member_password}
+</select>
+
+<select id = "selectMember" parameterType="String" resultType="Member">
+	select * from member where member_id=#{member_id}
+</select>
+
 
 	</mapper>

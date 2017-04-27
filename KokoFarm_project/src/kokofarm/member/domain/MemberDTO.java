@@ -1,6 +1,8 @@
 package kokofarm.member.domain;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable{
 	private String member_id;
 	private String member_password;
 	private String member_name;

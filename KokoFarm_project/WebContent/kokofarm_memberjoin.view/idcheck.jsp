@@ -4,16 +4,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<%
-String message = request.getParameter("message");
-%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<%
 
-${message}
+String message= (String)request.getAttribute("message");
 
-<%=message%>
+	if(message.indexOf("사용 가능") != -1){  %>
+		<span style="color:blue;"><%=message %></span>
+<%}else{	%>
+
+	<span style="color:red;"><%=message %></span>
+	
+ <%} %>
+	
+
+
 </body>
 </html>

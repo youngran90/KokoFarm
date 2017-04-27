@@ -12,6 +12,8 @@ import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
 import kokofarm.member.action.idcheckAction;
 import kokofarm.member.action.insertFormAction;
+import kokofarm.member.action.loginCheckAction1;
+import kokofarm.member.action.logincheckAction;
 
 @WebServlet("*.member" )
 public class MemberController extends HttpServlet {
@@ -21,7 +23,6 @@ public class MemberController extends HttpServlet {
 		super();
 
 	}
-
 	public void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String requestURI = request.getRequestURI();
@@ -52,9 +53,26 @@ public class MemberController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			//사용자가 입력한 아이디
-			//String userid = request.getParameter("member_id");
+			
+		}else if(requestURI.indexOf("loginCheck.member") !=-1){
+				action = new logincheckAction();
+			try {
+				forward = action.execute(request, response);
+								
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(requestURI.indexOf("loginCheck1.member") != -1){
+			action = new loginCheckAction1();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+				
+		
 
 		if (forward != null) {
 			if (forward.isRedirect()) {

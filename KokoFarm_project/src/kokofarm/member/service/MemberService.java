@@ -33,5 +33,9 @@ public class MemberService {
 		return result;
 	}
 
+	/*public boolean logincheckService(String member_id,String member_password) throws Exception{
+		boolean result = MemberServiceSingleton.memberDao.logincheck(member_id,member_password);
+		return result;
+	}*/
 	
 }
