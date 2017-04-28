@@ -36,8 +36,9 @@ public class MemberService {
 		return result;
 	}
 
-	public List<MemberDTO> listJoinedMemberService(MemberSearch search){
+	public List<MemberDTO> listJoinedMemberService(MemberSearch search, int requestPage){
 		List<MemberDTO> list = MemberServiceSingleton.memberDao.listJoinedMember(search);
+		
 		return list;
 	}
 	

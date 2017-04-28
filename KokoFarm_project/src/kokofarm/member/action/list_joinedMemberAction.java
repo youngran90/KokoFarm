@@ -26,18 +26,17 @@ public class list_joinedMemberAction implements Action {
 		}
 	
 		int requestPage = Integer.parseInt(pageNum);
-		//ListModel listModel = service.listJoinedMemberService(search);
+		
 		
 		
 		MemberSearch search = new MemberSearch();
 		search.setArea(request.getParameterValues("area"));
 		search.setSearchKey("%"+request.getParameter("searchKey")+"%");
 		
-		System.out.println(request.getParameterValues("area"));
-		System.out.println(request.getParameter("searchKey"));
+		//ListModel listModel = service.listJoinedMemberService(search, requestPage);		
+		//List<MemberDTO> list = service.listJoinedMemberService(search);
 		
-		List<MemberDTO> list = service.listJoinedMemberService(search);
-		request.setAttribute("list", list);
+		request.setAttribute("listModel", listModel);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
