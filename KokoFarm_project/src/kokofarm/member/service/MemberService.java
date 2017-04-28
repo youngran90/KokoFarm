@@ -1,6 +1,9 @@
 package kokofarm.member.service;
 
+import java.util.List;
+
 import kokofarm.member.domain.MemberDTO;
+import kokofarm.member.domain.MemberSearch;
 import kokofarm.member.persistence.MemberDao;
 
 public class MemberService {
@@ -33,6 +36,12 @@ public class MemberService {
 		return result;
 	}
 
+	public List<MemberDTO> listJoinedMemberService(MemberSearch search){
+		List<MemberDTO> list = MemberServiceSingleton.memberDao.listJoinedMember(search);
+		return list;
+	}
+	
+	
 	/*public boolean logincheckService(String member_id,String member_password) throws Exception{
 		boolean result = MemberServiceSingleton.memberDao.logincheck(member_id,member_password);
 		return result;

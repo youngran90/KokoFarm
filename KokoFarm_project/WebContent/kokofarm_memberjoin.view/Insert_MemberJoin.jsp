@@ -145,7 +145,7 @@ $(function(){
 </head>
 <body>
 <h2>회원가입</h2>
-	<form name = "joinForm" action="" method="post">
+	<form name = "joinForm" action="insertMember.member" method="post">
 		<table border="1" width="700px">
 			<tr>
 				<td>이름</td>

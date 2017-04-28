@@ -2,6 +2,7 @@ package kokofarm.member.persistence;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.websocket.Session;
 
@@ -11,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import kokofarm.member.domain.MemberDTO;
+import kokofarm.member.domain.MemberSearch;
 import kokofarm.member.mapper.MemberMapper;
 
 public class MemberDao {
@@ -105,6 +107,18 @@ public class MemberDao {
 		return member;
 	}
 	
+	public List<MemberDTO> listJoinedMember(MemberSearch search){
+		SqlSession session = getSqlSessionFaction().openSession();
+		List<MemberDTO> list= null;
+		try {
+			list = session.getMapper(MemberMapper.class).listJoinedMember(search);
+		} catch (Exception e) {
+		e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
 	
 	
 }

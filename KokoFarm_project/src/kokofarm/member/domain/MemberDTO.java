@@ -13,7 +13,14 @@ public class MemberDTO implements Serializable{
 	private String member_address2;
 	private String member_account;
 	private String member_grade;
+	private String join_date;
 	
+	public String getJoin_date() {
+		return join_date;
+	}
+	public void setJoin_date(String join_date) {
+		this.join_date = join_date;
+	}
 	public String getMember_id() {
 		return member_id;
 	}
@@ -80,7 +87,8 @@ public class MemberDTO implements Serializable{
 		return "MemberDTO [member_id=" + member_id + ", member_password=" + member_password + ", member_name="
 				+ member_name + ", member_email=" + member_email + ", member_phoneNum=" + member_phoneNum
 				+ ", member_zipcode=" + member_zipcode + ", member_address1=" + member_address1 + ", member_address2="
-				+ member_address2 + ", member_account=" + member_account + ", member_grade=" + member_grade + "]";
+				+ member_address2 + ", member_account=" + member_account + ", member_grade=" + member_grade
+				+ ", join_date=" + join_date + "]";
 	}
 
 	

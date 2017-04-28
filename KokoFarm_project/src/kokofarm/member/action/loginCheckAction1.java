@@ -46,7 +46,7 @@ public class loginCheckAction1 implements Action {
 			
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("http://localhost:8081/KokoFarm_project/Kokofarm_Main/kokofarm_main.html");
+			forward.setPath("listMember.member");
 			return forward;
 			
 			
