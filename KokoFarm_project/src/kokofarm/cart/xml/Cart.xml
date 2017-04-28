@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="kokofarm.cart.mapper.CartMapper">
+	<cache />
+	
+	<insert id="product_insert" parameterType="ProductDTO">
+		insert into product(
+			product_no, product_name, product_unit, product_price, seller_no, product_date
+		)
+		values(
+		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate
+		)	
+	</insert>
+	
+	
+	<select id="product_list" resultType="ProductDTO">
+		select * from product
+	</select>
+	
+	<insert id="cart_insert" parameterType="java.util.List">
+		<foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
+			into cart (
+						cart_no,  product_no, member_id
+			)
+			values( 
+				#{list.cart_no}, #{list.product_no}, #{list.member_id}
+			)
+		</foreach>
+	</insert>
+	
+	<select id="cart_list" resultType="ProductDTO" parameterType="String">
+		select c.member_id , p.product_name, p.product_price 
+		from cart c, product p 
+		where c.product_no = p.product_no
+  		and member_id = #{member_id};
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

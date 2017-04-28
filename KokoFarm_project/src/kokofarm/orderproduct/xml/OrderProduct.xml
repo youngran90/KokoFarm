@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="kokofarm.orderproduct.mapper.OrderProductMapper">
+	<cache />
+	
+	<!-- <insert id="Order" parameterType="java.util.List">
+	
+	<foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
+		into orderproduct(
+			order_no, product_no, member_id,	order_date, order_price
+			)
+		values(
+			#{list.order_no}, #{list.product_no}, #{list.member_id}, sysdate, #{list.order_price}
+			)
+	</foreach>
+			
+	</insert> -->
+	
+	<select id="OrderList" resultType="OrderProductListDTO">
+		select  DISTINCT op.order_no, p.product_no, op.member_id,  p.product_name, p.product_price 
+  		from product p, orderproduct op 
+  		where p.product_no = op.product_no and member_id=#{member_id}
+	</select> 
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

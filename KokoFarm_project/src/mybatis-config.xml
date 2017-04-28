@@ -9,6 +9,7 @@
 		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
 		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
   		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/> 
+<<<<<<< HEAD
 		
 		
 		<!-- =========== 정환이 담당 =============-->
@@ -20,6 +21,8 @@
 		<typeAlias type="kokofarm.cart.domain.CartDTO" alias="CartDTO"/>
 		
 		
+=======
+>>>>>>> branch 'master' of https://github.com/youngran90/KokoFarm_Project
 	</typeAliases>
 	
 	
@@ -36,7 +39,7 @@
 	
 	<mappers>
 		<mapper resource="kokofarm/product/xml/Product.xml"/>
-		<mapper resource="kokofarm/member/xml/Member.xml"/>
+		<mapper resource="kokofarm/member/mapper/Member.xml"/>
 		
 	<!-- =========== 정환이 담당 =============-->
 		<!-- =========== 주문 =============-->

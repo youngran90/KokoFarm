@@ -1,13 +1,14 @@
 package kokofarm.orderproduct.mapper;
 
 import java.util.List;
+import java.util.Map;
 
-import kokofarm.orderproduct.model.OrderProductDTO;
-import kokofarm.orderproduct.model.ProductDTO;
+import kokofarm.orderproduct.domain.OrderProductDTO;
+import kokofarm.orderproduct.domain.OrderProductListDTO;
 
 
 public interface OrderProductMapper {
-	List<ProductDTO> ProductList();
-	int ProductInsert(ProductDTO product);
-	int OrderProduct(OrderProductDTO orderproduct);
+	/*int ProductInsert(ProductDTO product);*/
+	int Order(List<OrderProductDTO> checklist);
+	List<OrderProductListDTO> OrderList(String member_id);
 }

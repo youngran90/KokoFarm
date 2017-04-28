@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kokofarm.orderproduct.action.ActionInsert;
-import kokofarm.orderproduct.action.ActionList;
 import kokofarm.orderproduct.action.ActionOrder;
+import kokofarm.orderproduct.action.ActionOrderList;
 import kokofarm.orderproduct.action.OrderProductAction;
 import kokofarm.orderproduct.action.OrderProductActionFoward;
 
@@ -19,7 +18,7 @@ import kokofarm.orderproduct.action.OrderProductActionFoward;
 /**
  * Servlet implementation class OrderProductController
  */
-@WebServlet("*.c")
+@WebServlet("*.orderproduct")
 public class OrderProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,33 +32,19 @@ public class OrderProductController extends HttpServlet {
     	String command = requstUrl.substring(contextPath.length()+1); // Product.do
     	int le = command.indexOf("/");
 		String path = command.substring(le + 1, command.length()); // insert.do
-		
-		System.out.println(requstUrl);
-		System.out.println(contextPath);
-		System.out.println(command);
-		System.out.println(path);
-    	
     	
     	OrderProductAction action = null;
     	OrderProductActionFoward forward = null;
     	
-    	if(path.equals("insert.c")){
-    		action = new ActionInsert();
-    		try {
-				forward = action.excute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}
-    	else if(path.equals("list.c")){
-    		action = new ActionList();
-    		try {
-				forward = action.excute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(path.equals("orderproduct.c")){
+    	if(path.equals("orderproduct.orderproduct")){
     		action = new ActionOrder();
+    		try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(path.equals("orderproductlist.orderproduct")){
+    		action = new ActionOrderList();
     		try {
 				forward = action.excute(request, response);
 			} catch (Exception e) {
