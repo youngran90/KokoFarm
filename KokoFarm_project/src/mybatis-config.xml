@@ -7,6 +7,18 @@
 	<typeAliases>
 		<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
 		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
+  		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/> 
+		
+		
+		<!-- =========== 정환이 담당 =============-->
+		<!-- =========== 주문 =============-->
+		<typeAlias type="kokofarm.orderproduct.domain.OrderProductListDTO" alias="OrderProductListDTO"/>
+		<typeAlias type="kokofarm.orderproduct.domain.OrderProductDTO" alias="OrderProductDTO"/>
+		<!-- =========== 장바구니 =============-->
+		<typeAlias type="kokofarm.cart.domain.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="kokofarm.cart.domain.CartDTO" alias="CartDTO"/>
+		
 		
 	</typeAliases>
 	
@@ -26,6 +38,11 @@
 		<mapper resource="kokofarm/product/xml/Product.xml"/>
 		<mapper resource="kokofarm/member/xml/Member.xml"/>
 		
+	<!-- =========== 정환이 담당 =============-->
+		<!-- =========== 주문 =============-->
+			<mapper resource="kokofarm/orderproduct/xml/OrderProduct.xml"/>
+		<!-- =========== 장바구니 =============-->
+			<mapper resource="kokofarm/cart/xml/Cart.xml"/>
 	</mappers>
 	
 </configuration>
