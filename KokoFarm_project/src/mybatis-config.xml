@@ -9,8 +9,7 @@
 		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
 		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
   		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/> 
-<<<<<<< HEAD
-		
+
 		
 		<!-- =========== 정환이 담당 =============-->
 		<!-- =========== 주문 =============-->
@@ -19,10 +18,7 @@
 		<!-- =========== 장바구니 =============-->
 		<typeAlias type="kokofarm.cart.domain.ProductDTO" alias="ProductDTO"/>
 		<typeAlias type="kokofarm.cart.domain.CartDTO" alias="CartDTO"/>
-		
-		
-=======
->>>>>>> branch 'master' of https://github.com/youngran90/KokoFarm_Project
+
 	</typeAliases>
 	
 	
