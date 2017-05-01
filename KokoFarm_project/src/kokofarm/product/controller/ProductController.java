@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.tribes.group.interceptors.FragmentationInterceptor;
-
 import kokofarm.product.action.Action;
 import kokofarm.product.action.ActionForward;
+import kokofarm.product.action.DeletePostAction;
+import kokofarm.product.action.InsertPostAction;
 import kokofarm.product.action.InsertProductAction;
 import kokofarm.product.action.ListproductAction;
 import kokofarm.product.action.detailProdutAction;
@@ -29,7 +29,7 @@ public class ProductController extends HttpServlet {
 
 	public void doProcess(HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
-		
+		request.setCharacterEncoding("utf-8");
 		String requestURI = request.getRequestURI();
 		System.out.println(requestURI);
 		int index = requestURI.lastIndexOf("/");
@@ -44,7 +44,7 @@ public class ProductController extends HttpServlet {
 		
 		if (path.equals("InsertProductAction.product")) {
 			System.out.println("insert!!");
-			// insertForm.jsp·Î ÀÌµ¿ÇÏ±â À§ÇÑ ¸ñÀû
+			// insertForm.jspï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			action = new InsertProductAction();
 
 			try {
@@ -56,7 +56,6 @@ public class ProductController extends HttpServlet {
 			
 		}else if(path.equals("listproductAction.product")) {
 			System.out.println("list!!");
-			// insertForm.jsp·Î ÀÌµ¿ÇÏ±â À§ÇÑ ¸ñÀû
 			action = new ListproductAction();
 
 			try {
@@ -77,6 +76,17 @@ public class ProductController extends HttpServlet {
 			
 		}else if(path.equals("PostInsertAction.product")){
 			System.out.println("insertpost");
+			action = new InsertPostAction();
+			try {
+				forward = action.execute(request, response);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(path.indexOf("deletePost.product") != -1){
+			System.out.println("deletepost");
+			action = new DeletePostAction();
 			
 			try {
 				forward = action.execute(request, response);

@@ -14,6 +14,7 @@ public class idcheckAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//사용자가 입력한 아이디
+		
 		MemberService service = MemberService.getInstance();
 		
 		String member_id = request.getParameter("userid");

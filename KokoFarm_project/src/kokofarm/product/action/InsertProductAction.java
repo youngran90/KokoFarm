@@ -1,10 +1,12 @@
 package kokofarm.product.action;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.multi.MultiListUI;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -42,6 +44,7 @@ public class InsertProductAction implements Action {
 		product.setProduct_unit(multi.getParameter("product_unit"));
 		product.setProduct_price(Integer.parseInt(multi.getParameter("product_price")));
 		product.setSeller_no(multi.getParameter("seller_no"));
+		System.out.println("날짜"+multi.getParameter("product_harvestdate"));
 
 		Enumeration files = multi.getFileNames();
 		 
@@ -91,8 +94,7 @@ public class InsertProductAction implements Action {
 			}
 			
         }
-		
-		
+				
 		service.insertProdectService(product);
 
 		ActionForward forward = new ActionForward();

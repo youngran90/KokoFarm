@@ -12,6 +12,7 @@
 <body>
 <%
 
+
 String message = (String)request.getAttribute("message");
 String sMember_id = (String)request.getAttribute("member_id");
 if(message.indexOf("환영") !=-1){ %>

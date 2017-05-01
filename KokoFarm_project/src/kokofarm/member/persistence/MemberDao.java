@@ -2,19 +2,23 @@ package kokofarm.member.persistence;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.websocket.Session;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import kokofarm.member.domain.MemberDTO;
+import kokofarm.member.domain.MemberSearch;
 import kokofarm.member.mapper.MemberMapper;
 
 public class MemberDao {
 
+	
 	private MemberDao(){}
 	private static class MemberDaoSingleton{
 		private static final MemberDao memberDao = new MemberDao();
@@ -105,6 +109,32 @@ public class MemberDao {
 		return member;
 	}
 	
+	public List<MemberDTO> listJoinedMember(int startRow, MemberSearch search){
+		SqlSession session = getSqlSessionFaction().openSession();
+		List<MemberDTO> list= null;
+		try {
+			list = session.getMapper(MemberMapper.class).listJoinedMember(new RowBounds(startRow,5),search);
+		} catch (Exception e) {
+		e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
+	
+	public int countMember(MemberSearch search){
+		SqlSession session = getSqlSessionFaction().openSession();
+		int re = 0;
+		try {
+			re = session.getMapper(MemberMapper.class).countMember(search);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+		
+	}
 	
 	
 }

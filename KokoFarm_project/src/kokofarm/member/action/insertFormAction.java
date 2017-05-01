@@ -11,6 +11,7 @@ public class insertFormAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		request.setCharacterEncoding("utf-8");
 		MemberService service = MemberService.getInstance();
 		MemberDTO member = new MemberDTO(); 

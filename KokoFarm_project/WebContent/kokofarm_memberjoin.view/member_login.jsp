@@ -7,6 +7,7 @@
 <title></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+ 	
  	$(function(){
  		$("#btnidcheck").click(function(){  //클릭이벤트
  			var member_id = $("#member_id").val();  //입력값 

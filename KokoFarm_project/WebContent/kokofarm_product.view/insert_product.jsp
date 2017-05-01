@@ -5,8 +5,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+<script type="text/javascript"> 
+
+$(function() {
+    $( "#testDatepicker" ).datepicker({
+         changeMonth: true, 
+         dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+         dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+         monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+         monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+   		 altField : '#getdate',
+   		 dateFormat : 'yy년 mm월 dd일'
+
+  });
+});
+</script>
 </head>
 <body>
+
+
 	<form action="InsertProductAction.product" method="post" enctype="multipart/form-data">
 	
 <table border="1" cellpadding="0" cellspacing="0" style="border: solid #eaeaea 1px;">
@@ -35,6 +55,13 @@
 				</td>
 			</tr>
 
+	
+		<tr height="30" align="center">
+				<td width="200">수확일</td>
+				<td width="170"><input type="text" id="testDatepicker" class="text" placeholder="날짜선택"/></td>
+			</tr>
+	
+	
 			<tr height="30" align="center">
 				<td width="200">메인사진</td>
 				<td width="170"><input type="file" name="product_mainimage"
@@ -61,6 +88,7 @@
 			</tr>
 		</table>
 
+				<a href="list_Product.jsp">리스트</a>
 
 	</form>
 

@@ -5,8 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+	
+	$("#btnMemberlist").click(function(){
+		
+		location.href="listMember.member";
+			});
+	});
+
+</script>
 </head>
 <body>
-
+<div>회원가입이 완료 되었습니다.</div>
+<input type="button" value="회원목록" id="btnMemberlist">
 </body>
 </html>

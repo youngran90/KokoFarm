@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
 <script type="text/javascript">
 $(function(){
 	//버튼 클릭 이벤트
@@ -145,7 +146,7 @@ $(function(){
 </head>
 <body>
 <h2>회원가입</h2>
-	<form name = "joinForm" action="" method="post">
+	<form name = "joinForm" action="insertMember.member" method="post">
 		<table border="1" width="700px">
 			<tr>
 				<td>이름</td>

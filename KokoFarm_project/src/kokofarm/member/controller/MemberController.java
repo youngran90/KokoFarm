@@ -12,6 +12,7 @@ import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
 import kokofarm.member.action.idcheckAction;
 import kokofarm.member.action.insertFormAction;
+import kokofarm.member.action.list_joinedMemberAction;
 import kokofarm.member.action.loginCheckAction1;
 import kokofarm.member.action.logincheckAction;
 
@@ -22,6 +23,7 @@ public class MemberController extends HttpServlet {
 	public MemberController() {
 		super();
 
+		
 	}
 	public void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -68,6 +70,14 @@ public class MemberController extends HttpServlet {
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(requestURI.indexOf("listMember.member") !=-1){
+			action = new list_joinedMemberAction();
+			try{
+				forward = action.execute(request, response);
+				
+			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

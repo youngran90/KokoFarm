@@ -29,7 +29,7 @@
 </head>
 <body>
 <h2>상품리스트 출력</h2>
-<table border="1" cellpadding="0" cellspacing="0">
+<%-- <table border="1" cellpadding="0" cellspacing="0">
 			<tr height="80" align="center">
 				<td width="200">메인사진</td>
 				<td width="200">상품이름</td>
@@ -43,7 +43,7 @@
 		<c:if test="${product.product_mainimage != null }">
 				<c:set var="pattern" value="${fn:substring(product.product_mainimage, fn:length(product.product_mainimage)-4, fn:length(product.product_mainimage))}"></c:set>
 				<c:choose>
-					<c:when test="${pattern eq '.jpg' || pattern eq '.gif'}">
+					<c:when test="${pattern eq '.jpg' or pattern eq '.gif'}">
 						<a href ="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none"" ><img  src="../upload/small_${product.product_mainimage}"></a>
 					</c:when>
 					<c:otherwise>
@@ -84,14 +84,73 @@
 				<input type="button" value="취소">
 				</td>
 			</tr>
-		</table>
-				  
-	<form action="listproductAction.product" method="post">
-		 <input type="hidden" name="temp" value="temp"></input>
-		 <input type="checkbox" name="area" value="b_title">제목
-		 <input type="checkbox" name="area" value="b_name">작성자
-		 <input type="text" name="searchKey" size="10"></input>
-		 <input type="submit" value="검색">
-	</form>
-
+		</table> --%>
+		
+				<div style="margin-left: 50%">
+				<form action="listproductAction.product" method="post">
+					 <input type="hidden" name="temp" value="temp"></input>
+					 <input type="checkbox" name="area" value="b_title">제목
+					 <input type="checkbox" name="area" value="b_name">작성자
+					 <input type="text" name="searchKey" size="10"></input>
+					 <input type="submit" value="검색">
+				</form>
+			</div>
+			
+	<div style="clear: both;">
+		<ul>
+			<c:forEach var="product" items="${listModel.list}">
+			<li style="margin: 5px 10px 5px 10px; display: inline-block;  float: left;list-style: none">
+				<table style="border: solid #eaeaea 3px; width: 300px; height: 400px;">
+					<tr >
+						<td><c:if test="${product.product_mainimage != null }">
+							<c:set var="pattern" value="${fn:substring(product.product_mainimage, fn:length(product.product_mainimage)-4, fn:length(product.product_mainimage))}"></c:set>
+							<c:choose>
+								<c:when test="${pattern eq '.jpg' or pattern eq '.gif'}">
+									<a href ="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none"" ><img style="width: 90%; height: 220px; margin-left:5%; border:solid black 1px;"  src="../upload/small_${product.product_mainimage}"></a>
+								</c:when>
+								<c:otherwise>
+									<c:out value="NO IMAGE"></c:out>
+								</c:otherwise>
+							</c:choose>
+						</c:if></td>
+					</tr>
+					<tr>
+						<td><a href="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none; margin-left: 10px; color: #352f29;font-size: 19px; font-family: Tahoma; ">${product.product_name}</a></td>
+					</tr>
+					<tr>
+						<td><span style="margin-left: 10px;color: #38a9a5; font-weight: bold;font-size: 19px; font-family: Tahoma;">★★★★★  65건</span></td>
+					</tr>
+					<tr>
+						<td><span style="margin-left: 10px;color: #403324; font-weight: bold;font-size: 13px; font-family: Tahoma;">${product.product_unit}</span></td>
+					</tr>
+					<tr>
+						<td><span style="margin-left: 10px;color: #403324; font-weight: bold;font-size: 13px; font-family: Tahoma;">
+						<fmt:formatNumber value="${product.product_price}" pattern="###,###,###"/>원</span></td>
+					</tr>
+				</table>
+			</c:forEach>
+		</ul>
+	</div>
+	
+			<div style="clear: both; margin-left: 50%; margin-top: 36%; " >
+					<!-- 이전 -->
+				<c:if test="${listModel.startPage > 5}">
+					<a href="list.jsp?pageNum=${listModel.startPage -5 }" style="text-decoration: none; font: black">[이전]</a>
+				</c:if>
+				
+				<!-- 페이지목록 , 선택페이지 굵게 -->
+					<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
+						<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+					<a href="list_Product.jsp?pageNum=${pageNo}"  style="text-decoration: none; font: black">[${pageNo}]</a>
+					    <c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+					</c:forEach>
+				
+				
+				<!-- 이후 -->
+				<c:if test="${listModel.endPage < listModel.totalPageCount}">
+					<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }"  style="text-decoration: none; font: black">[이후]</a>
+				</c:if>	
+			</div>
+				<a href="list_Product.jsp">리스트</a>			  
+	
 </html>

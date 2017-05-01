@@ -6,7 +6,7 @@
 		
 	<insert id="insertProdcut" parameterType="Product">
 		insert into product(
-			product_no, product_name, product_unit, product_price, seller_no, product_uploaddate, PROUDCT_HARVESTDATE, review_number, 
+			product_no, product_name, product_unit, product_price, seller_no, product_uploaddate, product_harvestdate, review_number, 
 			product_mainimage, product_detailimage , product_sellerimage 
 		)
 		values(
@@ -25,8 +25,6 @@
 			</where>
 		</if>
 		order by product_uploaddate	
-		
-		
 	</select>
 	
 	<select id="detailProduct" parameterType="String" resultType="Product">
@@ -48,11 +46,17 @@
 	
 	<insert id="InsertPost" parameterType="Post">
 	insert into post (post_no, product_no, member_id, post_content, post_date)
-	value(#{post_no}, #{product_no}, #{member_id}, #{post_content}, sysdate) 
+	values(#{post_no}, #{product_no}, 0, #{post_content}, sysdate) 
 	</insert>
 	
-	<select id="listPost" parameterType="int" resultType="Post">
-	
+	<select id="listPost" parameterType="String" resultType="Post">
+	select * from post
+	where product_no = #{product_no}
 	</select>
+	
+	<delete id="deletePost" parameterType="String">
+	delete from post
+	where post_no = #{post_no}
+	</delete>
 	
 	</mapper>
