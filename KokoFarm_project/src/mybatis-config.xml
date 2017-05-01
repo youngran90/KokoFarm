@@ -5,10 +5,15 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
-		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+				<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
 		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
   		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/> 
+		
+		<!-- 동훈 담당 -->
+			<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+			<typeAlias type="kokofarm.member.domain.MemberSearch" alias="MemberSearch"/>
+		
+		 <!--  동훈이꺼 -->
 
 		
 		
