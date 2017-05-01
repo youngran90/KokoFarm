@@ -58,7 +58,7 @@ $(function() {
 	
 		<tr height="30" align="center">
 				<td width="200">수확일</td>
-				<td width="170"><input type="text" id="testDatepicker" class="text" placeholder="날짜선택"/></td>
+				<td width="170"><input type="text" id="testDatepicker"  name="product_harvestdate" class="text" placeholder="날짜선택"/></td>
 			</tr>
 	
 	
