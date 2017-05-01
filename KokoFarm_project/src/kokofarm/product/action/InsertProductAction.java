@@ -91,8 +91,7 @@ public class InsertProductAction implements Action {
 			}
 			
         }
-		
-		
+				
 		service.insertProdectService(product);
 
 		ActionForward forward = new ActionForward();

@@ -13,11 +13,21 @@ public class InsertPostAction implements Action {
 		ProductService service = ProductService.getInstance();
 		PostDTO
 		post = new PostDTO();
+		String product_no = request.getParameter("product_no");
+		
+		post.setProduct_no(product_no);
+		post.setPost_content(request.getParameter("post_content"));
+		
 		service.InsertPostService(post);
+		
+		System.out.println("id"+post.getMember_id());
+		System.out.println("con"+post.getPost_content());
+		System.out.println("no"+post.getProduct_no());
+		System.out.println("date"+post.getPost_date());
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("detailProdutAction.product");
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		
 		return forward;
 	}

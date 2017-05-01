@@ -21,19 +21,20 @@ public class ProductService {
 	  productDao = productDao.getInstance();
           return service;
   }
-  //dao 호출
-  //페이징처리
+ //uuid생성
   public String create_UUID(){
       String uuid = UUID.randomUUID().toString().replace("-", "");
   return uuid;
 }
  
+  //상품등록
   public int insertProdectService(ProductDTO product){
 	String uuid = create_UUID();
-	product.setProduct_no(uuid);
+	product.setProduct_no("P"+uuid);
 	return  productDao.insertProcut(product);
   }
   
+  //상품리스트, 페이징처리
   public ListProductPage listProductService(HttpServletRequest request, int requestPage){
 	 HttpSession session = request.getSession();
 	 ProductSearch search = new ProductSearch();
@@ -65,16 +66,22 @@ public class ProductService {
 	  
 	  return new ListProductPage(list, requestPage, totalPageCount, startPage, endPage);
   }
+
+  //상품상세
+  public ProductDTO detailProductService(String product_no){
+	  return productDao.detailProduct(product_no);
+  }
+
   
-  //post 입력
+  //댓글 입력
   public int InsertPostService(PostDTO post){
 	  String uuid = create_UUID();
-		post.setPost_no(uuid);
+		post.setPost_no("PO"+uuid);
 		return  productDao.InsertPost(post);
   }
   
-  public ProductDTO detailProductService(String product_no){
-	  return productDao.detailProduct(product_no);
+  public List<PostDTO> listPostService(String product_no){
+	  return productDao.listPost(product_no);
   }
 
   

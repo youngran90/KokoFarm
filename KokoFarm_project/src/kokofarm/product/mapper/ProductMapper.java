@@ -14,6 +14,8 @@ public interface ProductMapper {
  public ProductDTO detailProduct(String product_no);
  public int countProduct(ProductSearch search);
  public int InsertPost(PostDTO post);
+ public List<PostDTO> listPost(String product_no);
+ 
  }
 
 

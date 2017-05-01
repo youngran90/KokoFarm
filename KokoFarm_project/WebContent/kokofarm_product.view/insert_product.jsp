@@ -61,6 +61,7 @@
 			</tr>
 		</table>
 
+				<a href="list_Product.jsp">리스트</a>
 
 	</form>
 

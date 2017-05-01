@@ -12,7 +12,6 @@ public class ListproductAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ProductService service = ProductService.getInstance();
 		System.out.println("listaction");
-		//ProductDTO product = new ProductDTO();
 		int requestPage = 1;
 		ListProductPage list = service.listProductService(request, requestPage);
 		
