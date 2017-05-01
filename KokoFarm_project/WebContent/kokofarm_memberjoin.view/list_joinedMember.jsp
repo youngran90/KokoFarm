@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
  
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- 
+ <%request.setCharacterEncoding("utf-8"); %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,7 +28,7 @@
 			<th width="200">가입일</th>
 		</tr>
 			
-		<c:forEach var="member" items="${list }">
+		<c:forEach var="member" items="${listModel.list }">
 			<tr height="30">
 				<td align="center" style="font-weight: bold">${member.member_id }</td>
 				<td align="center" style="font-weight: bold">${member.member_name }</td>
@@ -50,10 +50,24 @@
 	<!-- 현재 페이지, start_row, end_row -->
 	
 	<!-- 이전 -->
+	<div align="center">
 	
+	<c:if test="${ listModel.startPage>5}">
+		<a href="listMember.member?pageNum=${listModel.startPage-5 }">[이전]</a>
+	</c:if>
 	
+	<c:forEach var="pageNum" begin="${listModel.startPage}" end ="${listModel.endPage}">
+		<c:if test="${listModel.requestPage==pageNum }"><b></c:if>
+			<a href= "listMember.member?pageNum=${pageNum}">[${pageNum}]</a>
+		<c:if test="${listModel.requestPage==pageNum }"><b></c:if>
+	</c:forEach>
 	
+	<c:if test="${listModel.endPage<listModel.totalPageCount }">
+		<a href = "listMember.member?pageNum=${listModel.startPage+5}">[이후]></a>
 	
+	</c:if>
+	
+	</div>
 	<!-- <div id="paging" align="center">
 		<script type="text/javascript">
 		$("#paging").paging({max:1});
@@ -67,7 +81,7 @@
 	<!-- 검색 -->
 	<div align="center">
 		<form action ="listMember.member" method="post" >
-			<input type="hidden" name ="temp" value="teme"></input>
+			<input type="hidden" name ="temp" value="temp"></input>
 			<input type="checkbox" name = "area" value = "member_id">아이디
 			<input type="checkbox" name = "area" value = "member_name">이름
 			<input type = "checkbox" name = "area" value = "member_email">이메일

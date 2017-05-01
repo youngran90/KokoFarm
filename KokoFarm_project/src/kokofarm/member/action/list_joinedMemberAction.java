@@ -15,7 +15,9 @@ public class list_joinedMemberAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			
+		request.setCharacterEncoding("utf-8");	
+		
+		
 		MemberService service = MemberService.getInstance();
 		MemberDao dao = MemberDao.getInstance();
 		
@@ -24,16 +26,10 @@ public class list_joinedMemberAction implements Action {
 		if(pageNum ==null){
 			pageNum ="1";
 		}
-	
 		int requestPage = Integer.parseInt(pageNum);
-		
-		
-		
-		MemberSearch search = new MemberSearch();
-		search.setArea(request.getParameterValues("area"));
-		search.setSearchKey("%"+request.getParameter("searchKey")+"%");
-		
-		//ListModel listModel = service.listJoinedMemberService(search, requestPage);		
+	
+			
+		ListModel listModel = service.listJoinedMemberService(request, requestPage);		
 		//List<MemberDTO> list = service.listJoinedMemberService(search);
 		
 		request.setAttribute("listModel", listModel);

@@ -1,46 +1,67 @@
 package kokofarm.member.domain;
 
+import java.util.List;
+
 public class ListModel {
-	private String requestPage;
-	private String totalPageNum;
-	private String startPage;
-	private String endPage;
+	private List<MemberDTO> list;
+	private int requestPage;
+	private int totalPageCount;
+	private int startPage;
+	private int endPage;
 	
 	public ListModel() {
 		
 	}
 
-	public String getRequestPage() {
+	public ListModel(List<MemberDTO> list, int requestPage, int totalPageCount, int startPage, int endPage) {
+		super();
+		this.list = list;
+		this.requestPage = requestPage;
+		this.totalPageCount = totalPageCount;
+		this.startPage = startPage;
+		this.endPage = endPage;
+	}
+
+	public List<MemberDTO> getList() {
+		return list;
+	}
+
+	public void setList(List<MemberDTO> list) {
+		this.list = list;
+	}
+
+	public int getRequestPage() {
 		return requestPage;
 	}
 
-	public void setRequestPage(String requestPage) {
+	public void setRequestPage(int requestPage) {
 		this.requestPage = requestPage;
 	}
 
-	public String getTotalPageNum() {
-		return totalPageNum;
+	public int getTotalPageCount() {
+		return totalPageCount;
 	}
 
-	public void setTotalPageNum(String totalPageNum) {
-		this.totalPageNum = totalPageNum;
+	public void setTotalPageCount(int totalPageCount) {
+		this.totalPageCount = totalPageCount;
 	}
 
-	public String getStartPage() {
+	public int getStartPage() {
 		return startPage;
 	}
 
-	public void setStartPage(String startPage) {
+	public void setStartPage(int startPage) {
 		this.startPage = startPage;
 	}
 
-	public String getEndPage() {
+	public int getEndPage() {
 		return endPage;
 	}
 
-	public void setEndPage(String endPage) {
+	public void setEndPage(int endPage) {
 		this.endPage = endPage;
 	}
 	
-
+	
+	
 }

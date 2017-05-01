@@ -49,6 +49,24 @@
 </select>
 
 
+	<select id="countMember" parameterType="MemberSearch" resultType="int">
+		select count(*) from member
+		<if test="area !=null">
+			<where>
+				<foreach collection="area" item="item" separator="OR" open="("
+								close=")">
+						${item} LIKE #{searchKey}
+				
+				</foreach>
+			
+			</where>
+		
+		</if>
+	
+	
+	
+	</select>
+
 
 
 
