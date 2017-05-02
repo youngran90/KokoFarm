@@ -10,7 +10,7 @@
 			product_mainimage, product_detailimage , product_sellerimage 
 		)
 		values(
-		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate, sysdate, 0, 
+		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate, #{product_harvestdate}, 0,
 		#{product_mainimage}, #{product_detailimage}, #{product_sellerimage}
 		)	
 	</insert>

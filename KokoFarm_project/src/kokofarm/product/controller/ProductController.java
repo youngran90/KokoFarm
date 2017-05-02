@@ -74,7 +74,7 @@ public class ProductController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-		}else if(path.equals("PostInsertAction.product")){
+		}else if(path.equals("InsertPostAction.product")){
 			System.out.println("insertpost");
 			action = new InsertPostAction();
 			try {

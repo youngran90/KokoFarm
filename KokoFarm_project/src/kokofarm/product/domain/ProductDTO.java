@@ -2,6 +2,7 @@ package kokofarm.product.domain;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class ProductDTO implements Serializable{
 	
@@ -11,8 +12,9 @@ public class ProductDTO implements Serializable{
 	private int product_price;	
 	private String seller_no;
 	private Timestamp product_uploaddate;
-	private Timestamp product_harvestdate;
+	private Date product_harvestdate;
 	private int review_number;
+	
 	
 	
 	private String product_mainimage;
@@ -24,7 +26,7 @@ public class ProductDTO implements Serializable{
 
 
 	public ProductDTO(String product_no, String product_name, String product_unit, int product_price, String seller_no,
-			Timestamp product_uploaddate, Timestamp product_harvestdate, int review_number, String product_mainimage,
+			Timestamp product_uploaddate, Date product_harvestdate, int review_number, String product_mainimage,
 			String product_detailimage, String product_sellerimage) {
 		super();
 		this.product_no = product_no;
@@ -101,12 +103,12 @@ public class ProductDTO implements Serializable{
 	}
 
 
-	public Timestamp getProduct_harvestdate() {
+	public Date getProduct_harvestdate() {
 		return product_harvestdate;
 	}
 
 
-	public void setProduct_harvestdate(Timestamp product_harvestdate) {
+	public void setProduct_harvestdate(Date product_harvestdate) {
 		this.product_harvestdate = product_harvestdate;
 	}
 

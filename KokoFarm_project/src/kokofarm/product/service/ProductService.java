@@ -15,7 +15,7 @@ import kokofarm.product.persistence.ProductDao;
 public class ProductService {
 	private static ProductService service = new ProductService();
 	private static ProductDao productDao;
-	private static final int  PAGE_SIZE = 2; //페이징 숫자 바꾸기
+	private static final int  PAGE_SIZE = 5; //페이징 숫자 바꾸기
   
   public static ProductService getInstance(){
 	  productDao = productDao.getInstance();

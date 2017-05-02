@@ -1,12 +1,11 @@
 package kokofarm.product.action;
 
 import java.io.File;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.plaf.multi.MultiListUI;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -21,11 +20,12 @@ public class InsertProductAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ProductService service = ProductService.getInstance();
 		ProductDTO product = new ProductDTO();
-
+		
 		//String uploadPath = Application.getRealPath("ImageUpload");
 		int size = 20 * 1024 * 1024; // 20MB
 		//String uploadPath = request.getRealPath("upload");
-		String uploadPath = "C:\\Users\\youngran\\git\\KokoFarm_Project1\\KokoFarm_project\\WebContent\\upload";
+//		String uploadPath = "C:\\Users\\youngran\\git\\KokoFarm_Project2\\KokoFarm_project\\WebContent\\upload";
+		String uploadPath = "../WebContent/upload";
 		System.out.println(uploadPath);
 	   
 		 File file = new File(uploadPath);
@@ -44,8 +44,13 @@ public class InsertProductAction implements Action {
 		product.setProduct_unit(multi.getParameter("product_unit"));
 		product.setProduct_price(Integer.parseInt(multi.getParameter("product_price")));
 		product.setSeller_no(multi.getParameter("seller_no"));
+		//product.setProduct_harvestdate(multi.getParameter("product_harvestdate"));
+	
 		System.out.println("날짜"+multi.getParameter("product_harvestdate"));
-
+		java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy/MM/dd");
+		Date date = format.parse(multi.getParameter("product_harvestdate"));
+		product.setProduct_harvestdate(date);
+		   
 		Enumeration files = multi.getFileNames();
 		 
 		//서브

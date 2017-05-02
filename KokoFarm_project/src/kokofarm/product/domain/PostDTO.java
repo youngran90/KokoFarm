@@ -1,5 +1,7 @@
 package kokofarm.product.domain;
 
+import java.util.Date;
+
 import com.sun.jmx.snmp.Timestamp;
 
 public class PostDTO {
@@ -8,11 +10,11 @@ public class PostDTO {
 	private String post_no;
 	private String member_id;
 	private String post_content;
-	private Timestamp post_date;
+	private Date post_date;
 	
 	public PostDTO(){}
 
-	public PostDTO(String product_no, String post_no, String member_id, String post_content, Timestamp post_date) {
+	public PostDTO(String product_no, String post_no, String member_id, String post_content, Date post_date) {
 		super();
 		this.product_no = product_no;
 		this.post_no = post_no;
@@ -53,11 +55,11 @@ public class PostDTO {
 		this.post_content = post_content;
 	}
 
-	public Timestamp getPost_date() {
+	public Date getPost_date() {
 		return post_date;
 	}
 
-	public void setPost_date(Timestamp post_date) {
+	public void setPost_date(Date post_date) {
 		this.post_date = post_date;
 	}
 

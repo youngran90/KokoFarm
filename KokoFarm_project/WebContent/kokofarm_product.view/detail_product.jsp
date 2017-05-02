@@ -102,23 +102,23 @@ text-align: center;
 				
 				<tr>
 					<td>수확일</td>
-					<td><fmt:formatDate value="${product.product_harvestdate}" pattern="yyyy년 MM월 dd일"/>
+					<td><fmt:formatDate value="${product.product_harvestdate}" pattern="yyyy년MM월dd일"/>
 					</td>
 				</tr>	
 
 				<tr>
 					<td>대표이미지</td>
-					<td><img  src="../upload/${product.product_sellerimage}"></td>
+					<td><img  src="../upload/${product.product_mainimage}"></td>
 				</tr>		
 				
 				<tr>
 					<td>상세이미지</td>
-					<td><img  src="../upload/${product.product_mainimage}"></td>
+					<td><img  src="../upload/${product.product_detailimage}"></td>
 				</tr>
 				
 				<tr>
 					<td>판매자이미지</td>
-					<td><img  src="../upload/${product.product_detailimage}"></td>
+					<td><img  src="../upload/${product.product_sellerimage}"></td>
 				</tr>
 						
 	
@@ -131,7 +131,7 @@ text-align: center;
 		</table>
 		
 	<h2>댓글</h2>		  
-	<form action="PostInsertAction.product" method="post">
+	<form action="InsertPostAction.product" method="post">
 		 <input type="hidden" name="product_no" value="${product.product_no}"></input>
 		<input type="hidden" name="member_id" size="10"></input>
 		글내용:<input type="text" name="post_content" size="50"></input>
@@ -159,7 +159,7 @@ text-align: center;
 						<td>${status.count}</td>
 							<td class="comment_name"><span class="txt strong">${postlist.member_id}</span></td>
 			                  <td class="comment_txt"><span>${postlist.post_content}</span></td>
-			                  <td class="comment_date"><fmt:formatDate value="${postlist.post_date}" pattern="yyyy-MM-dd"/>
+			                  <td class="comment_date"><fmt:formatDate value="${postlist.post_date}" pattern="yyyy년 MM월 dd일"/></td>
 			                  <td><button id="deletePost" value="${postlist.post_no}" onclick="deletpost('${postlist.post_no}')">삭제</button></td>
 			               </tr>
 			        </c:forEach>
