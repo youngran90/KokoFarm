@@ -24,8 +24,8 @@ public class InsertProductAction implements Action {
 		//String uploadPath = Application.getRealPath("ImageUpload");
 		int size = 20 * 1024 * 1024; // 20MB
 		//String uploadPath = request.getRealPath("upload");
-//		String uploadPath = "C:\\Users\\youngran\\git\\KokoFarm_Project2\\KokoFarm_project\\WebContent\\upload";
-		String uploadPath = "../WebContent/upload";
+          String uploadPath = "C:\\Users\\youngran\\git\\KokoFarm_Project2\\KokoFarm_project\\WebContent\\upload";
+		//String uploadPath = "../WebContent/upload";
 		System.out.println(uploadPath);
 	   
 		 File file = new File(uploadPath);

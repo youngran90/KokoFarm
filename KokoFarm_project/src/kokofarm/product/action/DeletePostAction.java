@@ -2,6 +2,7 @@ package kokofarm.product.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kokofarm.product.service.ProductService;
 
@@ -14,11 +15,11 @@ public class DeletePostAction implements Action {
 		System.out.println("deletepostAction");
 		String post_no = request.getParameter("post_no");
 		System.out.println(post_no);
-		
+
 		service.deletePostService(post_no);
 		ActionForward forward = new ActionForward();
 		forward.setPath("detailProdutAction.product");
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		
 		return forward;
 	}

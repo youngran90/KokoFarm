@@ -89,6 +89,10 @@ public class ProductService {
 	  return productDao.deletePost(post_no);
   }
   
+  //댓글수정
+  public int updatePostService(PostDTO post){
+	  return productDao.updatePost(post);
+  }
   
   
   

@@ -8,7 +8,10 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <%
 	request.setCharacterEncoding("utf-8");
-    %>
+    String id = (String)session.getAttribute("m_id");
+    request.setAttribute("id", id);
+    System.out.print(id);
+     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,21 +40,53 @@
 		}
 		}
 	function deletpost(post_no){
-		alert("ddd");
-		alert(post_no);
 		
-		$.ajax({
-			type: "get",
-			url:   "deletePost.product",
-	        data: {"post_no":post_no},
-	        success: function (data) {
-	        	location.reload();
-	        },
-	        error: function (data) {
-	            console.log('Error:', data);
-	        }
-		})
-	}
+			$.ajax({
+				type: "get",
+				url:   "deletePost.product",
+		        data: {"post_no":post_no},
+		        success: function (data) {
+		        	location.reload();
+		        	alert("댓글삭제");
+		        },
+		        error: function (data) {
+		            console.log('Error:', data);
+		            alert("오류");
+		        }
+			})
+		}
+	
+	function eadown(){
+		var num = $("#ea").val();
+		var ea = parseInt(num);
+		if(ea == 0){
+			alert("더이상 수량을 줄일수없습니다.")
+		}else{
+			$("#ea").val(ea-1);
+			var price = parseInt($("#aa").text());
+			alert(price)
+			$("#aa").text(price/ea+"원");
+		}
+		}
+	function updatepost(post_no){
+    	
+		$("#updatePost").append('<input type="submit" name="post_content" size="50"/>');
+		location.reload();
+		
+			$.ajax({
+				type: "get",
+				url:   "updatePostAction.product",
+		        data: {"post_no":post_no},
+		        success: function (data) {
+		        	location.reload();
+		        	alert("댓글수정");
+		        },
+		        error: function (data) {
+		            console.log('Error:', data);
+		            alert("오류");
+		        }
+			})
+		}
 	
 </script>
 <style type="text/css">
@@ -146,10 +181,10 @@ text-align: center;
 		<table id="commentList" style="border: solid #eaeaea 3px; ">
 		
 			<tr>
-				<td style="width: 120px;" align="center">글번호</td>
-				<td style="width: 120px;" align="center">작성자</td>
-				<td style="width: 500px;" align="center">글내용</td>
-				<td style="width: 120px;" align="center">시간</td>
+				<td style="width: 50px;" align="center">글번호</td>
+				<td style="width: 100px;" align="center">작성자</td>
+				<td style="width: 500px;" >글내용</td>
+				<td style="width: 145px;" align="center">작성일</td>
 			</tr>
 			
 		
@@ -157,10 +192,14 @@ text-align: center;
 					<c:forEach var="postlist" items="${postlist}" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-							<td class="comment_name"><span class="txt strong">${postlist.member_id}</span></td>
+							<td class="comment_name"><span class="txt strong" id="member_id">${postlist.member_id}</span></td>
 			                  <td class="comment_txt"><span>${postlist.post_content}</span></td>
 			                  <td class="comment_date"><fmt:formatDate value="${postlist.post_date}" pattern="yyyy년 MM월 dd일"/></td>
+			                 
+			                  <c:set var="id" value="${id}"></c:set>
+			                   <c:if test="${postlist.member_id eq id}">
 			                  <td><button id="deletePost" value="${postlist.post_no}" onclick="deletpost('${postlist.post_no}')">삭제</button></td>
+			              		</c:if>
 			               </tr>
 			        </c:forEach>
 				</c:if>

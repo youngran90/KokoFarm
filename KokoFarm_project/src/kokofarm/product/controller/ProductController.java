@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kokofarm.customercenter.action.updateAction;
 import kokofarm.product.action.Action;
 import kokofarm.product.action.ActionForward;
 import kokofarm.product.action.DeletePostAction;
@@ -16,6 +17,7 @@ import kokofarm.product.action.InsertPostAction;
 import kokofarm.product.action.InsertProductAction;
 import kokofarm.product.action.ListproductAction;
 import kokofarm.product.action.detailProdutAction;
+import kokofarm.product.action.updatePostAction;
 
 
 @WebServlet("*.product")
@@ -91,6 +93,14 @@ public class ProductController extends HttpServlet {
 			try {
 				forward = action.execute(request, response);
 				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(path.equals("updatePostAction.product")){
+			action = new updatePostAction();
+			
+			try {
+				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

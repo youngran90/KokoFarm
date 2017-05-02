@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kokofarm.product.domain.PostDTO;
 import kokofarm.product.domain.ProductDTO;
@@ -26,6 +27,11 @@ public class detailProdutAction implements Action {
 		System.out.println("dd"+product_no);
 		request.setAttribute("product", product);
 		request.setAttribute("postlist", postlist);
+	
+		//세션가져오기
+		HttpSession session = request.getSession();
+		System.out.println("detail_mid는"+session.getAttribute("m_id"));
+		
 		
 
 		System.out.println(product.getProduct_name());

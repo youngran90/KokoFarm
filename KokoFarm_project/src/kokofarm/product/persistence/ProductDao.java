@@ -137,4 +137,24 @@ public class ProductDao {
 		}
 		return re;
 	}
+	
+	//댓글수정
+	public int updatePost(PostDTO post){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(ProductMapper.class).updatePost(post);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }
