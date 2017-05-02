@@ -3,7 +3,6 @@ package kokofarm.member.domain;
 import java.util.List;
 
 public class ListModel {
-	
 	private List<MemberDTO> list;
 	private int requestPage;
 	private int totalPageCount;

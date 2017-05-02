@@ -12,9 +12,12 @@ import kokofarm.member.action.Action;
 import kokofarm.member.action.ActionForward;
 import kokofarm.member.action.idcheckAction;
 import kokofarm.member.action.insertFormAction;
+import kokofarm.member.action.joinAction;
+import kokofarm.member.action.joinMemberAction;
 import kokofarm.member.action.list_joinedMemberAction;
 import kokofarm.member.action.loginCheckAction1;
 import kokofarm.member.action.logincheckAction;
+import kokofarm.member.action.mainAction;
 
 @WebServlet("*.member" )
 public class MemberController extends HttpServlet {
@@ -23,7 +26,6 @@ public class MemberController extends HttpServlet {
 	public MemberController() {
 		super();
 
-		
 	}
 	public void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -80,8 +82,29 @@ public class MemberController extends HttpServlet {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(requestURI.indexOf("joinMember.member") !=-1){
+			action = new joinMemberAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();						
+			}
+		}else if(requestURI.indexOf("join.member") !=-1){
+			action = new joinAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(requestURI.indexOf("mainAction.member") !=-1){
+			action = new mainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-				
 		
 
 		if (forward != null) {

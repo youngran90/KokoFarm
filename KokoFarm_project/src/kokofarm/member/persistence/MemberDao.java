@@ -18,7 +18,6 @@ import kokofarm.member.mapper.MemberMapper;
 
 public class MemberDao {
 
-	
 	private MemberDao(){}
 	private static class MemberDaoSingleton{
 		private static final MemberDao memberDao = new MemberDao();
@@ -30,7 +29,7 @@ public class MemberDao {
 	}
 	
 	public SqlSessionFactory getSqlSessionFaction(){
-		String resource = "mybatis-config.xml";
+		String resource = "donghoon.xml";
 		InputStream in = null;
 		try {
 			in = Resources.getResourceAsStream(resource);

@@ -13,7 +13,6 @@
 
 String message= (String)request.getAttribute("message");
 
-
 	if(message.indexOf("사용 가능") != -1){  %>
 		<span style="color:blue;"><%=message %></span>
 <%}else{	%>

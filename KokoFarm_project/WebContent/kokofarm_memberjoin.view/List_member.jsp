@@ -9,7 +9,6 @@
 
 <script type="text/javascript">
 
-
 $(function(){
 	
 	$("#btnMemberlist").click(function(){

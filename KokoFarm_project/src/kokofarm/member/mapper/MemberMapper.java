@@ -12,7 +12,6 @@ import kokofarm.member.domain.MemberSearch;
 
 public interface MemberMapper {
 	
-	
 	public int insertMember(MemberDTO member);
 	public int idcheck(String userid);
 	public int logincheck(Map<String,String> map);

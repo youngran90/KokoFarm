@@ -14,7 +14,6 @@
 </head>
 <body>
 
-
 	<h3>가입된 회원 정보들</h3>
 	<table border="1" cellpadding="0" cellspacing="0">
 		<tr height = "30">

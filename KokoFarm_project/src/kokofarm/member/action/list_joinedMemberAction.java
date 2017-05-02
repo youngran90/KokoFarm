@@ -15,7 +15,6 @@ public class list_joinedMemberAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		request.setCharacterEncoding("utf-8");	
 		
 		

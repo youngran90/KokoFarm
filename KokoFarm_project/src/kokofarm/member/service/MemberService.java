@@ -13,7 +13,6 @@ import kokofarm.member.domain.MemberSearch;
 import kokofarm.member.persistence.MemberDao;
 
 public class MemberService {
-	
 	private static int PAGE_SIZE=5;
 
 	private MemberService(){

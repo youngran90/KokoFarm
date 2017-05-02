@@ -3,7 +3,6 @@ package kokofarm.member.domain;
 import java.io.Serializable;
 
 public class MemberSearch implements Serializable{
-	
 	private String[] area;
 	private String searchKey;
 	
