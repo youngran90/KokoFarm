@@ -8,7 +8,6 @@ import kokofarm.orderproduct.domain.OrderProductListDTO;
 
 
 public interface OrderProductMapper {
-	/*int ProductInsert(ProductDTO product);*/
 	int Order(List<OrderProductDTO> checklist);
 	List<OrderProductListDTO> OrderList(String member_id);
 }

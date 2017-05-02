@@ -7,7 +7,7 @@
 <mapper namespace="kokofarm.orderproduct.mapper.OrderProductMapper">
 	<cache />
 	
-	<!-- <insert id="Order" parameterType="java.util.List">
+	<insert id="Order" parameterType="java.util.List">
 	
 	<foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
 		into orderproduct(
@@ -18,7 +18,7 @@
 			)
 	</foreach>
 			
-	</insert> -->
+	</insert>
 	
 	<select id="OrderList" resultType="OrderProductListDTO">
 		select  DISTINCT op.order_no, p.product_no, op.member_id,  p.product_name, p.product_price 

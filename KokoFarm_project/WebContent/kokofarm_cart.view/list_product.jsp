@@ -21,6 +21,7 @@
 		</tr>
 	
 			<c:forEach var="list" items="${list }">
+			
 			<tr>
 				<form action="ActionCartListInsert.cart" method="post">
 					<td>${list.product_no }</td>

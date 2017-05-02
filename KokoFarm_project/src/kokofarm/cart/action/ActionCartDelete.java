@@ -1,16 +1,17 @@
 package kokofarm.cart.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kokofarm.cart.domain.CartDTO;
 import kokofarm.cart.domain.CartListDTO;
-import kokofarm.cart.domain.ProductDTO;
 import kokofarm.cart.service.CartService;
 
-public class AcitonCartList implements CartAction {
+public class ActionCartDelete implements CartAction {
 
 	@Override
 	public CartActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -19,16 +20,18 @@ public class AcitonCartList implements CartAction {
 		
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
-		session.setAttribute("member_id", member_id);
+		session.setAttribute("member_id", member_id); //세션
 		
-		System.out.println("장바구니 리스트 출력 세션 : "+member_id);
+		String product_no = request.getParameter("product_no");
 		
-		List<CartListDTO>list = service.cart_list(member_id);
-		request.setAttribute("cartlist", list);
+		CartDTO cart_delete = new CartDTO();
+		cart_delete.setMember_id(member_id);
+		cart_delete.setProduct_no(product_no);
+		service.cart_delete(cart_delete); // 선택한 항목만 삭제
 		
 		CartActionForward forward = new CartActionForward();
-		forward.setPath("list_cart.jsp");
-		forward.setRedirect(false);
+		forward.setPath("AcitonCartList.cart");
+		forward.setRedirect(true);
 		return forward;
 	}
 

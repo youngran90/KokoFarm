@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kokofarm.cart.action.AcitonCartList;
+import kokofarm.cart.action.ActionCartDelete;
+import kokofarm.cart.action.ActionCartDeleteALL;
 import kokofarm.cart.action.ActionCartListInsert;
 import kokofarm.cart.action.ActionInsert;
 import kokofarm.cart.action.ActionList;
+import kokofarm.cart.action.ActionRoutingCart;
 import kokofarm.cart.action.CartAction;
 import kokofarm.cart.action.CartActionForward;
 
@@ -41,7 +44,7 @@ public class CartController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(path.equals("AcitonList.cart")){
+    	}else if(path.equals("ActionList.cart")){
     		action = new ActionList();
     		try {
 				forward = action.excute(request, response);
@@ -62,6 +65,28 @@ public class CartController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(path.equals("ActionCartDelete.cart")){
+    		action = new ActionCartDelete();
+    		try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(path.equals("ActionCartDeleteALL.cart")){
+    		action = new ActionCartDeleteALL();
+    		try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(path.equals("ActionRoutingCart.cart")){
+    		action = new ActionRoutingCart();
+    		try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		
     	}
     		
     	

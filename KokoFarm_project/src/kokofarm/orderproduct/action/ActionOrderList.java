@@ -21,11 +21,7 @@ public class ActionOrderList implements OrderProductAction {
 		
 		
 		List<OrderProductListDTO> orderlist = service.OrderProductListDTO(member_id);
-		for(int i=0; i<orderlist.size(); i++){
-			System.out.println(orderlist.get(i));
-		}
 		request.setAttribute("list", orderlist);
-		
 		
 		OrderProductActionFoward foward = new OrderProductActionFoward();
 		foward.setPath("list_orderproduct.jsp");

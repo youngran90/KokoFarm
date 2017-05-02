@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import kokofarm.cart.domain.ProductDTO;
+import kokofarm.cart.service.CartService;
 import kokofarm.orderproduct.domain.OrderProductDTO;
 import kokofarm.orderproduct.domain.OrderProductListDTO;
 import kokofarm.orderproduct.persistence.OrderProductDao;
@@ -26,9 +27,9 @@ public class OrderProductService {
 	}
 	
 	
-	/*public int OrderProduct(String[] no, String member_id){
+	public int OrderProduct(String[] no, String member_id){
 		OrderProductDTO orderproduct = new OrderProductDTO();
-		//List<ProductDTO> list = dao.ProductList();
+		List<ProductDTO> list = CartService.getInstance().product_list();
 		List<OrderProductDTO> checklist = new ArrayList<OrderProductDTO>(); //체크한값을 저장하기 위한 리스트
 				
 		String order_no =  create_UUID();
@@ -43,17 +44,17 @@ public class OrderProductService {
 		}
 		
 	
-		상품 총합 구하는 반복문
+		/*상품 총합 구하는 반복문
 		  for(int i=0; i<list.size(); i++){
 			if(list.get(i).getProduct_no().equals(no)){ // 상품번호로 금액 더한다.
 				this.sum = list.get(i).getProduct_price();
 				this.total += this.sum;
 				orderproduct.setOrder_total(this.total);
 			}
-		}
+		}*/
 		
 	return dao.Order(checklist);
-	}*/
+	}
 	
 	public List<OrderProductListDTO> OrderProductListDTO(String member_id){
 		return dao.OrderList(member_id);

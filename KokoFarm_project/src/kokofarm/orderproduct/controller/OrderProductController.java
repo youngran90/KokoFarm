@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kokofarm.orderproduct.action.ActionOrder;
 import kokofarm.orderproduct.action.ActionOrderList;
+import kokofarm.orderproduct.action.ActionRoutingOrderProduct;
 import kokofarm.orderproduct.action.OrderProductAction;
 import kokofarm.orderproduct.action.OrderProductActionFoward;
 
@@ -32,8 +33,8 @@ public class OrderProductController extends HttpServlet {
     	String command = requstUrl.substring(contextPath.length()+1); // Product.do
     	int le = command.indexOf("/");
 		String path = command.substring(le + 1, command.length()); // insert.do
-    	
-    	OrderProductAction action = null;
+
+		OrderProductAction action = null;
     	OrderProductActionFoward forward = null;
     	
     	if(path.equals("orderproduct.orderproduct")){
@@ -45,6 +46,13 @@ public class OrderProductController extends HttpServlet {
 			}
     	}else if(path.equals("orderproductlist.orderproduct")){
     		action = new ActionOrderList();
+    		try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(path.equals("ActionRoutingOrderProduct.orderproduct")){
+    		action = new ActionRoutingOrderProduct();
     		try {
 				forward = action.excute(request, response);
 			} catch (Exception e) {

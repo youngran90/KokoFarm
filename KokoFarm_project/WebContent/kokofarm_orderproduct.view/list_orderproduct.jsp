@@ -15,10 +15,11 @@
 	<section>
 	
 	<h4>주문내역</h4>
-	<form action="list.orderproduct" method="post">
+	<form action="ActionRoutingOrderProduct.orderproduct" method="post">
 		<input type="hidden" name="member_id" value="<%=session.getAttribute("member_id")%>">
 		<input type="submit" value="제품목록">
 	</form>
+	<h4>${member_id }</h4>
 	<table>
 		<tr>
 			<th>주문번호</th>

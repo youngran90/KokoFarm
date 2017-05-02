@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import kokofarm.cart.domain.CartDTO;
+import kokofarm.cart.domain.CartListDTO;
 import kokofarm.cart.domain.ProductDTO;
 import kokofarm.cart.persistence.CartDAO;
 
@@ -29,7 +30,7 @@ public class CartService {
 		 return dao.product_list();
 	 }
 	 
-	 public int cart_list(String[] checklist, String member_id){//체크한 품목들 장바구니 테이블에 저장하는 메소드
+	 public int cart_insert(String[] checklist, String member_id){//체크한 품목들 장바구니 테이블에 저장하는 메소드
 		 CartDTO cartDTO = new CartDTO();
 		 List<ProductDTO> product_list = dao.product_list(); //제품 객체랑 비교
 		 List<CartDTO> cart_list = new ArrayList<CartDTO>(); //장바구니 객체에 저장
@@ -49,7 +50,18 @@ public class CartService {
 		 return dao.cart(cart_list);
 	 }
 	 
-	 public List<ProductDTO> cart_list(String member_id){
+	 public List<CartListDTO> cart_list(String member_id){
+		 //장바구니 리스트 출력
 		 return dao.cart_list(member_id);
+	 }
+	 
+	 public int cart_delete(CartDTO cart_delete){ 
+		 //선택한 항목만 삭제한다
+		 return dao.cart_delete(cart_delete);
+	 }
+	 
+	 public int cart_delte_all(CartDTO cart_delte_all){
+		 // 장바구니 전체목록 삭제
+		 return dao.cart_delte_all(cart_delte_all);
 	 }
 }

@@ -5,8 +5,25 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="kosta.model.Board" alias="Board"/>
-	<typeAlias type="kosta.model.Search" alias="search"/>
+		<typeAlias type="kokofarm.product.domain.ProductDTO" alias="Product"/>
+		<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+		<typeAlias type="kokofarm.product.domain.ProductSearch" alias="Search"/>
+  		<typeAlias type="kokofarm.product.domain.PostDTO" alias="Post"/>
+		
+		<!-- 동훈 담당 -->
+			<typeAlias type="kokofarm.member.domain.MemberDTO" alias="Member"/>
+			<!--<typeAlias type="kokofarm.member.domain.MemberSearch" alias="MemberSearch"/> -->
+		 <!--  동훈이꺼 -->
+		
+		<!-- =========== 정환이 담당 =============-->
+		<!-- =========== 주문 =============-->
+		<typeAlias type="kokofarm.orderproduct.domain.OrderProductListDTO" alias="OrderProductListDTO"/>
+		<typeAlias type="kokofarm.orderproduct.domain.OrderProductDTO" alias="OrderProductDTO"/>
+		<!-- =========== 장바구니 =============-->
+		<typeAlias type="kokofarm.cart.domain.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="kokofarm.cart.domain.CartDTO" alias="CartDTO"/>
+		<typeAlias type="kokofarm.cart.domain.CartListDTO" alias="CartListDTO"/>
+
 	</typeAliases>
 	
 	<environments default="development">
@@ -19,7 +36,14 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="kosta/mapper/Board.xml"/>
+		<mapper resource="kokofarm/product/xml/Product.xml"/>
+		<mapper resource="kokofarm/member/mapper/Member.xml"/>
+		
+	<!-- =========== 정환이 담당 =============-->
+		<!-- =========== 주문 =============-->
+			<mapper resource="kokofarm/orderproduct/xml/OrderProduct.xml"/>
+		<!-- =========== 장바구니 =============-->
+			<mapper resource="kokofarm/cart/xml/Cart.xml"/>
 	</mappers>
 	
 </configuration>

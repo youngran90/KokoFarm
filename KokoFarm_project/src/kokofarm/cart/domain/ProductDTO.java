@@ -73,6 +73,13 @@ public class ProductDTO implements Serializable{
 	public void setProduct_date(Timestamp product_date) {
 		this.product_date = product_date;
 	}
+
+	@Override
+	public String toString() {
+		return "ProductDTO [product_no=" + product_no + ", product_name=" + product_name + ", product_unit="
+				+ product_unit + ", product_price=" + product_price + ", seller_no=" + seller_no + ", product_date="
+				+ product_date + "]";
+	}
 	
 	
 	

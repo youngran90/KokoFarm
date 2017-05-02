@@ -30,8 +30,8 @@ public class ActionInsert implements CartAction{
 		
 		
 		CartActionForward forward = new CartActionForward();
-		forward.setRedirect(false);
-		forward.setPath("AcitonList.cart");
+		forward.setRedirect(true);
+		forward.setPath("ActionList.cart");
 		
 		return forward;
 	}

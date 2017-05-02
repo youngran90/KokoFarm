@@ -32,12 +32,21 @@
 		</foreach>
 	</insert>
 	
-	<select id="cart_list" resultType="ProductDTO" parameterType="String">
-		select c.member_id , p.product_name, p.product_price 
+	<select id="cart_list" resultType="CartListDTO">
+		select p.product_name, p.product_price, p.product_no
 		from cart c, product p 
 		where c.product_no = p.product_no
-  		and member_id = #{member_id};
+  		and member_id = #{member_id}
 	</select>
+	
+	<delete id="cart_delete" parameterType="CartDTO">
+			delete from cart where product_no = #{product_no}			
+				and member_id = #{member_id}
+	</delete>
+	
+	<delete id="cart_delte_all" parameterType="CartDTO">
+		delete from cart where member_id = #{member_id}
+	</delete>
 </mapper>
 
 
