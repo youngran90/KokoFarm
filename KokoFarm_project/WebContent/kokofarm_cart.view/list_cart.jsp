@@ -111,7 +111,7 @@
 			alert(sum);
 		}
 		
-		$(.total).each(function(i){
+		$('.total').each(function(i){
 			
 		})
 		

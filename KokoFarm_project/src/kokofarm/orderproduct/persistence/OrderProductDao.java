@@ -24,7 +24,7 @@ public class OrderProductDao {
 	
 	
 	public SqlSessionFactory getSqlSessionFactory(){
-		String resource = "mybatis-config.xml";
+		String resource = "jeong.xml";
 		InputStream in = null;
 		try{
 			in = Resources.getResourceAsStream(resource);
