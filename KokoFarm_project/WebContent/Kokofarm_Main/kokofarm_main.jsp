@@ -6,12 +6,28 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="jquery.js" type="text/javascript"></script>
 	<link href="./shop/web/images/common/favicon.ico" rel="shortcut icon">
 	<link href="./shop/web/css/font2.css" rel="stylesheet">
 	<link href="./shop/web/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-	<link href="./shop/web/css/style.css?ver=1493094408" rel="stylesheet">
+	<link href="./shop/web/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="./slider/css/flexslider.css" type="text/css">
+	
+	<script type="text/javascript" charset="utf-8">
+	$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide"
+		  });
+		});
+</script>
+	
+	
 
+
+
+	
+	
 
 	<!-- facebook meta -->
 	<link href="http://www.hellonature.net/shop/web/images/common/logo200x200.jpg" rel="image_src">
@@ -21,26 +37,30 @@
 	<meta content="http://www.hellonature.net/shop/web/images/common/logo200x200.jpg" property="og:image">
 	<meta content="코코팜" property="og:site_name">
 	<meta content="966242223397117" property="fb:app_id">
-	<meta content="http://www.hellonature.net/shop/main/index.php" property="og:url">
+	
 	<!-- // facebook meta-->
 
 
-	<script src="/shop/web/lib/jquery-1.11.3.min.js"></script>
+	<script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 	
-	<script src="/shop/web/lib/jquery-ui.js"></script>
-	<script src="/shop/web/lib/isotope.pkgd.min.js"></script>
-	<script src="/shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
+	<script src="shop/web/lib/jquery-ui.js"></script>
+	
+	
+	<script src="slider/jquery.flexslider.js"></script>
+	
+	<script src="shop/web/lib/isotope.pkgd.min.js"></script>
+	<script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
-	<script src="/shop/web/lib/script.js"></script>
-	<script src="/shop/web/lib/prefixfree.min.js"></script>
-	<script src="/shop/web/lib/cart.js"></script>
-	<script src="/shop/web/lib/dashboard.js"></script>
-	<script src="/shop/web/lib/osinfo.js"></script>
-	<script src="/shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
-	<script src="/shop/data/skin/renew/jquery.slides.js"></script>
-	<script src="/shop/data/skin/renew/common.js"></script>
-	<script src="/shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
-	<script src="/shop/web/lib/countdown.js"></script>
+	<script src="shop/web/lib/script.js"></script>
+	<script src="shop/web/lib/prefixfree.min.js"></script>
+	<script src="shop/web/lib/cart.js"></script>
+	<script src="shop/web/lib/dashboard.js"></script>
+	<script src="shop/web/lib/osinfo.js"></script>
+	<script src="shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
+	<script src="shop/data/skin/renew/jquery.slides.js"></script>
+	<script src="shop/data/skin/renew/common.js"></script>
+	<script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
+	<script src="shop/web/lib/countdown.js"></script>
 	<!-- 카카오 API링크 -->
 	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<!--// 카카오 API링크 -->
@@ -1499,78 +1519,121 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 </script>
 
 
+	
+	<div class="flexslider">
+		<ul class="slides">
+			<li><img src="slider/images/20170331_낙지문어주꾸미_웹.jpg" /></li>
+			<li><img src="slider/images/가정의달기획전_메인롤링배너.jpg" /></li>
+			<li><img src="slider/images/녹차예약전_메인롤링배너.jpg" /></li>
+			<li><img src="slider/images/더주부_메인롤링.jpg" /></li>
+			<li><img src="slider/images/미니찰토마토_배너_웹.jpg" /></li>
+			<li><img src="slider/images/바지락_웹.jpg" /></li>
+			<li><img src="slider/images/배송공지배너.jpg" /></li>
+			<li><img src="slider/images/소담떡방_메인배너.jpg" /></li>
+			<li><img src="slider/images/자연애벗_메인롤링배너.jpg" /></li>
+			<li><img src="slider/images/배송공지배너.jpg" /></li>
+		</ul>
+	</div>
+
+
+
 	<div class="content_area">
 
-		<div class="main_visual">
-			<ul class="visual_list">
-					<li class="visual_box on" style='background-image: url("/shop/data/skin/renew/img/banner/소담떡방_메인배너_수정.jpg");'>
+	
+		<!-- 	<div class="main_visual">
+		<ul class="visual_list">
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/미니찰토마토_배너_웹.jpg");'>
+						<a class="vis_anchor" href="/shop/goods/goods_view.php?&amp;goodsno=17801">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/banner/Copy-main_temp(11).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/banner/20170425_장아찌_웹_할인.jpg");'>
+						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%BF%EC%C0%FC%B3%EC%C2%F7&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_view.php%3F%26goodsno%3D17719&amp;edit=&amp;sword=%BC%AD%C0%CF%B3%F3%BF%F8">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(10).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box on" style='background-image: url("shop/data/skin/renew/img/banner/더주부_메인롤링.jpg");'>
+						<a class="vis_anchor" href="/shop/event/event_list.php">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(5).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/바지락_웹.jpg");'>
+						<a class="vis_anchor" href="/shop/goods/goods_view.php?&amp;goodsno=17805">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(12).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/자연애벗_메인롤링배너.jpg");'>
+						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=&amp;hid_link_url=&amp;edit=&amp;sword=%C0%DA%BF%AC%BE%D6%B9%FE">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(6).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/배송공지배너.jpg");'>
+						<a class="vis_anchor" href="/shop/board/view.php?id=notice&amp;no=343">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(3).png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/소담떡방_메인배너.jpg");'>
 						<a class="vis_anchor" href="/shop/goods/goods_plan_list.php?category=079">
 							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp.png"></div>
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(2).png"></div>
 								<div class="btn_more off">자세히 보기</div>
 							</div>
 						</a>
 					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/녹차예약전_메인롤링배너.jpg");'>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/녹차예약전_메인롤링배너.jpg");'>
 						<a class="vis_anchor" href="/shop/goods/goods_plan_list.php?category=077041">
 							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(7).png"></div>
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp.png"></div>
 								<div class="btn_more off">자세히 보기</div>
 							</div>
 						</a>
 					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/배나무골_메인배너2.jpg");'>
-						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%C7%D8%B9%B06%C1%BE&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_search.php%3Fsearched%3DY%26log%3D1%26skey%3Dall%26hid_pr_text%3D%25BE%25CF%25B2%25C9%25B0%25D4%26hid_link_url%3Dhttp%253A%252F%252Fwww.hellonature.net%252Fshop%252Fgoods%252Fgoods_view.php%253F%2526goodsno%253D17718%26edit%3D%26sword%3D%25C7%25D8%25B9%25B06%25C1%25BE&amp;edit=&amp;sword=%B9%E8%B3%AA%B9%AB%B0%F1">
-							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(11).png"></div>
-								<div class="btn_more off">자세히 보기</div>
-							</div>
-						</a>
-					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/가정의달기획전_메인롤링배너.jpg");'>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/가정의달기획전_메인롤링배너.jpg");'>
 						<a class="vis_anchor" href="/shop/goods/goods_plan_list.php?category=077040">
 							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(10).png"></div>
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(7).png"></div>
 								<div class="btn_more off">자세히 보기</div>
 							</div>
 						</a>
 					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/HOOPHOOP베이글_웹.jpg");'>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/A.N_rolling.jpg");'>
+						<a class="vis_anchor" href="/shop/goods/goods_view.php?&amp;goodsno=17597">
+							<div class="vis_in_con">
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/main_temp.png"></div>
+								<div class="btn_more off">자세히 보기</div>
+							</div>
+						</a>
+					</li>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/HOOPHOOP베이글_웹.jpg");'>
 						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%B9%E8%B3%AA%B9%AB%B0%F1&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_search.php%3Fsearched%3DY%26log%3D1%26skey%3Dall%26hid_pr_text%3D%26hid_link_url%3D%26edit%3D%26sword%3D%25B9%25E8%25B3%25AA%25B9%25AB%25B0%25F1&amp;edit=&amp;sword=%BA%A3%C0%CC%B1%DB">
 							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/main_temp.png"></div>
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(9).png"></div>
 								<div class="btn_more off">자세히 보기</div>
 							</div>
 						</a>
 					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/죽보육보딸기_메인배너.jpg");'>
-						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%C7%D8%B9%B06%C1%BE&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_search.php%3Fsearched%3DY%26log%3D1%26skey%3Dall%26hid_pr_text%3D%25BE%25CF%25B2%25C9%25B0%25D4%26hid_link_url%3Dhttp%253A%252F%252Fwww.hellonature.net%252Fshop%252Fgoods%252Fgoods_view.php%253F%2526goodsno%253D17718%26edit%3D%26sword%3D%25C7%25D8%25B9%25B06%25C1%25BE&amp;edit=&amp;sword=%C0%B0%BA%B8%C1%D7%C7%E2%B5%FE%B1%E2">
-							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(9).png"></div>
-								<div class="btn_more off">자세히 보기</div>
-							</div>
-						</a>
-					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/20170331_낙지문어주꾸미_웹.jpg");'>
+					<li class="visual_box" style='background-image: url("shop/data/skin/renew/img/banner/20170331_낙지문어주꾸미_웹.jpg");'>
 						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%C8%A3%B9%DA%B2%BF%C1%F6%C2%EE%B0%B3&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_search.php%3Fsearched%3DY%26log%3D1%26skey%3Dall%26hid_pr_text%3D%25B3%25AB%25C1%25F6%25B9%25AE%25BE%25EE%25C1%25D6%25B2%25D9%25B9%25CC%26hid_link_url%3Dhttp%253A%252F%252Fwww.hellonature.net%252Fshop%252Fgoods%252Fgoods_search.php%253Fsearched%253DY%2526log%253D1%2526skey%253Dall%2526hid_pr_text%253D%2525C7%2525E3%2525B1%2525D7%2525C7%2525C3%2525B7%2525AF%2525BD%2525BA%2526hid_link_url%253Dhttp%25253A%25252F%25252Fwww.hellonature.net%25252Fshop%25252Fgoods%25252Fgoods_plan_list.php%25253Fcategory%25253D079%2526edit%253D%2526sword%253D%2525B3%2525AB%2525C1%2525F6%2525B9%2525AE%2525BE%2525EE%26edit%3D%26sword%3D%25C8%25A3%25B9%25DA%25B2%25BF%25C1%25F6%25C2%25EE%25B0%25B3&amp;edit=&amp;sword=%C1%A6%C3%B6%BC%F6%BB%EA%B9%B0">
 							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(5).png"></div>
-								<div class="btn_more off">자세히 보기</div>
-							</div>
-						</a>
-					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/17806_개두릅_메인롤링배너.jpg");'>
-						<a class="vis_anchor" href="/shop/goods/goods_view.php?&amp;goodsno=17806">
-							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(4).png"></div>
-								<div class="btn_more off">자세히 보기</div>
-							</div>
-						</a>
-					</li>
-					<li class="visual_box" style='background-image: url("/shop/data/skin/renew/img/banner/20170407_암꽃게_웹.jpg");'>
-						<a class="vis_anchor" href="/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%BC%D2%B4%E3%B6%B1%B9%E6&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_plan_list.php%3Fcategory%3D079&amp;edit=&amp;sword=%BE%CF%B2%C9%B0%D4">
-							<div class="vis_in_con">
-								<div class="img_box"><img alt="" src="/shop/data/skin/renew/img/banner/Copy-main_temp(6).png"></div>
+								<div class="img_box"><img alt="" src="shop/data/skin/renew/img/banner/Copy-main_temp(4).png"></div>
 								<div class="btn_more off">자세히 보기</div>
 							</div>
 						</a>
@@ -1581,10 +1644,10 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<button class="btn_vis btn_vis_prev" type="button"><span>prev</span></button>
 				<button class="btn_vis btn_vis_next" type="button"><span>next</span></button>
 			</div>
-			<div class="control_box"><button class="btn_vis_page on" type="button" value="0">0</button><button class="btn_vis_page" type="button" value="1">1</button><button class="btn_vis_page" type="button" value="2">2</button><button class="btn_vis_page" type="button" value="3">3</button><button class="btn_vis_page" type="button" value="4">4</button><button class="btn_vis_page" type="button" value="5">5</button><button class="btn_vis_page" type="button" value="6">6</button><button class="btn_vis_page" type="button" value="7">7</button><button class="btn_vis_page" type="button" value="8">8</button>
+			<div class="control_box"><button class="btn_vis_page" type="button" value="0">0</button><button class="btn_vis_page" type="button" value="1">1</button><button class="btn_vis_page on" type="button" value="2">2</button><button class="btn_vis_page" type="button" value="3">3</button><button class="btn_vis_page" type="button" value="4">4</button><button class="btn_vis_page" type="button" value="5">5</button><button class="btn_vis_page" type="button" value="6">6</button><button class="btn_vis_page" type="button" value="7">7</button><button class="btn_vis_page" type="button" value="8">8</button><button class="btn_vis_page" type="button" value="9">9</button><button class="btn_vis_page" type="button" value="10">10</button><button class="btn_vis_page" type="button" value="11">11</button>
 				<button class="btn_vis_play" type="button">play</button>
 			</div>
-		</div><!--//main_visual-->
+		</div>//main_visual  -->
 
 		<section class="category_section plan_section ">
 			<ul class="plan_list">
@@ -1850,7 +1913,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1446119304586l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1446119304586l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -1906,7 +1969,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1491896450447l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1491896450447l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -1962,7 +2025,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1491896410648l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1491896410648l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -2018,7 +2081,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1491448445942l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1491448445942l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -2074,7 +2137,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1489483179517l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1489483179517l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -2130,7 +2193,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1449563824609l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1449563824609l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -2186,7 +2249,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1446795932785l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1446795932785l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -3169,7 +3232,7 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<!-- 단골고객할인 end -->
 				<!-- 전국최고용 태그 -->
 				<div class="master_box">
-					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="../data/goods/1474248762126l2.jpg"></div>
+					<div class="master_icon"><img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'" src="shop/data/goods/1474248762126l2.jpg"></div>
 				</div>
 			</a>
 			<div class="btn_box">
@@ -4010,10 +4073,10 @@ document.writeln("<scr"+"ipt language='javascript' src='/shop/lib/js/acecounter_
 				<li><a href="/shop/service/sitemap.php"><span>서비스맵</span></a></li>
 			</ul>
 			<div class="company_info">
-				<span>(주)헬로네이처 대표이사 박병열</span>
+				<span>(주)코코팜 대표이사 박동훈</span>
 				<span>사업자등록번호 105-87-66628</span>
 				<span>통신판매업신고번호 제2012-서울강남-02931호</span>
-				<span>개인정보관리자 좌종호 help@hellonature.net</span>
+				<span>개인정보관리자 박동훈 help@hellonature.net</span>
 			</div>
 			<address>서울특별시 강남구 언주로79길 12, 2층 (역삼동) 우.135-080 | 고객센터 : 1644-4339 (광고전화 수신거부) | 팩스 : 02-6280-1360</address>
 			<div class="copyright">Copyright(c) 2012 헬로네이처. All right reserved</div>
