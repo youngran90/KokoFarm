@@ -52,6 +52,7 @@ public class loginCheckAction1 implements Action {
 			
 					
 		}else{
+		
 			message = "로그인을 할 수 없습니다.";
 			
 			request.setAttribute("message", message);

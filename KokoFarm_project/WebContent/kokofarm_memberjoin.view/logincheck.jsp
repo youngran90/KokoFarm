@@ -10,6 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
+
 <%
 
 String message = (String)request.getAttribute("message");
@@ -20,7 +21,11 @@ if(message.indexOf("환영") !=-1){ %>
 		<%
 }else{
 	%>
-	<span style="color:red;"><%=message %></span>
+	<script type="text/javascript">
+	alert("로그인을 할 수 없습니다.");
+	history.go(-1);
+	</script>
+	
 	
 <%
 }

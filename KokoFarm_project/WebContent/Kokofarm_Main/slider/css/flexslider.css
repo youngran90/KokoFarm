@@ -41,32 +41,18 @@
  * BASE STYLES
  * ====================================================================================================================*/
 .flexslider {
-	
-	position:relative;
-	overflow:hidden;
-	margin-bottom:12px;
-	z-index:100
-	left :10px;
-	top : 9px;
-	width : 100%;
-	height: 510px;
   margin: 0;
   padding: 0;
-    padding-bottom: 10px;
-    float : left;
 }
 .flexslider .slides > li {
-	z-index:100
   display: none;
   -webkit-backface-visibility: hidden;
 }
 .flexslider .slides img {
-	z-index:100
   width: 100%;
   display: block;
 }
 .flexslider .slides:after {
-	z-index:100-;
   content: "\0020";
   display: block;
   clear: both;
@@ -87,6 +73,7 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
+	width : 100%;
 	
   margin: 0 0 60px;
   background: #fff;

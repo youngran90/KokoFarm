@@ -3,7 +3,15 @@
  * Copyright 2012 WooThemes
  * Contributing Author: Tyler Smith
  */
-;
+$(window).load(function() {
+		  $('.flexslider').flexslider({
+		  
+		    	animation: "fade"
+		  });
+		});
+
+
+
 (function ($) {
 
   var focused = true;
