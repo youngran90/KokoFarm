@@ -124,10 +124,10 @@
 					<a
 						href="https://mark.inicis.com/mark/escrow_popup.php?no=53917&amp;st=1397617269"
 						target="_blank"><img alt="이니페이 에스크로"
-						src="shop/web/images/common/ico_certification1.gif"></a> <a
+						src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/ico_certification1.gif"></a> <a
 						href="http://ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2012322016230202931&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=03&amp;searchVal=%B9%DA%BA%B4%BF%AD&amp;stdate=&amp;enddate="
 						target="_blank"><img alt="통신판매사업자"
-						src="shop/web/images/common/ico_certification2.gif"></a>
+						src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/ico_certification2.gif"></a>
 				</div>
 
 				<aside class="share_link"> <a

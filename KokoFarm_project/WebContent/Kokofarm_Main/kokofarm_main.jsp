@@ -6,17 +6,13 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.js" type="text/javascript"></script>
-
-
-
-
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/favicon.ico" rel="shortcut icon">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css" rel="stylesheet">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="jquery.js" type="text/javascript"></script>
 
 <script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 
@@ -39,18 +35,9 @@
 <script src="shop/data/skin/renew/common.js"></script>
 <script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
 <script src="shop/web/lib/countdown.js"></script>
-<!-- 카카오 API링크 -->
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<!--// 카카오 API링크 -->
+
 
 <script type="text/javascript">
-$(function(){
-	var x = $(".user_info a").eq(1).attr("href");
-
-	$(".user_info .udline").eq(1).text("로그아웃");
-	
-})
-
 
 <%
 String member_id = (String) session.getAttribute("member_id");
@@ -59,6 +46,11 @@ String member_id = (String) session.getAttribute("member_id");
 			if (member_id != null) {%>
 $(function(){
 	 $("#login_welcome").text("${member_id}"+ "님 환영합니다.");
+	 $(".user_info a").eq(1).attr("href","logout.member?member_id=${member_id}");
+	$(".user_info .udline").eq(1).text("로그아웃");
+	 
+	 
+	 
 /* 	 
 	 var x= $(".user_info>a").eq(1).attr();
 	 alert(x);
@@ -342,9 +334,10 @@ stroke-dashoffset : 0;
 					<div class="user_info">
 						<a class="user_menu" href="joinMember.member">
 						<img style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;"
-							src="/shop/web/images/common/join_icon.png">
+							src="shop/web/images/common/join_icon.png">
 							<span class="udline">회원가입</span></a> 
-							<a class="user_menu" href="join.member?member_id="${member_id }">
+							
+							<a class="user_menu" href="join.member">
 							<span class="udline">로그인</span></a> 
 							<a class="user_menu" href="/shop/goods/goods_review2.php">
 							<span class="udline">실제구매후기</span></a> 

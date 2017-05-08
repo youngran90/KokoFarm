@@ -17,6 +17,7 @@ import kokofarm.member.action.joinMemberAction;
 import kokofarm.member.action.list_joinedMemberAction;
 import kokofarm.member.action.loginCheckAction1;
 import kokofarm.member.action.logincheckAction;
+import kokofarm.member.action.logoutAction;
 import kokofarm.member.action.mainAction;
 
 @WebServlet("*.member" )
@@ -104,6 +105,13 @@ public class MemberController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(requestURI.indexOf("logout.member") !=-1){
+			action = new logoutAction();
+			
+		}try{
+			forward = action.execute(request, response);
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 

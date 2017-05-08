@@ -6,8 +6,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.js" type="text/javascript"></script>
+
 
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/favicon.ico" rel="shortcut icon">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css" rel="stylesheet">
@@ -15,23 +14,16 @@
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
-	
-	<script type="text/javascript" charset="utf-8">
-	$(window).load(function() {
-		  $('.flexslider').flexslider({
-		    animation: "slide"
-		  });
-		});
-</script>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<!-- <script src="jquery.js" type="text/javascript"></script> -->
 	
 
-	<script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 	
-	<script src="shop/web/lib/jquery-ui.js"></script>
-	
-	
-	<script src="slider/jquery.flexslider.js"></script>
-	
+	<script src="shop/web/lib/jquery-1.11.3.min.js"></script>	
+	<script src="shop/web/lib/jquery-ui.js"></script>	
+	<script src="slider/jquery.flexslider.js"></script>	
 	<script src="shop/web/lib/isotope.pkgd.min.js"></script>
 	<script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
@@ -49,45 +41,40 @@
 	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<!--// 카카오 API링크 -->
 
+
+	<script type="text/javascript" charset="utf-8">
+	$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide"
+		  });
+		});
+</script>
+	
 <script type="text/javascript">
 
-
 <%
-String member_id =(String)session.getAttribute("member_id");
-out.println("세션아이디 :"+member_id);
-if(member_id!=null){ %>
+String member_id = (String) session.getAttribute("member_id");
+			System.out.println("세션아이디 :" + member_id);
+
+			if (member_id != null) {%>
 $(function(){
-	var x = $(".user_menu .udline").text();
-	alert(x);
-	
+	 $("#login_welcome").text("${member_id}"+ "님 환영합니다.");
+	 $(".user_info a").eq(1).attr("href","logout.member?member_id=${member_id}");
+	$(".user_info .udline").eq(1).text("로그아웃");
+	 
+	 
+	 
+/* 	 
+	 var x= $(".user_info>a").eq(1).attr();
+	 alert(x);
+	 $(".user_info .udline").eq(1).attr() */
+		
 })
-<%	
-}%>
+<%}%>
 
 </script>
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-28184252-1', 'auto');
-		ga('require', 'linkid', '//www.google-analytics.com/plugins/ua/linkid.js');
-		ga('require', 'displayfeatures');
 
-		ga('send', 'pageview');
-	</script>
-
-	
-<script>
-(function(d,a,b,l,e,_) {
-d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
-e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
-_=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_);
-})(window,document,'dable','script');
-dable('setService', 'hellonature.net');
-dable('sendMallLog', 'godomall');
-</script>
 	
 </head>
 	
@@ -129,7 +116,7 @@ dable('sendMallLog', 'godomall');
 	</div>
 
 	<div>
-		<a href="/shop/member/myinfo.php?&amp;"><img src="/shop/data/skin/renew/img/main/btn_mypage_go.gif"></a>
+		<a href="/shop/member/myinfo.php?&amp;"><img src="shop/data/skin/renew/img/main/btn_mypage_go.gif"></a>
 	</div>
 </div>
 
@@ -274,7 +261,7 @@ dable('sendMallLog', 'godomall');
 <div class="wrapper">
 
 <article class="topbanner">
-	<img alt="top banner" src="./shop/web/images/banner/top_banner1.jpg" usemap="#pc_top_banner">
+	<img alt="top banner" src="/KokoFarm_project/Kokofarm_Main/shop/web/images/banner/top_banner1.jpg" usemap="#pc_top_banner">
 	<map name="pc_top_banner">
 		<area href="/shop/board/view.php?id=notice&amp;no=318" shape="rect" coords="0,0,689,50" alt="">
 		<area href="/shop/goods/goods_list.php?category=070004" shape="rect" coords="689,0,1230,50" alt="">
@@ -295,7 +282,8 @@ dable('sendMallLog', 'godomall');
 				</div>
 
 				<div class="user_info">
-					<a class="user_menu" href="joinMember.member"><img style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;" src="/shop/web/images/common/join_icon.png"><span class="udline">회원가입</span></a>
+					<a class="user_menu" href="joinMember.member">
+					<img style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;" src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/join_icon.png"><span class="udline">회원가입</span></a>
 					<a class="user_menu" href="join.member"><span class="udline">로그인</span></a>
 					<a class="user_menu" href="/shop/goods/goods_review2.php"><span class="udline">실제구매후기</span></a>
 					<a class="user_menu" href="/shop/board/list.php?id=notice"><span class="udline">고객센터</span></a>

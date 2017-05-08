@@ -85,7 +85,7 @@
 </head>
 <body>
 <!-- 로그인 관련 -->
-
+<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
 <form name = "loginForm" action="loginCheck1.member" method="post">
 	<table border="1">
 		<tr>

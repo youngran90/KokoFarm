@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -22,7 +23,7 @@ $(function(){
 		if(id == ""){
 			alert("아이디를 입력하세요");
 			$("#member_id").focus();
-			
+			return;
 		}
 		var exp = /[a-z0-9]/; //영문과 숫자
 		//정규표현식 .test(입력값) 규칙에 맞으면 true 틀리면 false
@@ -37,7 +38,8 @@ $(function(){
 		var pw = $("#member_password").val();
 		if(pw==""){
 			alert("패스워드 입력하세요")
-			$("#member_password").focus();	
+			$("#member_password").focus();
+			return;
 		}
 		var pw2  =$("#member_password2").val();
 		
@@ -50,12 +52,14 @@ $(function(){
 		if(email==""){
 			alert("이메일을 입력하세요");
 			$("#member_email").focus();
+			return;
 		}
 		
 		var hp = $("#member_phoneNum")
 		if(hp==""){
 			alert("전화번호를 입력하세요");
 			$("#member_phoneNum").focus();
+			return;
 			
 		}
 		
@@ -63,11 +67,12 @@ $(function(){
 		if(zip==""){
 			alert("우편번호를 입력하세요");
 			$("#member_zipcode").focus();
+			return;
 			
 		}
-				
-		
+						
 	document.joinForm.submit();
+	
 	});
 	
 	//아이디 중복 확인 처리
@@ -141,9 +146,11 @@ $(function(){
 </script>
 
 
-</head>
+</head>	
+
 <body>
-<%@ include file="../Kokofarm_Main/mainheader.jsp" %>
+
+
 
 <h2>회원가입</h2>
 	<form name = "joinForm" action="insertMember.member" method="post">
