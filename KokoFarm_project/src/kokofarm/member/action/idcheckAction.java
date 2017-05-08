@@ -21,7 +21,9 @@ public class idcheckAction implements Action {
 	
 		System.out.println(member_id);
 		
-		 String pattern = "^[a-z0-9]*$";
+		 String pattern = "^[a-z0-9_]{5,12}$";
+		 		 
+	
 		 boolean i = Pattern.matches(pattern, member_id);
 			
 		boolean result = service.idcheckService(member_id);
@@ -31,10 +33,12 @@ public class idcheckAction implements Action {
 		if(i==false){
 			message="영문과 숫자만 사용하세요";
 		}
-		if(result){
-			message+=member_id+"는 사용 가능한 아이디 입니다.";
+		
+		
+		if(result && i==true){
+			message+="   "+member_id+"는 사용 가능한 아이디 입니다.";
 		}else{
-			message+=member_id+"는 사용 불가능한 아이디 입니다.";
+			message+="   "+member_id+"는 사용 불가능한 아이디 입니다.";
 		}
 		request.setAttribute("message", message);
 		System.out.println(message);

@@ -14,13 +14,22 @@ $(function(){
 	$("#btnJoin").click(function(){
 		//폼데이터 서버에 제출
 		var name =$("#member_name").val();
+		var name1=/^[가-힣]{2,6}$/;
+		
 		if(name == ""){
 			alert("이름을 입력하세요");
 			$("#member_name").focus();
 			return;
+			}else if (!name1.test(name)){
+				alert("이름은 2글자 이상 정확하게 입력하세요");
+				return;
 			}
+		
+		
 		var id = $("#member_id").val();
-		if(id == ""){
+		var reg_uid = /^[a-z0-9_]{5,12}$/;
+	
+		if(id == ""|| !reg_uid.test(id)){
 			alert("아이디를 입력하세요");
 			$("#member_id").focus();
 			return;
@@ -36,6 +45,7 @@ $(function(){
 		
 		
 		var pw = $("#member_password").val();
+		var pwcheck = /[^A-z|0-9]/;
 		if(pw==""){
 			alert("패스워드 입력하세요")
 			$("#member_password").focus();
@@ -46,8 +56,14 @@ $(function(){
 		if(pw != pw2){
 			 alert("입력한 비밀번호가 다릅니다.");
 			 $("#member_password2").focus();
+			 return;
+			 
+		 }else if(!pw.test(pwcheck) && pw.length<5){
+			 $("#member_password2").focus();
+			 alert("비밀번호는 4글자 이상 영문,숫자,특수기호만 사용할 수 있습니다");
+			 return;
 		 }
-		
+	
 		var email = $("#member_email")
 		if(email==""){
 			alert("이메일을 입력하세요");
@@ -70,7 +86,8 @@ $(function(){
 			return;
 			
 		}
-						
+					
+		
 	document.joinForm.submit();
 	
 	});
@@ -79,7 +96,7 @@ $(function(){
 	$("#member_id").keyup(function(){
 			var userid = $("#member_id").val();                                                                                                                                                                      
 			var param ="userid="+userid;
-			if(userid.length >=4){  //최소 4글자 이상
+			if(userid.length >=5){  //최소 4글자 이상
 				$.ajax({
 					type : "post",
 					url : "idcheck.member",

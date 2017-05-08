@@ -1,5 +1,7 @@
 package kokofarm.member.action;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,10 +11,18 @@ import kokofarm.member.service.MemberService;
 
 public class insertFormAction implements Action {
 
+	 public String create_UUID(){ //각 고유한 번호 생성 메소드
+         String uuid = UUID.randomUUID().toString().replace("-", "");
+     return uuid;
+   }
+
+		
+	
+	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		
+		String cartno = create_UUID();
 		MemberService service = MemberService.getInstance();
 		MemberDTO member = new MemberDTO(); 
 		
@@ -26,16 +36,8 @@ public class insertFormAction implements Action {
 		member.setMember_address2(request.getParameter("member_address2"));
 		member.setMember_account(request.getParameter("member_account"));
 		
-		System.out.println(request.getParameter("member_id"));
-		System.out.println(request.getParameter("member_password"));
-		System.out.println(request.getParameter("member_name"));
-		System.out.println(request.getParameter("member_email"));
-		System.out.println(request.getParameter("member_phoneNum"));
-		System.out.println(request.getParameter("member_zipcode"));
-		System.out.println(request.getParameter("member_address1"));
-		System.out.println(request.getParameter("member_address2"));
-		System.out.println(request.getParameter("member_account"));
-				
+		member.setCartNo(cartno);
+		
 		service.insertMemberService(member);
 	
 		

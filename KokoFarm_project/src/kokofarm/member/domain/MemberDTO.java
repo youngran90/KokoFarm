@@ -14,7 +14,15 @@ public class MemberDTO implements Serializable{
 	private String member_account;
 	private String member_grade;
 	private String join_date;
+	private String cart_No;
 	
+	
+	public String getCart_No() {
+		return cart_No;
+	}
+	public void setCartNo(String cart_No) {
+		this.cart_No = cart_No;
+	}
 	public String getJoin_date() {
 		return join_date;
 	}

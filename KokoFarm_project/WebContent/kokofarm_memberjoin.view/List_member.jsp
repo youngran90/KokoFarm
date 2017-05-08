@@ -21,6 +21,6 @@ $(function(){
 </head>
 <body>
 <div>회원가입이 완료 되었습니다.</div>
-<input type="button" value="메인페이지이동" id="mainPage">
+<input type="button" value="메인 페이지 이동" id="mainPage">
 </body>
 </html>

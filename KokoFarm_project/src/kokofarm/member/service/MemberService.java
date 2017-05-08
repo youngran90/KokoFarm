@@ -19,8 +19,7 @@ public class MemberService {
 		
 	}
 	private static class MemberServiceSingleton{
-		private static final MemberService service = 
-				new MemberService();
+		private static final MemberService service = 	new MemberService();
 		private static MemberDao memberDao ;
 		
 	}
