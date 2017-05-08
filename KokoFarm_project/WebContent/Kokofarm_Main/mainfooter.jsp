@@ -45,20 +45,6 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!--// 카카오 API링크 -->
 
-<script type="text/javascript">
-
-
-<%String member_id = (String) session.getAttribute("member_id");
-			out.println("세션아이디 :" + member_id);
-			if (member_id != null) {%>
-$(function(){
-	var x = $(".user_menu .udline").text();
-	alert(x);
-	
-})
-<%}%>
-
-</script>
 <script>
 	(function(i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function() {
