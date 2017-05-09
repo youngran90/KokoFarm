@@ -47,9 +47,11 @@ public class CartService {
 					 
 					 cart.setMember_id(cart.getMember_id());
 					 cart.setProduct_unit(product_amount);
+					 return dao.update(cart);
 				 	}
+				 break;
 			 	}
-		 	return dao.update(cart);
+			 return dao.cart(cart);
 		}else{
 			return dao.cart(cart);
 		}

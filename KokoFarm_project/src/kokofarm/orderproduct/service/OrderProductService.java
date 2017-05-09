@@ -39,9 +39,7 @@ public class OrderProductService {
 		int delivery_price=0;
 		
 		if( orderlist.size()== 0){
-			System.out.println("111111111111111");
 			for (int i = 0; i < product_no.length; i++) { // product_no = 체크박스배열 / list = 물품 객체
-				System.out.println("22222222222222222222");
 				for (int j = 0; j < list.size(); j++) {
 					if ( product_no[i].equals(list.get(j).getProduct_no())  ) { 
 						if(list.get(j).getProduct_price() >= 100000){
