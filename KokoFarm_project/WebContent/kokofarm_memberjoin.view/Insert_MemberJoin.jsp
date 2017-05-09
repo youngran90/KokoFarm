@@ -7,7 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<style type="text/css">
+td,td,input{
+height: 30px;
+}
+</style>
 <script type="text/javascript">
 $(function(){
 	//버튼 클릭 이벤트
@@ -184,15 +188,14 @@ $(function(){
 
 
 
-<h2>회원가입</h2>
+<h2 style="font-size: 20;">회원가입</h2>
 	<form name = "joinForm" action="insertMember.member" method="post">
-		<table border="1" width="700px">
+		<table border="1" width="1000px">
 			<tr>
-				<td>이름</td>
+				<td width="150px">이름</td>
 				<td><input type="text" name="member_name" id="member_name" width="500px"></td>
 			</tr>
 			<tr>
-				<td>아이디</td>
 				<td><input type="text" name="member_id" id="member_id">
 				 	<span id = "span_id" ></span>
 				 	
@@ -250,6 +253,7 @@ $(function(){
 		</table>
 
 	</form>
-	
+	 <jsp:include page="../Kokofarm_Main/mainfooter.jsp"></jsp:include>
+   		
 </body>
 </html>

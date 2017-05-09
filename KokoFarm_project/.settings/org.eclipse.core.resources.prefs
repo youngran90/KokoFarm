@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/Kokofarm_Main/shop/web/css/style.css=UTF-8
 encoding//src/kokofarm/product/action/InsertProductAction.java=UTF-8
 encoding//src/kokofarm/product/persistence/ProductDao.java=UTF-8
 encoding//src/kokofarm/product/service/ProductService.java=UTF-8

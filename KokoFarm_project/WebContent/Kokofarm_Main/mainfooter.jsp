@@ -18,79 +18,29 @@
 
 <script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 <script src="shop/web/lib/jquery-ui.js"></script>
-<script src="slider/jquery.flexslider.js"></script>
 <script src="shop/web/lib/isotope.pkgd.min.js"></script>
-<script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
-<script
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
 <script src="shop/web/lib/script.js"></script>
 <script src="shop/web/lib/prefixfree.min.js"></script>
-<script src="shop/web/lib/cart.js"></script>
+
 <script src="shop/web/lib/dashboard.js"></script>
 <script src="shop/web/lib/osinfo.js"></script>
 <script src="shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
-<script src="shop/data/skin/renew/jquery.slides.js"></script>
 <script src="shop/data/skin/renew/common.js"></script>
-<script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
-<script src="shop/web/lib/countdown.js"></script>
+
 <!-- 카카오 API링크 -->
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!--// 카카오 API링크 -->
 
-<script>
-	(function(i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function() {
-			(i[r].q = i[r].q || []).push(arguments)
-		}, i[r].l = 1 * new Date();a = s.createElement(o),
-		m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-	ga('create', 'UA-28184252-1', 'auto');
-	ga('require', 'linkid', '//www.google-analytics.com/plugins/ua/linkid.js');
-	ga('require', 'displayfeatures');
-
-	ga('send', 'pageview');
-</script>
-
-
-<script>
-	(function(d, a, b, l, e, _) {
-		d[b] = d[b] || function() {
-			(d[b].q = d[b].q || []).push(arguments)
-		};
-		e = a.createElement(l);
-		e.async = 1;
-		e.charset = 'utf-8';
-		e.src = '//static.dable.io/dist/plugin.min.js';
-		_ = a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e, _);
-	})(window, document, 'dable', 'script');
-	dable('setService', 'hellonature.net');
-	dable('sendMallLog', 'godomall');
-</script>
 
 </head>
 
 
 
-<body ondragstart="return false" onselectstart="return false"
-	oncontextmenu="return false">
-	<div class="wrapper">
-		
-		<div class="container" id="hn_container">
-		
-				<div class="content_area">
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
 			
-			
-			
-				</div>	<!-- content_area  -->
-			
-			
-			
-			
-			
-		</div><!--//container-->
 
 		<footer class="footer">
 		<div class="footer_wrap">
@@ -140,12 +90,13 @@
 		</footer>
 		<!--//footer-->
 
-	</div>
+
 	<!-- wrapper -->
 
 	<div class="load_ajax">
 		<img alt="" src="shop/web/images/common/loader.svg">
 	</div>
+
 
 </body>
 </html>
