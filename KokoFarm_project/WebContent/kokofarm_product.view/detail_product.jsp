@@ -95,6 +95,11 @@
 		window.open("doInquiry.Inquiry?product_name=" + product_name + "&product_no=" + product_no + "&seller_no=" + seller_no, "", "width=500,height=400");
 	}
 	
+	function cart(product_no){
+		var num = $("#ea").val();
+		var ea = parseInt(num);
+		location.href="gocartAaction.product?ea=" + ea + "&product_no="+ product_no;
+	}
 </script>
 <style type="text/css">
 td {
@@ -136,7 +141,8 @@ td {
 
 		<tr>
 			<td></td>
-			<td><input type="button" value="장바구니"	 onclick="location.href='gocartAaction.product?product_no=${product.product_no}'" /> 
+			
+			<td><input type="button" value="장바구니"	 onclick="cart('${product.product_no}')" /> 
 			<input type="button"
 				value="즉시구매" onclick="buy('${product.product_no}')" /></td>
 		</tr>

@@ -11,12 +11,16 @@ public class gocartAaction implements Action {
 	System.out.println("question*********goAction");
 		
 		String product_no = request.getParameter("product_no");
+		String product_unit = request.getParameter("ea");
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("product_no", product_no);
+		session.setAttribute("product_unit", product_unit);
 	
 		
 		System.out.println("--------------------------------");
 		System.out.println(product_no);
+		System.out.println(product_unit);
 		System.out.println("--------------------------------");
 		
 		ActionForward forward = new ActionForward();
