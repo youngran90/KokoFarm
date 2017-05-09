@@ -28,65 +28,13 @@ pageEncoding="UTF-8"%>
 <title>Insert title here</title>
 </head>
 <body>
-<h2>상품리스트 출력</h2>
-<%-- <table border="1" cellpadding="0" cellspacing="0">
-			<tr height="80" align="center">
-				<td width="200">메인사진</td>
-				<td width="200">상품이름</td>
-				<td width="200">상품단위</td>
-				<td width="200">상품가격</td>
-			</tr>
-	
-		<c:forEach var="product" items="${listModel.list}">
-		<tr height="200" align ="center" >
-		<td>
-		<c:if test="${product.product_mainimage != null }">
-				<c:set var="pattern" value="${fn:substring(product.product_mainimage, fn:length(product.product_mainimage)-4, fn:length(product.product_mainimage))}"></c:set>
-				<c:choose>
-					<c:when test="${pattern eq '.jpg' or pattern eq '.gif'}">
-						<a href ="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none"" ><img  src="../upload/small_${product.product_mainimage}"></a>
-					</c:when>
-					<c:otherwise>
-						<c:out value="NO IMAGE"></c:out>
-					</c:otherwise>
-				</c:choose>
-			</c:if>
-			
-			</td>	
-			<td><a href="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none">${product.product_name}</a></td>
-			<td>${product.product_unit}</td>
-			<td>${product.product_price}</td>
-		</tr>
-			</c:forEach>
-			
-			<!-- 이전 -->
-	<c:if test="${listModel.startPage > 5}">
-		<a href="list.jsp?pageNum=${listModel.startPage -5 }">[이전]</a>
-	</c:if>
-	
-	<!-- 페이지목록 , 선택페이지 굵게 -->
-		<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
-			<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
-		<a href="list_Product.jsp?pageNum=${pageNo}">[${pageNo}]</a>
-		    <c:if test="${listModel.requestPage == pageNo}"></b></c:if>
-		</c:forEach>
-	
-	
-	<!-- 이후 -->
-	<c:if test="${listModel.endPage < listModel.totalPageCount}">
-		<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }">[이후]</a>
-	</c:if>	
-			
-			
-			<tr height="30">
-				<td colspan="4" align="center">
-				<input type="button" value="메인페이지" onclick="history.go(-1)">&nbsp;&nbsp; 
-				<input type="button" value="취소">
-				</td>
-			</tr>
-		</table> --%>
+		<div id="header">
+			<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"/>	
+		</div>
 		
-				<div style="margin-left: 50%">
+<div id="body" style="margin-top: 50px; margin-left: 5%;">
+	<h2>상품리스트 출력</h2>
+				<div style="margin-left: 60%; margin-bottom: 50px; margin-bottom: 50px;">
 				<form action="listproductAction.product" method="post" name="searchForm">
 					 <input type="hidden" name="temp" value="temp"></input>
 					 <select id="searchOption" name="searchOption" style="height: 20px; width: 80px;" s>
@@ -154,6 +102,13 @@ pageEncoding="UTF-8"%>
 					<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }"  style="text-decoration: none; font: black">[이후]</a>
 				</c:if>	
 			</div>
-				<a href="listproductAction.product">리스트</a>			  
+				<a href="listproductAction.product">리스트</a>		
+		</div>
+		
+	<div id="footer">
+					<jsp:include page="../Kokofarm_Main/mainfooter.jsp" flush="false"/>
+	</div>	  
+		</body>
+				
 </html>
 

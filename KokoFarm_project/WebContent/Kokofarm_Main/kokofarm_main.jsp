@@ -346,7 +346,7 @@ stroke-dashoffset
 				
 				<a class="user_menu1" href="InsertFormAction.product"><span class ="udline1"></span></a>
 				<a class="user_menu1" href="reg_list.reg"><span class ="udline1"></span></a>
-				<a class="user_menu1" href="listFormAction.product"><span class ="udline1"></span></a>
+				<a class="user_menu1" href="golistproductAction.product"><span class ="udline1"></span></a>
 				
 					<span id="login_welcome"></span>&nbsp;
 					<div class="login_info">

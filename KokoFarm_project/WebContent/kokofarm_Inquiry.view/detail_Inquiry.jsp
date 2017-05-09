@@ -9,10 +9,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="InsertInquiryReply.Inquiry">
-<input type="hidden" name="inquiry_no" value="${Inquiry.inquiry_no}"/>		
-<input type="hidden" name="product_no" value="${Inquiry.product_no}"/>		
-<table border="1" cellpadding="0" cellspacing="0" width="800px;">
+
+	
+	<div id="body" >
+
+	<form action="InsertInquiryReply.Inquiry">
+		<input type="hidden" name="inquiry_no" value="${Inquiry.inquiry_no}"/>		
+		<input type="hidden" name="product_no" value="${Inquiry.product_no}"/>		
+	<table border="1" cellpadding="0" cellspacing="0" width="800px;" style="margin-left: 10%;">
 				<tr>
 					<td>상품명</td>					
 					<td>${Inquiry.product_name}</td>
@@ -42,12 +46,14 @@
 			<tr height="30">
 				<td colspan="5" align="center">
 				<input type="submit" value="작성완료" >&nbsp;&nbsp; 
-				<input type="button" value="리스트보기" onclick="location.href='listproductAction.product'">&nbsp;&nbsp; 
+				<input type="button" value="리스트보기" onclick="location.href='ListInquiryAction.Inquiry?inquiry_no=${Inquiry.inquiry_no}'">&nbsp;&nbsp; 
 				<input type="button" value="취소">&nbsp;&nbsp; 
 				</td>
 			</tr>
 		</table>
 		</form>
-
+	</div>
+	
+	 
 </body>
 </html>

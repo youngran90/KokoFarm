@@ -64,7 +64,7 @@ public class ProductDao {
 
 		try {
 			// 페이지 숫자 바꾸기
-			list = session.getMapper(ProductMapper.class).listProduct(new RowBounds(startRow, 5), search);
+			list = session.getMapper(ProductMapper.class).listProduct(new RowBounds(startRow, 6), search);
 
 		} catch (Exception e) {
 			e.printStackTrace();
