@@ -24,7 +24,6 @@ public class ActionInsert implements CartAction{
 		product.setProduct_price(Integer.parseInt(request.getParameter("product_price")));
 		product.setSeller_no(request.getParameter("seller_no"));		
 		service.insertList(product);
-		
 		HttpSession session = request.getSession(); //회원 아이디 세션 생성(테스트)
 		session.setAttribute("member_id", service.create_UUID());
 		

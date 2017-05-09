@@ -62,7 +62,22 @@ public class OrderProductDao {
 		
 	}
 
-
+	public int deleteorder(String member_id){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re =  session.getMapper(OrderProductMapper.class).deleteorder(member_id);
+			if( re> 0 ){
+				session.commit();
+			}else {
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return re;
+	}
+	
 	/*public List<ProductDTO> ProductList(){
 		SqlSession session = getSqlSessionFactory().openSession();
 		

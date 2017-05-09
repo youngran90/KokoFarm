@@ -11,20 +11,26 @@
 	
 	<foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
 		into orderproduct(
-			order_no, product_no, member_id,	order_date, order_price
+			order_no, product_no, member_id,	order_date, product_price, product_amount, total_price, delivery_price, product_name
 			)
 		values(
-			#{list.order_no}, #{list.product_no}, #{list.member_id}, sysdate, #{list.order_price}
+			#{list.order_no}, #{list.product_no}, #{list.member_id}, sysdate, #{list.product_price}, #{list.product_amount}, #{list.total_price}, #{list.delivery_price}, #{list.product_name}
 			)
 	</foreach>
 			
 	</insert>
 	
 	<select id="OrderList" resultType="OrderProductListDTO">
-		select  DISTINCT op.order_no, p.product_no, op.member_id,  p.product_name, p.product_price 
+		select  DISTINCT op.order_no, p.product_no, op.member_id, p.product_name, p.product_price,
+		op.product_amount, op.total_price, op.delivery_price
   		from product p, orderproduct op 
   		where p.product_no = op.product_no and member_id=#{member_id}
-	</select> 
+	</select>
+	
+	<delete id="deleteorder" parameterType="String">
+		delete from orderproduct where member_id = #{member_id}
+	</delete>
+	
 	
 </mapper>
 

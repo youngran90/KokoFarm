@@ -27,8 +27,8 @@ public class AcitonCartList implements CartAction {
 		request.setAttribute("cartlist", list);
 		
 		CartActionForward forward = new CartActionForward();
-		forward.setPath("list_cart.jsp");
-		forward.setRedirect(false);
+		forward.setPath("/KokoFarm_project/kokofarm.cart/list_cart.jsp");
+		forward.setRedirect(true);
 		return forward;
 	}
 

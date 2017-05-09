@@ -30,24 +30,9 @@ public class CartService {
 		 return dao.product_list();
 	 }
 	 
-	 public int cart_insert(String[] checklist, String member_id){//체크한 품목들 장바구니 테이블에 저장하는 메소드
-		 CartDTO cartDTO = new CartDTO();
-		 List<ProductDTO> product_list = dao.product_list(); //제품 객체랑 비교
-		 List<CartDTO> cart_list = new ArrayList<CartDTO>(); //장바구니 객체에 저장
-		 
-		 String cart_no = create_UUID();
-		 for(int i=0; i<checklist.length; i++){
-			 for(int j=0; j<product_list.size(); j++){
-				 if(checklist[i].equals(product_list.get(j).getProduct_no())){
-					 cart_list.add(new CartDTO(cart_no, product_list.get(j).getProduct_no(), member_id));
-					 //장바구니 번호,  상품번호, 아이디 
-				 }
-			 }
-		 }
-		 /*for(int i=0; i<cart_list.size(); i++){
-			 System.out.println(cart_list.get(i).toString());
-		 }*/
-		 return dao.cart(cart_list);
+	 public int cart_insert(CartDTO cart){
+		 //장바구니에 담기
+		return dao.cart(cart);
 	 }
 	 
 	 public List<CartListDTO> cart_list(String member_id){

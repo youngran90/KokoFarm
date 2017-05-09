@@ -6,18 +6,22 @@ public class CartDTO implements Serializable{
 	private String cart_no;
 	private String product_no;
 	private String member_id;
+	private String product_unit;
 	
 	public CartDTO() {
 		super();
 	}
 	
-	public CartDTO(String cart_no, String product_no, String member_id) {
+	
+	public CartDTO(String cart_no, String product_no, String member_id, String product_unit) {
 		super();
 		this.cart_no = cart_no;
 		this.product_no = product_no;
 		this.member_id = member_id;
+		this.product_unit = product_unit;
 	}
-	
+
+
 	public String getCart_no() {
 		return cart_no;
 	}
@@ -36,6 +40,16 @@ public class CartDTO implements Serializable{
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
 	}
+	
+	public String getProduct_unit() {
+		return product_unit;
+	}
+
+
+	public void setProduct_unit(String product_unit) {
+		this.product_unit = product_unit;
+	}
+
 
 	@Override
 	public String toString() {

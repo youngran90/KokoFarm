@@ -19,22 +19,33 @@
 		<input type="hidden" name="member_id" value="<%=session.getAttribute("member_id")%>">
 		<input type="submit" value="제품목록">
 	</form>
+	<h4><a href="ActionRoutingOrderProduct.orderproduct">목록</a></h4>
 	<h4>${member_id }</h4>
-	<table>
+	<table border="1">
+	<thead align="center">
 		<tr>
-			<th>주문번호</th>
-			<th>제품번호</th>
-			<th>상품명</th>
-			<th>상품금액</th>			
-		</tr>
+			<td width="350">주문번호</td>
+			<td width="350">제품번호</td>
+			<td width="180">상품명</td>
+			<td width="180">배송비</td>
+			<td width="190">상품금액</td>
+			<td width="170">수량</td>
+			<td width="150">총 금액</td>
+			</tr>
+	</thead>
+	<thead align="center">
 		<c:forEach var="list" items="${list }">
 			<tr>
 				<td>${list.order_no }</td>
 				<td>${list.product_no }</td>
 				<td>${list.product_name }</td>
-				<td>${list.product_price }</td>
+				<td><fmt:formatNumber value="${list.delivery_price }" pattern="#,###" ></fmt:formatNumber> 원</td>
+				<td><fmt:formatNumber value="${list.product_price }" pattern="#,###"></fmt:formatNumber> 원</td>
+				<td>${list.product_amount }</td>
+				<td><fmt:formatNumber value="${list.total_price }" pattern="#,###"></fmt:formatNumber> 원</td>
 			</tr>
 		</c:forEach>
+	</thead>
 	</table><br>
 	
 		
@@ -43,8 +54,13 @@
 	
 	
 	</section>
-	<footer><table border="1" width="100%">푸터</table></footer>
-
+	
+<%-- 	<footer>
+		<div id = "footer">
+	   	<jsp:include page="../Kokofarm_Main/mainfooter.jsp"></jsp:include>
+	   	</div>
+   </footer>
+ --%>
 	
 </body>
 </html>

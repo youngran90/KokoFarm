@@ -64,11 +64,11 @@ public class CartDAO {
 		}
 	}
 	
-	public int cart(List<CartDTO> cart_list){
+	public int cart(CartDTO cart){
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
 		try {
-			re = session.getMapper(CartMapper.class).cart_insert(cart_list);
+			re = session.getMapper(CartMapper.class).cart_insert(cart);
 					if( re > 0 ){
 						session.commit();
 					}else{

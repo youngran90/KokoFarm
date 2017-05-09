@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.sun.corba.se.impl.orb.ParserActionBase;
+
 import kokofarm.cart.domain.ProductDTO;
 import kokofarm.cart.service.CartService;
 import kokofarm.orderproduct.domain.OrderProductDTO;
@@ -13,8 +15,6 @@ import kokofarm.orderproduct.persistence.OrderProductDao;
 public class OrderProductService {
 	private static OrderProductService service = new OrderProductService();
 	private static OrderProductDao dao;
-	private static int sum=0;
-	private static int total=0;
 	
 	public static OrderProductService getInstance(){
 		dao = OrderProductDao.getInstance();
@@ -27,33 +27,102 @@ public class OrderProductService {
 	}
 	
 	
-	public int OrderProduct(String[] no, String member_id){
+	public int OrderProduct(String order_no,String[] product_no, String member_id, String[] product_amount, String[] total_price	){
+		
 		OrderProductDTO orderproduct = new OrderProductDTO();
-		List<ProductDTO> list = CartService.getInstance().product_list();
+		List<ProductDTO> list = CartService.getInstance().product_list(); 
 		List<OrderProductDTO> checklist = new ArrayList<OrderProductDTO>(); //체크한값을 저장하기 위한 리스트
+		List<OrderProductListDTO> orderlist = OrderProductListDTO(member_id);
 				
-		String order_no =  create_UUID();
-		for (int i = 0; i < no.length; i++) { // no = 체크박스배열 list = 물품 객체
-			for (int j = 0; j < list.size(); j++) {
-				if (no[i].equals(list.get(j).getProduct_no())) {
-					checklist
-							.add(new OrderProductDTO(order_no, no[i], member_id, null, list.get(j).getProduct_price() ));
-					// 주문번호 , 제품번호 , 회원번호, 주문일자, 제품가격
+		int delivery_price=0;
+		
+		if( orderlist.size()== 0){
+			System.out.println("111111111111");
+			for (int i = 0; i < product_no.length; i++) { // product_no = 체크박스배열 / list = 물품 객체
+				for (int j = 0; j < list.size(); j++) {
+					if ( product_no[i].equals(list.get(j).getProduct_no())  ) { 
+						if(list.get(j).getProduct_price() >= 100000){
+							if(Integer.parseInt(total_price[i]) >= 500000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 10000;
+							}
+						}else if(list.get(j).getProduct_price() >= 10000){
+							if(Integer.parseInt(total_price[i]) >= 50000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 5000;
+							}
+						}else if(list.get(j).getProduct_price() >= 0){
+							if(Integer.parseInt(total_price[i]) >= 5000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 2500;
+							}
+						}
+						
+						checklist.add(new OrderProductDTO(
+										order_no, //주문번호
+										product_no[i], //제품번호
+										member_id, //회원번호
+										list.get(j).getProduct_name(), //제품명 
+										Integer.parseInt(product_amount[i]), //수량
+										list.get(j).getProduct_price(), //제품 금액 
+										Integer.parseInt(total_price[i]), //제품 총 금액(수량*제품금액)
+										delivery_price, //배송비
+										null//주문일
+										));
+						// 주문번호 , 제품번호 , 회원번호, 제품명, 수량, 제품금액, 제품 총 금액, 배송비, 주문일
+					} 
 				}
 			}
-		}
-		
-	
-		/*상품 총합 구하는 반복문
-		  for(int i=0; i<list.size(); i++){
-			if(list.get(i).getProduct_no().equals(no)){ // 상품번호로 금액 더한다.
-				this.sum = list.get(i).getProduct_price();
-				this.total += this.sum;
-				orderproduct.setOrder_total(this.total);
+			return dao.Order(checklist);
+		}else{
+			System.out.println("@22222");
+			checklist.clear();
+			dao.deleteorder(member_id);
+			System.out.println("@333333333");
+			
+			for (int i = 0; i < product_no.length; i++) { // product_no = 체크박스배열 / list = 물품 객체
+				for (int j = 0; j < list.size(); j++) {
+					if ( product_no[i].equals(list.get(j).getProduct_no())  ) { 
+						if(list.get(j).getProduct_price() >= 100000){
+							if(Integer.parseInt(total_price[i]) >= 500000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 10000;
+							}
+						}else if(list.get(j).getProduct_price() >= 10000){
+							if(Integer.parseInt(total_price[i]) >= 50000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 5000;
+							}
+						}else if(list.get(j).getProduct_price() >= 0){
+							if(Integer.parseInt(total_price[i]) >= 5000){
+								delivery_price = 0;
+							}else{
+								delivery_price = 2500;
+							}
+						}
+						
+						checklist.add(new OrderProductDTO(
+										order_no, //주문번호
+										product_no[i], //제품번호
+										member_id, //회원번호
+										list.get(j).getProduct_name(), //제품명 
+										Integer.parseInt(product_amount[i]), //수량
+										list.get(j).getProduct_price(), //제품 금액 
+										Integer.parseInt(total_price[i]), //제품 총 금액(수량*제품금액)
+										delivery_price, //배송비
+										null//주문일
+										));
+						// 주문번호 , 제품번호 , 회원번호, 제품명, 수량, 제품금액, 제품 총 금액, 배송비, 주문일
+					} 
+				}
 			}
-		}*/
-		
-	return dao.Order(checklist);
+			return dao.Order(checklist);
+		}
 	}
 	
 	public List<OrderProductListDTO> OrderProductListDTO(String member_id){

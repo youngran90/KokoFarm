@@ -7,7 +7,7 @@
 <mapper namespace="kokofarm.cart.mapper.CartMapper">
 	<cache />
 	
-	<insert id="product_insert" parameterType="ProductDTO">
+	<!-- <insert id="product_insert" parameterType="ProductDTO">
 		insert into product(
 			product_no, product_name, product_unit, product_price, seller_no, product_date
 		)
@@ -19,17 +19,23 @@
 	
 	<select id="product_list" resultType="ProductDTO">
 		select * from product
-	</select>
+	</select> -->
 	
-	<insert id="cart_insert" parameterType="java.util.List">
-		<foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
+	<insert id="cart_insert" parameterType="CartDTO">
+		insert into cart(
+			cart_no, product_no, member_id, product_unit
+		)values(
+			#{cart_no}, #{product_no}, #{member_id}, #{product_unit}
+		)
+		
+		<!-- <foreach collection="list" item="list" index="index" open="insert all" separator=" " close="select * from dual">
 			into cart (
 						cart_no,  product_no, member_id
 			)
 			values( 
 				#{list.cart_no}, #{list.product_no}, #{list.member_id}
 			)
-		</foreach>
+		</foreach> -->
 	</insert>
 	
 	<select id="cart_list" resultType="CartListDTO">

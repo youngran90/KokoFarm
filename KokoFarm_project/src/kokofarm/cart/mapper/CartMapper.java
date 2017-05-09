@@ -9,7 +9,7 @@ import kokofarm.cart.domain.ProductDTO;
 public interface CartMapper {
 	int product_insert(ProductDTO product);
 	List<ProductDTO> product_list();
-	int cart_insert(List<CartDTO> cart_list);
+	int cart_insert(CartDTO cart);
 	List<CartListDTO> cart_list(String member_id);
 	int cart_delete(CartDTO cart_delete);
 	int cart_delte_all(CartDTO cart_delte_all);

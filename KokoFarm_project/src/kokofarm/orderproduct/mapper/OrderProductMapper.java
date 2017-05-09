@@ -10,4 +10,5 @@ import kokofarm.orderproduct.domain.OrderProductListDTO;
 public interface OrderProductMapper {
 	int Order(List<OrderProductDTO> checklist);
 	List<OrderProductListDTO> OrderList(String member_id);
+	int deleteorder(String member_id);
 }

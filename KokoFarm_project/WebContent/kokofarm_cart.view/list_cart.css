@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+	.cart_head .open_cart{
+		width: 75%;
+		height: 65px;
+		font-size: 20px;
+		position: absolute;
+		bottom: -254px;
+	}
+	
+	#down{
+		width: 25px;
+		height: 15px;
+		background: url("http://www.hellonature.net/shop/web/images/common/btn_arr3_b_off.gif") no-repeat;
+		background-origin: content-box;
+		background-size: 15px;
+		overflow: hidden;
+	}
+	#change{
+		width: 65px;
+		height: 37px;
+		background: url("http://www.hellonature.net/shop/web/images/content/ord1_btn_cnt_modi.gif") no-repeat;
+		border: none;
+	}
