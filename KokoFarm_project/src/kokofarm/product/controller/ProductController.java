@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kokofarm.customercenter.action.updateAction;
+import kokofarm.member.action.insertFormAction;
 import kokofarm.product.action.Action;
 import kokofarm.product.action.ActionForward;
 import kokofarm.product.action.DeletePostAction;
+import kokofarm.product.action.InsertFormAction;
 import kokofarm.product.action.InsertPostAction;
 import kokofarm.product.action.InsertProductAction;
 import kokofarm.product.action.ListproductAction;
@@ -115,7 +117,7 @@ public class ProductController extends HttpServlet {
 			}
 			
 		}else if(path.equals("InsertFormAction.product")){
-			action = new gocartAaction();
+			action = new InsertFormAction();
 			
 			try {
 				forward = action.execute(request, response);
