@@ -11,13 +11,25 @@
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
-<script src="shop/web/lib/jquery-ui.js"></script>
-<script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
-<script src="shop/web/lib/osinfo.js"></script>
-<script src="shop/data/skin/renew/common.js"></script>
 
+
+
+<script src="shop/web/lib/jquery-1.11.3.min.js"></script>
+<script src="shop/web/lib/jquery-ui.js"></script>
+<script src="shop/web/lib/isotope.pkgd.min.js"></script>
+<script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+<script src="shop/web/lib/script.js"></script>
+<script src="shop/web/lib/prefixfree.min.js"></script>
+<script src="shop/web/lib/cart.js"></script>
+<script src="shop/web/lib/dashboard.js"></script>
+<script src="shop/web/lib/osinfo.js"></script>
+<script src="shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
+<script src="shop/data/skin/renew/jquery.slides.js"></script>
+<script src="shop/data/skin/renew/common.js"></script>
+<script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
+<script src="shop/web/lib/countdown.js"></script>
 
 
 <script type="text/javascript">
@@ -48,13 +60,13 @@ $(function(){
 position: absolute;
 margin-top : 10px;
 
-left : 34%;
+left : 25%;
 }
 .user_menu1:nth-child(2){
 position: absolute;
 margin-top : 10px;
 
-left : 40%;
+left : 32%;
 }
 .user_menu1:nth-child(3){
 position: absolute;
@@ -314,7 +326,7 @@ stroke-dashoffset
 	<div class="wrapper">
 
 		<article class="topbanner"> <img alt="top banner"
-			src="./shop/web/images/banner/top_banner1.jpg"
+			src="/KokoFarm_project/Kokofarm_Main/shop/web/images/banner/top_banner1.jpg"
 			usemap="#pc_top_banner"> <map name="pc_top_banner">
 			<area href="#" shape="rect"
 				coords="0,0,689,50" alt="">
@@ -326,6 +338,7 @@ stroke-dashoffset
 		<div class="in_head">
 			<div class="utile_area">
 				<div class="utile_area_wrap">
+				
 				<a class="user_menu1" href="InsertFormAction.product"><span class ="udline1"></span></a>
 				<a class="user_menu1" href="reg_list.reg"><span class ="udline1"></span></a>
 				<a class="user_menu1" href="listFormAction.product"><span class ="udline1"></span></a>
@@ -344,7 +357,7 @@ stroke-dashoffset
 					<div class="user_info">
 						<a class="user_menu" href="joinMember.member"> <img
 							style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;"
-							src="shop/web/images/common/join_icon.png"> <span
+							src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/join_icon.png"> <span
 							class="udline">회원가입</span></a> <a class="user_menu"
 							href="join.member"> <span class="udline">로그인</span></a> <a
 							class="user_menu" href="#"> <span class="udline">실제구매후기</span></a>
@@ -1892,4 +1905,18 @@ stroke-dashoffset
 
 		</div>
 		</header>
+		<!--//header-->
+				
+				
+			</div>
+			</div>
+			</div>
+			
+			
+			</body>
+			</html>
+
+				
+				
+				
 		

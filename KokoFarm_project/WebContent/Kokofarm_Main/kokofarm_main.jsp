@@ -331,7 +331,7 @@ stroke-dashoffset
 	<div class="wrapper">
 
 		<article class="topbanner"> <img alt="top banner"
-			src="./shop/web/images/banner/top_banner1.jpg"
+			src="/KokoFarm_project/Kokofarm_Main/shop/web/images/banner/top_banner1.jpg"
 			usemap="#pc_top_banner"> <map name="pc_top_banner">
 			<area href="#" shape="rect"
 				coords="0,0,689,50" alt="">
@@ -362,7 +362,7 @@ stroke-dashoffset
 					<div class="user_info">
 						<a class="user_menu" href="joinMember.member"> <img
 							style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;"
-							src="shop/web/images/common/join_icon.png"> <span
+							src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/join_icon.png"> <span
 							class="udline">회원가입</span></a> <a class="user_menu"
 							href="join.member"> <span class="udline">로그인</span></a> <a
 							class="user_menu" href="#"> <span class="udline">실제구매후기</span></a>
@@ -2604,14 +2604,12 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
 										<div class="master_icon">
-											<img
-												onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"
-												src="shop/data/goods/1489483179517l2.jpg">
+											<img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"	src="/KokoFarm_project/Kokofarm_Main/shop/data/goods/1489483179517l2.jpg">
 										</div>
 									</div>
 								</a>
@@ -2674,14 +2672,14 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
 										<div class="master_icon">
 											<img
 												onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"
-												src="shop/data/goods/1449563824609l2.jpg">
+												src="/KokoFarm_project/Kokofarm_Main/shop/data/goods/1449563824609l2.jpg">
 										</div>
 									</div>
 								</a>
@@ -2744,7 +2742,7 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
@@ -2900,7 +2898,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3020,7 +3018,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3140,7 +3138,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3349,7 +3347,7 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img alt="Best 1"
-											src="/shop/web/images/common/tag_best1_b.png">
+											src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/tag_best1_b.png">
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
 								<div class="btn_box">
@@ -4840,8 +4838,6 @@ stroke-dashoffset
 			<div class="movie_box">
 				<iframe src="" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 			</div>
-
-
 		</div>
 	</div>
 

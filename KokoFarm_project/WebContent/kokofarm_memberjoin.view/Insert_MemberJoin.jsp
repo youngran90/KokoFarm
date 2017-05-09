@@ -186,7 +186,8 @@ $(function(){
 
 <body>
 
-
+<jsp:include page="../Kokofarm_Main/mainheader.jsp"></jsp:include>
+<hr>
 
 <h2 style="font-size: 20;">회원가입</h2>
 	<form name = "joinForm" action="insertMember.member" method="post">
@@ -196,10 +197,11 @@ $(function(){
 				<td><input type="text" name="member_name" id="member_name" width="500px"></td>
 			</tr>
 			<tr>
+				<td>아이디</td>
 				<td><input type="text" name="member_id" id="member_id">
-				 	<span id = "span_id" ></span>
-				 	
-				</td>
+				<span id = "span_id" ></span></td>
+				  	
+				
 			</tr>
 			<tr>
 				<td>비밀번호</td>

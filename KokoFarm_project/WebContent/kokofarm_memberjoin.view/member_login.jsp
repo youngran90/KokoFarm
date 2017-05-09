@@ -7,11 +7,7 @@
 <title></title>
 <style type="text/css">
 
-#loginForm{
-position: relative;
-left : 30%;
-top : 150px;
-}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -94,7 +90,14 @@ top : 150px;
 <body>
 <!-- 로그인 관련 -->
 <jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
-
+<div class="wrapper">
+      
+      <div class="container" id="hn_container">
+      
+            <div class="content_area">
+         
+        
+               
 <form name = "loginForm" action="loginCheck1.member" method="post" id = "loginForm">
 	<table border="1" width="500px">
 		<tr>
@@ -116,5 +119,13 @@ top : 150px;
 	</table>
 </form>
 	<div id = "loginResult"></div>
+	    </div>   <!-- content_area  -->
+	    </div>
+	    
+	<jsp:include page="../Kokofarm_Main/mainfooter.jsp" flush="false"></jsp:include>
+<hr>
+	
+</div>
+
 </body>
 </html>

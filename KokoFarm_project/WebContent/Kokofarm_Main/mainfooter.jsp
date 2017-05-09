@@ -41,21 +41,15 @@
 
 
 
-<body ondragstart="return false" onselectstart="return false"
-   oncontextmenu="return false">
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
    <div class="wrapper">
       
       <div class="container" id="hn_container">
       
             <div class="content_area">
          
-         
-         
             </div>   <!-- content_area  -->
-         
-         
-         
-         
+               
          
       </div><!--//container-->
 
@@ -73,15 +67,13 @@
             </ul>
             <div class="company_info">
                <span>(주)코코팜 대표이사 박동훈</span> <span>사업자등록번호 105-87-66628</span> <span>통신판매업신고번호
-                  제2012-서울강남-02931호</span> <span>개인정보관리자 박동훈 help@hellonature.net</span>
+                  제2012-서울강남-02931호</span> <span>개인정보관리자 박동훈 Park@help.com</span>
             </div>
-            <address>서울특별시 강남구 언주로79길 12, 2층 (역삼동) 우.135-080 | 고객센터 :
+            <address>서울특별시 가산동 언주로79길 12, 2층 (가산동) 우.135-080 | 고객센터 :
                1644-4339 (광고전화 수신거부) | 팩스 : 02-6280-1360</address>
-            <div class="copyright">Copyright(c) 2012 헬로네이처. All right
-               reserved</div>
+            <div class="copyright">Copyright(c) 2017 코코팜. All right reserved</div>
             <div class="certification_box">
-               <a
-                  href="https://mark.inicis.com/mark/escrow_popup.php?no=53917&amp;st=1397617269"
+               <a href="https://mark.inicis.com/mark/escrow_popup.php?no=53917&amp;st=1397617269"
                   target="_blank"><img alt="이니페이 에스크로"
                   src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/ico_certification1.gif"></a> <a
                   href="http://ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2012322016230202931&amp;area1=&amp;area2=&amp;currpage=1&amp;searchKey=03&amp;searchVal=%B9%DA%BA%B4%BF%AD&amp;stdate=&amp;enddate="
