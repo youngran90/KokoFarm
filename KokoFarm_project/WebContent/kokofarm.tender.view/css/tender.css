@@ -1,0 +1,156 @@
+.productView{
+	margin-top: 80px;
+	
+}
+.product{
+	margin-top: 10px;
+}
+.photoPart1{
+  float: left;
+  margin-left: 200px;
+  border: 1px solid white;
+  /* background: #E7E7E7; */
+  background: #D8D8D8;
+}
+#product_pic{
+  padding: 5px;
+}
+.productWhole{
+  margin-left: 800px;
+  padding: 14px;
+ /*  margin-top: 10px; */
+}
+div>li{
+ list-style: none;
+}
+#tender{
+  margin-left: 150px;
+}
+th{
+  padding: 4px;
+}
+#priceP{
+	font-weight: bold;
+	display: inline;
+}
+.end{
+  margin-left: 70px;
+  font-weight: bold;
+  color: red;
+  font-size: 17px;
+}
+.title{
+  font-weight: 900;
+  display: inline;
+  padding: 2px;
+  margin-bottom : 15px;
+  border-bottom: 2px solid #ABABAB;
+}
+.tab{
+ display: inline;
+ padding: 10px;
+ font-weight: 700;
+ color: white;
+ font-size: 20px;
+ text-align: center;
+ border-left: 2px solid white;
+ text-decoration: none;
+ 
+}
+#ftab{
+  border: none;
+  margin-left: 150px;
+  padding-left: 10px;
+}
+#stab{
+  margin-left: 150px;
+  padding-left: 10px;
+}
+#ttab{
+  margin-left: 150px;
+   padding-left: 10px;
+}
+#fotab{
+  margin-left: 150px;
+   padding-left: 10px;
+}
+#detailnav{
+  border: 1px;
+  background-color: #988d83;
+  padding: 8px;
+}
+#detailtitleP{
+  font-size: 50px;
+  text-align: center;
+  font-weight: 800;
+  color: #287a78;
+  font-weight:800; 
+}
+#detailImg{
+  margin-left: 180px;
+   margin-bottom: 30px;
+}
+#detailcontentP{
+ text-align: center;
+ font-size: 20px;
+ border: 1px solid white;
+ width: 1000px;
+ margin-left: 180px;
+ margin-bottom: 50px;
+}
+#detailcontentP:first-letter{
+	font-size: 25px;
+	font-weight: bold;
+	color: #287a78;
+}
+#tender{
+	background: #287a78;
+	color: white;
+	border: 1px solid #287a78;
+	padding: 5px;
+}
+#deliveryImg{
+	margin-left: 160px;
+}
+#detailImgs{
+	margin-left: 190px;
+	margin-bottom: 50px;
+}
+#deliveryH{
+	margin-left: 30px;
+}
+#deliveryHead{
+	margin-left: 70px;
+}
+.deliverySpan{
+	font-weight: bold;
+	color: red;
+}
+#deliveryInfo1{
+	float: left;
+	margin-left: 90px;
+}
+#deliveryInfo2{
+	margin-left: 670px;
+}
+#move_top{
+	background :#287a78;
+	color : white;
+	font-weight:800;
+	position: fixed;
+    right: 2%;
+    bottom: 50px;
+    display: none;
+    z-index: 999;
+}
+/* tr.trs td{
+	border-bottom: 1px solid black;
+} */
+.deliveryTable{
+	border: 1px solid gray;
+	border-left: none;
+	border-right: none;
+}
+#locationCheck{
+	text-decoration: none;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="kokofarm.register.mapper.RegMapper"> 
+	<cache />
+	
+	<insert id="insert" parameterType="RegDto"> 
+		insert into auction(
+			auction_no, auction_name, seller_no, start_date, end_date, 
+			auction_up, auction_down, auction_content, auction_file, auction_detailImg, auction_detailImg2
+		)
+		values(
+			auction_no.nextval, #{auction_name}, null, to_date(#{start_date}, 'yyyy-mm-dd hh24:mi:ss'), 
+			to_date(#{end_date}, 'yyyy-mm-dd hh24:mi:ss'), #{auction_up},
+			#{auction_down}, #{auction_content}, #{auction_file}, #{auction_detailImg}, #{auction_detailImg2}
+		)
+	</insert>
+	<select id="regList" resultType="regDto">
+		select * from auction
+	</select>
+	<select id="regDetail" resultType="regDto">
+		select * from auction where auction_no=#{auction_no}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

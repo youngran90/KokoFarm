@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="kokofarm.register.model.RegDto" alias="RegDto"/>
+		<typeAlias type="kokofarm.tender.domain.TenderDto" alias="Tender"/>
+		<typeAlias type="kokofarm.tender.domain.AuctionDto" alias="Auction"/>
+		<typeAlias type="kokofarm.tender.domain.SellerDto" alias="Seller"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="JNDI">
+			  <property name="data_source" value="java:comp/env/jdbc/oracle"/>
+			</dataSource>
+		</environment>		
+	</environments>
+	
+	<mappers>
+		<mapper resource="kokofarm/register/mapper/Register.xml"/>
+		<mapper resource="kokofarm/tender/mapper/Auction.xml"/>
+	</mappers>
+	
+</configuration>
