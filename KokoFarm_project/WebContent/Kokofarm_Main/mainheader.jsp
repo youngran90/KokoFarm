@@ -15,11 +15,6 @@
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
 
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
-<!-- <script src="jquery.js" type="text/javascript"></script> -->
-
-
 	
 	<script src="shop/web/lib/jquery-1.11.3.min.js"></script>	
 	<script src="shop/web/lib/jquery-ui.js"></script>	
@@ -42,33 +37,23 @@
 	<!--// 카카오 API링크 -->
 
 
-	<script type="text/javascript" charset="utf-8">
-	$(window).load(function() {
-		  $('.flexslider').flexslider({
-		    animation: "slide"
-		  });
-		});
-</script>
-	
 <script type="text/javascript">
 
-<%
-String member_id = (String) session.getAttribute("member_id");
+<%String member_id = (String) session.getAttribute("member_id");
+	
 			System.out.println("세션아이디 :" + member_id);
-
+			System.out.println("장바구니번호 :" + (String)session.getAttribute("cart_No"));
+			System.out.println("셀러번호 :" + (String)session.getAttribute("seller_No"));
+	
 			if (member_id != null) {%>
 $(function(){
 	 $("#login_welcome").text("${member_id}"+ "님 환영합니다.");
 	 $(".user_info a").eq(1).attr("href","logout.member?member_id=${member_id}");
 	$(".user_info .udline").eq(1).text("로그아웃");
-	 
-	 
-	 
-/* 	 
-	 var x= $(".user_info>a").eq(1).attr();
-	 alert(x);
-	 $(".user_info .udline").eq(1).attr() */
-		
+	$(".user_menu1 .udline1").eq(0).text("물품 등록");
+	$(".user_menu1 .udline1").eq(1).text("경매 물품 등록");
+	
+	 	 	
 })
 <%}%>
 

@@ -14,17 +14,7 @@
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
-<script type="text/javascript" charset="utf-8">
-	$(window).load(function() {
-		$('.flexslider').flexslider({
-			animation : "slide"
-		});
-	});
-</script>
 
-<!-- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.js" type="text/javascript"></script> -->
 
 <script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 <script src="shop/web/lib/jquery-ui.js"></script>
@@ -135,15 +125,15 @@
 				<aside class="share_link"> <a
 					href="https://www.instagram.com/hello._.nature/" target="_blank"><img
 					title="instagram" alt="instagram"
-					src="shop/web/images/common/link_instagram.gif"></a> <a
+					src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/link_instagram.gif"></a> <a
 					href="http://facebook.com/HelloNature" target="_blank"><img
 					title="facebook" alt="facebook"
-					src="shop/web/images/common/link_facebook.gif"></a> <!-- <a target="_blank" href="http://twitter.com/HelloNatureNet"><img src="shop/web/images/common/link_twitter.gif" alt="twitter" title="twitter"></a> -->
+					src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/link_facebook.gif"></a> <!-- <a target="_blank" href="http://twitter.com/HelloNatureNet"><img src="shop/web/images/common/link_twitter.gif" alt="twitter" title="twitter"></a> -->
 				<a href="https://story.kakao.com/ch/hellonature/app" target="_blank"><img
 					title="kakao story" alt="kakao story"
-					src="shop/web/images/common/link_kakaos.gif"></a> <a
+					src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/link_kakaos.gif"></a> <a
 					href="http://blog.naver.com/hnblog" target="_blank"><img
-					title="blog" alt="blog" src="shop/web/images/common/link_blog.gif"></a>
+					title="blog" alt="blog" src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/link_blog.gif"></a>
 				</aside>
 			</div>
 		</div>
