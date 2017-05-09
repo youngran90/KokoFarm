@@ -20,93 +20,91 @@
 	src=http://code.jquery.com/jquery-1.10.2.js></script>
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <script type="text/javascript">
-	function eaup() {
-		var num = parseInt($("#ea").val());
-		var ea = num + 1;
-		$("#ea").val(ea);
 
-		var price = parseInt($("#aa").text());
-		alert(price)
-		$("#aa").text(price * ea + "원");
-	}
-
-	function eadown() {
-		var num = $("#ea").val();
-		var ea = parseInt(num);
-		if (ea == 0) {
-			alert("더이상 수량을 줄일수없습니다.")
-		} else {
-			$("#ea").val(ea - 1);
-			var price = parseInt($("#aa").text());
-			alert(price)
-			$("#aa").text(price / ea + "원");
+	 function eaup() {
+			
+			var price = $('#price').val();
+			
+			var num = parseInt($("#ea").val());
+			var ea = num + 1;
+			$("#ea").val(ea);
+			
+			alert(price);
+			$("#aa").text(price * ea + "원");
 		}
-	}
-	function deletpost(post_no) {
-		$.ajax({
-			type : "get",
-			url : "deletePost.product",
-			data : {
-				"post_no" : post_no
-			},
-			success : function(data) {
-				location.reload();
-				alert("댓글삭제");
-			},
-			error : function(data) {
-				console.log('Error:', data);
-				alert("오류");
+
+		function eadown() {
+			
+			var price = $('#price').val();
+			
+			alert(price);
+			var num = $("#ea").val();
+			var ea = parseInt(num);
+			
+			if (ea == 0) {
+				alert("더이상 수량을 줄일수없습니다.")
+			} else {
+				$("#ea").val(ea - 1);
+			
+				$("#aa").text(price / ea + "원");
 			}
-		})
-	}
-
-	function eadown() {
-		var num = $("#ea").val();
-		var ea = parseInt(num);
-		if (ea == 0) {
-			alert("더이상 수량을 줄일수없습니다.")
-		} else {
-			$("#ea").val(ea - 1);
-			var price = parseInt($("#aa").text());
-			alert(price)
-			$("#aa").text(price / ea + "원");
 		}
-	}
-	function updatepost(post_no) {
-		$("#updatePost").append('<input type="submit" name="post_content" size="50"/>');
-		location.reload();
+		function deletpost(post_no) {
+			$.ajax({
+				type : "get",
+				url : "deletePost.product",
+				data : {
+					"post_no" : post_no
+				},
+				success : function(data) {
+					location.reload();
+					alert("댓글삭제");
+				},
+				error : function(data) {
+					console.log('Error:', data);
+					alert("오류");
+				}
+			})
+		}
 
-		$.ajax({
-			type : "get",
-			url : "updatePostAction.product",
-			data : {
-				"post_no" : post_no
-			},
-			success : function(data) {
-				location.reload();
-				alert("댓글수정");
-			},
-			error : function(data) {
-				console.log('Error:', data);
-				alert("오류");
+		function updatepost(post_no) {
+			$("#updatePost").append('<input type="submit" name="post_content" size="50"/>');
+			location.reload();
+
+			$.ajax({
+				type : "get",
+				url : "updatePostAction.product",
+				data : {
+					"post_no" : post_no
+				},
+				success : function(data) {
+					location.reload();
+					alert("댓글수정");
+				},
+				error : function(data) {
+					console.log('Error:', data);
+					alert("오류");
+				}
+			})
+		}
+		function question(product_name, product_no, seller_no) {
+			window.open("doInquiry.Inquiry?product_name=" + product_name + "&product_no=" + product_no + "&seller_no=" + seller_no, "", "width=500,height=400");
+		}
+		
+		function cart(product_no){
+		 <% 
+		 if(member_id==null){ %>
+			alert("로그인이 필요합니다.");
+			return;
+		 <%}else{%>
+		 var num = $("#ea").val();
+			var ea = parseInt(num);
+			location.href="gocartAaction.product?ea=" + ea + "&product_no="+ product_no;
+			<%}%>
 			}
-		})
-	}
-	function question(product_name, product_no, seller_no) {
-		window.open("doInquiry.Inquiry?product_name=" + product_name + "&product_no=" + product_no + "&seller_no=" + seller_no, "", "width=500,height=400");
-	}
-	
-	function cart(product_no){
-	 <% 
-	 if(member_id==null){ %>
-		alert("로그인이 필요합니다.");
-		return;
-	 <%}else{%>
-	 var num = $("#ea").val();
-		var ea = parseInt(num);
-		location.href="gocartAaction.product?ea=" + ea + "&product_no="+ product_no;
-		<%}%>
-		}
+	 
+
+ 
 </script>
 <style type="text/css">
 td {
@@ -118,6 +116,7 @@ td {
 </head>
 <body>
 	<h2>상품상세리스트 출력</h2>
+	<input type="hidden" id="price" value="${product.product_price}"/>
 	<table border="1" cellpadding="0" cellspacing="0">
 
 		<tr>
@@ -350,7 +349,7 @@ td {
        </table>
 	</div>
 
-	<a href="list_Product.jsp">리스트</a>
+	<a href="listproductAction.product">리스트</a>
 	<br>
 	<br>
 	<br>

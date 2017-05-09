@@ -42,7 +42,7 @@
 			<tr height="30">
 				<td colspan="5" align="center">
 				<input type="submit" value="작성완료" >&nbsp;&nbsp; 
-				<input type="button" value="리스트보기" onclick="history.go(-1)">&nbsp;&nbsp; 
+				<input type="button" value="리스트보기" onclick="location.href='listproductAction.product'">&nbsp;&nbsp; 
 				<input type="button" value="취소">&nbsp;&nbsp; 
 				</td>
 			</tr>

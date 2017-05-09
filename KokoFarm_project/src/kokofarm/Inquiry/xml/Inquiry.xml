@@ -6,9 +6,9 @@
 	
 	<insert id="insertInquiry" parameterType="Inquiry">
 	Insert into Inquiry(
-	inquiry_no, product_no, product_name, member_id, inquiry_content, inquiry_date)
+	inquiry_no, product_no, product_name, member_id, seller_no, inquiry_content, inquiry_date)
 	values(
-	#{inquiry_no}, #{product_no}, #{product_name}, #{member_id}, #{inquiry_content}, SYSDATE)
+	#{inquiry_no}, #{product_no}, #{product_name}, #{member_id}, #{seller_no}, #{inquiry_content}, SYSDATE)
 	</insert>
 	
 	<select id="listInquiry" resultType="Inquiry" parameterType="String">

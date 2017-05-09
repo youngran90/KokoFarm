@@ -102,6 +102,10 @@ public class ProductService {
 	  return productDao.updatePost(post);
   }
   
+  //cart productlist
+  public List<ProductDTO>list_ProductService(){
+	  return productDao.list_Product();
+  }
   
   
 }

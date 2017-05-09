@@ -1,12 +1,11 @@
 <%@page import="kokofarm.product.domain.ListProductPage"%>
 <%@page import="kokofarm.product.service.ProductService"%>
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    
-    <%
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
     request.setCharacterEncoding("utf-8");
 
 	String pageNum = request.getParameter("pageNum");
@@ -155,6 +154,6 @@
 					<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }"  style="text-decoration: none; font: black">[이후]</a>
 				</c:if>	
 			</div>
-				<a href="list_Product.jsp">리스트</a>			  
+				<a href="listproductAction.product">리스트</a>			  
 </html>
 

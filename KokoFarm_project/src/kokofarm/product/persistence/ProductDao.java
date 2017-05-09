@@ -157,4 +157,18 @@ public class ProductDao {
 		}
 		return re;
 	}
+	
+	//cart procut list
+	public List<ProductDTO>list_Product(){
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<ProductDTO> list = null;
+		try {
+			session.getMapper(ProductMapper.class).list_Product();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return list;
+	}
 }

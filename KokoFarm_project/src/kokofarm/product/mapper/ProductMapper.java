@@ -17,6 +17,7 @@ public interface ProductMapper {
 	 public List<PostDTO> listPost(String product_no);
 	 public int deletePost(String post_no);
 	 public int updatePost(PostDTO post);
+	 public List<ProductDTO> list_Product();
  }
 
 

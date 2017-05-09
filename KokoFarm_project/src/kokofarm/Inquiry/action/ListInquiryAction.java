@@ -19,6 +19,7 @@ public class ListInquiryAction implements Action {
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		String seller_no = member_id;
+		
 		inquirylist = service.listInquiryService(seller_no);
 		
 		request.setAttribute("inquirylist", inquirylist);

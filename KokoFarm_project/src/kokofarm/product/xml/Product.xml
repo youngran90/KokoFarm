@@ -23,6 +23,12 @@
 		order by product_uploaddate	
 	</select>
 	
+	<select id="list_Product" resultType="Product">
+		select * from product
+	</select>
+	
+	
+	
 	<select id="detailProduct" parameterType="String" resultType="Product">
 	 select * from product
 	 where product_no = #{product_no}
