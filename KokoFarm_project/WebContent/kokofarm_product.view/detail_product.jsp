@@ -41,12 +41,13 @@
 			var num = $("#ea").val();
 			var ea = parseInt(num);
 			
-			if (ea == 0) {
-				alert("더이상 수량을 줄일수없습니다.")
+			if (ea <= 1) {
+				alert("더이상 수량을 줄일수없습니다.");
+				$("#aa").text(price * ea + "원");
+				
 			} else {
 				$("#ea").val(ea - 1);
-			
-				$("#aa").text(price / ea + "원");
+				$("#aa").text(price * (ea-1) + "원");
 			}
 		}
 		function deletpost(post_no) {

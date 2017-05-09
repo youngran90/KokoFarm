@@ -163,7 +163,7 @@ public class ProductDao {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<ProductDTO> list = null;
 		try {
-			session.getMapper(ProductMapper.class).list_Product();
+			list = session.getMapper(ProductMapper.class).list_Product();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
