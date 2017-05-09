@@ -35,6 +35,7 @@ $(function(){
 	$(".user_info .udline").eq(1).text("로그아웃");
 	$(".user_menu1 .udline1").eq(0).text("물품 등록");
 	$(".user_menu1 .udline1").eq(1).text("경매 물품 등록");
+	$(".user_menu1 .udline1").eq(2).text("물품 리스트");
 	
 	 	 	
 })
@@ -55,7 +56,12 @@ margin-top : 10px;
 
 left : 40%;
 }
+.user_menu1:nth-child(3){
+position: absolute;
+margin-top : 10px;
 
+left : 40%;
+}
 
 
 </style>
@@ -322,6 +328,7 @@ stroke-dashoffset
 				<div class="utile_area_wrap">
 				<a class="user_menu1" href="InsertFormAction.product"><span class ="udline1"></span></a>
 				<a class="user_menu1" href="reg_list.reg"><span class ="udline1"></span></a>
+				<a class="user_menu1" href="listFormAction.product"><span class ="udline1"></span></a>
 				
 					<span id="login_welcome"></span>&nbsp;
 					<div class="login_info">
