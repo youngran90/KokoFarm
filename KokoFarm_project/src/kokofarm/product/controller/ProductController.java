@@ -17,6 +17,7 @@ import kokofarm.product.action.InsertPostAction;
 import kokofarm.product.action.InsertProductAction;
 import kokofarm.product.action.ListproductAction;
 import kokofarm.product.action.detailProdutAction;
+import kokofarm.product.action.gocartAaction;
 import kokofarm.product.action.updatePostAction;
 
 
@@ -98,6 +99,15 @@ public class ProductController extends HttpServlet {
 			}
 		}else if(path.equals("updatePostAction.product")){
 			action = new updatePostAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(path.equals("gocartAaction.product")){
+			action = new gocartAaction();
 			
 			try {
 				forward = action.execute(request, response);
