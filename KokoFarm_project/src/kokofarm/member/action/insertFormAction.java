@@ -37,19 +37,19 @@ public class insertFormAction implements Action {
 		member.setMember_account(request.getParameter("member_account"));
 		
 		member.setCartNo(cartno);
-		
-		service.insertMemberService(member);
+		int re = -1;
+		re = service.insertMemberService(member);
 	
-		
-		
-		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("List_member.jsp");
-			
-		
-		return forward;
+		if(re>0){
+			ActionForward forward = new ActionForward();
+			forward.setRedirect(true);
+			forward.setPath("List_member.jsp");
+			return forward;
+		}else{
+			return null;
 		}
 		
+			
 	}
-
+}
 

@@ -341,7 +341,7 @@ stroke-dashoffset : 0;
 							<span class="udline">로그인</span></a> 
 							<a class="user_menu" href="/shop/goods/goods_review2.php">
 							<span class="udline">실제구매후기</span></a> 
-							<a class="user_menu"  href="/shop/board/list.php?id=notice">
+							<a class="user_menu"  href="listAction.gogo">
 							<span class="udline">고객센터</span></a>
 					</div>
 

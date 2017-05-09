@@ -13,6 +13,7 @@ $(function(){
 	//버튼 클릭 이벤트
 	$("#btnJoin").click(function(){
 		//폼데이터 서버에 제출
+		
 		var name =$("#member_name").val();
 		var name1=/^[가-힣]{2,6}$/;
 		
@@ -34,52 +35,66 @@ $(function(){
 			$("#member_id").focus();
 			return;
 		}
+		
+		
+		
 		var exp = /[a-z0-9]/; //영문과 숫자
 		//정규표현식 .test(입력값) 규칙에 맞으면 true 틀리면 false
-		
-		if( !exp.test(id)){
-			alert("영문자와 숫자만 입력하세요");
-			$("#member_id").focus();  //입력 포커스 이동
-				return; 			
-			}
-		
-		
+			
 		var pw = $("#member_password").val();
-		var pwcheck = /[^A-z|0-9]/;
+		var pwRules = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{5,16}$/;
+		var pwRules1 =/^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{5,20}$/;
+
+
+		
 		if(pw==""){
 			alert("패스워드 입력하세요")
 			$("#member_password").focus();
 			return;
 		}
-		var pw2  =$("#member_password2").val();
-		
+				
+		var pw2  =$("#member_password2").val();		
 		if(pw != pw2){
 			 alert("입력한 비밀번호가 다릅니다.");
 			 $("#member_password2").focus();
-			 return;
-			 
-		 }else if(!pw.test(pwcheck) && pw.length<5){
-			 $("#member_password2").focus();
-			 alert("비밀번호는 4글자 이상 영문,숫자,특수기호만 사용할 수 있습니다");
-			 return;
+			 return			 
 		 }
+		
+	 
+		 if(!pwRules1.test(pw)){
+			 alert("숫자와 영문자 조합으로 5~20자리를 사용해야 합니다.");
+			 $("#member_password").focus();
+
+			 return;
+		 } 		
+		
+		 
 	
-		var email = $("#member_email")
+		 var emailRules1 = /^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$/;
+		 var re=/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		 
+		var email = $("#member_email").val();
 		if(email==""){
 			alert("이메일을 입력하세요");
 			$("#member_email").focus();
 			return;
+		}else if(!re.test(email)){
+			alert("양식에 맞는 이메일을 입력하세요");
+				return;
 		}
 		
-		var hp = $("#member_phoneNum")
+		var hpRules =  /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/; 
+		var hp = $("#member_phoneNum").val();
 		if(hp==""){
 			alert("전화번호를 입력하세요");
 			$("#member_phoneNum").focus();
 			return;
-			
-		}
+			}else if(!hpRules.test(hp)){
+				alert("전화 번호 제대로 입력하세요");
+				return;
+			}
 		
-		var zip = $("#member_zipcon")
+		var zip = $("#member_zipcode").val();
 		if(zip==""){
 			alert("우편번호를 입력하세요");
 			$("#member_zipcode").focus();
@@ -186,7 +201,7 @@ $(function(){
 			<tr>
 				<td>비밀번호</td>
 				<td><input type="password" name="member_password"
-					id="member_password"></td>
+					id="member_password">&nbsp;&nbsp;숫자와 영문자 조합으로 5~20 사용</td>
 			<tr>
 			<tr>
 				<td>비밀번호 확인</td>
@@ -195,12 +210,12 @@ $(function(){
 			<tr>
 			<tr>
 				<td>이메일</td>
-				<td><input type="text" name="member_email" id="member_id"></td>
+				<td><input type="text" name="member_email" id="member_email">&nbsp;&nbsp;abcd@abcd.com</td>
 			</tr>
 			<tr>
 				<td>전화번호</td>  
 				<td><input type="text" name="member_phoneNum"
-					id="member_phoneNum"></td>
+					id="member_phoneNum">&nbsp;&nbsp;01x-0000-0000&nbsp;(' - '생략 금지)</td>
 			</tr>
 			<tr>
 				<td>우편번호</td>
