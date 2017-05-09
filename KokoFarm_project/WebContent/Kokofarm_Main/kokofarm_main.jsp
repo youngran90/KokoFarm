@@ -4707,11 +4707,11 @@ stroke-dashoffset
 				</ul>
 				<div class="company_info">
 					<span>(주)코코팜 대표이사 박동훈</span> <span>사업자등록번호 105-87-66628</span> <span>통신판매업신고번호
-						제2012-서울강남-02931호</span> <span>개인정보관리자 박동훈 help@hellonature.net</span>
+						제2012-서울강남-02931호</span> <span>개인정보관리자 박동훈 help@kosta.com</span>
 				</div>
-				<address>서울특별시 강남구 언주로79길 12, 2층 (역삼동) 우.135-080 | 고객센터 :
+				<address>서울특별시 가산동 코스타79길 12, 2층 (코스타) 우.135-080 | 고객센터 :
 					1644-4339 (광고전화 수신거부) | 팩스 : 02-6280-1360</address>
-				<div class="copyright">Copyright(c) 2012 헬로네이처. All right
+				<div class="copyright">Copyright(c) 2017 코스타팜. All right
 					reserved</div>
 				<div class="certification_box">
 					<a
