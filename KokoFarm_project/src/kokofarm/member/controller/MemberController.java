@@ -107,13 +107,21 @@ public class MemberController extends HttpServlet {
 			}
 		}else if(requestURI.indexOf("logout.member") !=-1){
 			action = new logoutAction();
+			try{
+				forward = action.execute(request, response);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 			
-		}try{
-			forward = action.execute(request, response);
-		}catch (Exception e) {
-			e.printStackTrace();
+		}else if(requestURI.indexOf("main.member") !=-1){
+			action = new mainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}
-		
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
@@ -123,6 +131,8 @@ public class MemberController extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		}
+		
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

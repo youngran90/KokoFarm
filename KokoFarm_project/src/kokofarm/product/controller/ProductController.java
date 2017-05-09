@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kokofarm.customercenter.action.updateAction;
-import kokofarm.member.action.insertFormAction;
 import kokofarm.product.action.Action;
 import kokofarm.product.action.ActionForward;
 import kokofarm.product.action.DeletePostAction;
@@ -20,6 +18,7 @@ import kokofarm.product.action.InsertProductAction;
 import kokofarm.product.action.ListproductAction;
 import kokofarm.product.action.detailProdutAction;
 import kokofarm.product.action.gocartAaction;
+import kokofarm.product.action.golistAaction;
 import kokofarm.product.action.updatePostAction;
 
 
@@ -68,6 +67,7 @@ public class ProductController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
 		}else if(requestURI.indexOf("detailProdutAction.product") != -1){
 			System.out.println("detail");
 			action = new detailProdutAction();
@@ -124,8 +124,16 @@ public class ProductController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
+		}else if(path.equals("golistproductAction.product")){
+			action = new golistAaction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		
 		  if (forward != null) {
 		         if (forward.isRdirect()) {
 		            response.sendRedirect(forward.getPath());

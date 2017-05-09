@@ -52,6 +52,7 @@ $(function(){
 	$(".user_info .udline").eq(1).text("로그아웃");
 	$(".user_menu1 .udline1").eq(0).text("물품 등록");
 	$(".user_menu1 .udline1").eq(1).text("경매 물품 등록");
+	$(".user_menu1 .udline1").eq(2).text("물품 리스트");
 	
 	 	 	
 })
@@ -64,15 +65,20 @@ $(function(){
 position: absolute;
 margin-top : 10px;
 
-left : 34%;
+left : 25%;
 }
 .user_menu1:nth-child(2){
 position: absolute;
 margin-top : 10px;
 
+left : 32%;
+}
+.user_menu1:nth-child(3){
+position: absolute;
+margin-top : 10px;
+
 left : 40%;
 }
-
 
 
 </style>
@@ -140,8 +146,7 @@ left : 40%;
 		</div>
 
 		<div>
-			<a href=""><img
-				src="/shop/data/skin/renew/img/main/btn_mypage_go.gif"></a>
+			<a href=""><img src="shop/data/skin/renew/img/main/btn_mypage_go.gif"></a>
 		</div>
 	</div>
 
@@ -326,11 +331,11 @@ stroke-dashoffset
 	<div class="wrapper">
 
 		<article class="topbanner"> <img alt="top banner"
-			src="./shop/web/images/banner/top_banner1.jpg"
+			src="/KokoFarm_project/Kokofarm_Main/shop/web/images/banner/top_banner1.jpg"
 			usemap="#pc_top_banner"> <map name="pc_top_banner">
-			<area href="/shop/board/view.php?id=notice&amp;no=318" shape="rect"
+			<area href="#" shape="rect"
 				coords="0,0,689,50" alt="">
-			<area href="/shop/goods/goods_list.php?category=070004" shape="rect"
+			<area href="#" shape="rect"
 				coords="689,0,1230,50" alt="">
 		</map> </article>
 
@@ -338,24 +343,26 @@ stroke-dashoffset
 		<div class="in_head">
 			<div class="utile_area">
 				<div class="utile_area_wrap">
+				
 				<a class="user_menu1" href="InsertFormAction.product"><span class ="udline1"></span></a>
 				<a class="user_menu1" href="reg_list.reg"><span class ="udline1"></span></a>
+				<a class="user_menu1" href="golistproductAction.product"><span class ="udline1"></span></a>
 				
 					<span id="login_welcome"></span>&nbsp;
 					<div class="login_info">
 						<!-- <article class="headerbanner">
 						<img src="/shop/web/images/banner/header_banner.jpg" alt="header banner" usemap="#">
 					</article> -->
-						<a class="link_page link_coupon" href="/shop/mypage/mypage_coupon.php">
+						<a class="link_page link_coupon" href="#">
 						<span class="udline">쿠폰<em>0</em></span></a> &nbsp; 
-						<a class="link_page link_ord_dev" href="/shop/mypage/mypage_orderlist.php">
+						<a class="link_page link_ord_dev" href="#">
 						<span class="udline">주문배송조회</span></a>
 					</div>
 
 					<div class="user_info">
 						<a class="user_menu" href="joinMember.member"> <img
 							style="margin-right: 3px; margin-bottom: 2px; vertical-align: middle;"
-							src="shop/web/images/common/join_icon.png"> <span
+							src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/join_icon.png"> <span
 							class="udline">회원가입</span></a> <a class="user_menu"
 							href="join.member"> <span class="udline">로그인</span></a> <a
 							class="user_menu" href="#"> <span class="udline">실제구매후기</span></a>
@@ -380,20 +387,18 @@ stroke-dashoffset
 						href="#"></a>
 				</div>
 				<h1 class="main_logo">
-					<a href="/">Hello Nature</a>
+					<a href="main.member">Hello Nature</a>
 				</h1>
 
 				<div class="search_area">
 					<div class="search_box">
 						<form name="searchForm" id="searchForm"
-							action="/shop/goods/goods_search.php?&amp;"
+							action="#"
 							data-submit="valid_search">
 							<input name="searched" type="hidden" value="Y"> <input
 								name="log" type="hidden" value="1"> <input name="skey"
 								type="hidden" value="all"> <input name="hid_pr_text"
-								type="hidden" value="해물6종"> <input name="hid_link_url"
-								type="hidden"
-								value="http://www.hellonature.net/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%BE%CF%B2%C9%B0%D4&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_view.php%3F%26goodsno%3D17718&amp;edit=&amp;sword=%C7%D8%B9%B06%C1%BE">
+								type="hidden" value="해물6종"> <input name="hid_link_url" type="hidden" value="http://www.hellonature.net/shop/goods/goods_search.php?searched=Y&amp;log=1&amp;skey=all&amp;hid_pr_text=%BE%CF%B2%C9%B0%D4&amp;hid_link_url=http%3A%2F%2Fwww.hellonature.net%2Fshop%2Fgoods%2Fgoods_view.php%3F%26goodsno%3D17718&amp;edit=&amp;sword=%C7%D8%B9%B06%C1%BE">
 							<input name="edit" id="edit" type="hidden" value="">
 							<div class="search_in_wrap">
 								<input name="sword" align="absmiddle" class="inst_search"
@@ -469,7 +474,7 @@ stroke-dashoffset
 								<dd class="menu_box">
 									<a
 										href="#">
-										<img src="/shop/web/images/content/main/country_best.png">
+										<img src="/KokoFarm_project/Kokofarm_Main/shop/web/images/content/main/country_best.png">
 									</a>
 								</dd>
 							</dl>
@@ -2599,14 +2604,12 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
 										<div class="master_icon">
-											<img
-												onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"
-												src="shop/data/goods/1489483179517l2.jpg">
+											<img onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"	src="/KokoFarm_project/Kokofarm_Main/shop/data/goods/1489483179517l2.jpg">
 										</div>
 									</div>
 								</a>
@@ -2669,14 +2672,14 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
 										<div class="master_icon">
 											<img
 												onerror="this.src='/shop/data/skin/renew/img/common/noimg_100.gif'"
-												src="shop/data/goods/1449563824609l2.jpg">
+												src="/KokoFarm_project/Kokofarm_Main/shop/data/goods/1449563824609l2.jpg">
 										</div>
 									</div>
 								</a>
@@ -2739,7 +2742,7 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img class="tag_country" alt="전국최고"
-											src="/shop/web/images/common/tag_prod_country.gif">
+											src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_country.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 									<div class="master_box">
@@ -2895,7 +2898,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="/KokoFarm_project/Kokofarm_Main//shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3015,7 +3018,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3135,7 +3138,7 @@ stroke-dashoffset
 									</div>
 
 									<div class="tag_box">
-										<img alt="new" src="/shop/web/images/common/tag_prod_new.gif">
+										<img alt="new" src="shop/web/images/common/tag_prod_new.gif">
 										<!--  -->
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
@@ -3344,7 +3347,7 @@ stroke-dashoffset
 
 									<div class="tag_box">
 										<img alt="Best 1"
-											src="/shop/web/images/common/tag_best1_b.png">
+											src="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/tag_best1_b.png">
 									</div> <!-- 단골고객할인 strt --> <!-- 단골고객할인 end --> <!-- 전국최고용 태그 -->
 								</a>
 								<div class="btn_box">
@@ -4835,8 +4838,6 @@ stroke-dashoffset
 			<div class="movie_box">
 				<iframe src="" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 			</div>
-
-
 		</div>
 	</div>
 

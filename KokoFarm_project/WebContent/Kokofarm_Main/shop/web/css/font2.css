@@ -79,7 +79,7 @@
     url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/fonts/otf/NotoSansKR-Black-Hestia.otf) format('opentype');
 }*/
 
-body,input,textarea,h1,h2,h3,h4,h5,h6,th,td,a{font:normal 12px/1.2 YG74, Dotum, sans-serif;}
+ body,input,textarea,h1,h2,h3,h4,h5,h6,th,td,a{font:normal 12px/1.2 YG74, Dotum, sans-serif;}
 .yg74{font-family:YG74;}
 .yg76{font-family:YG76;}
 .yg77{font-family:YG77;}

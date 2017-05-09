@@ -110,7 +110,7 @@
 	.login_info{margin-right:16px;}
 	.login_info .link_page{display:inline-block;margin-right:10px;}
 	.login_info .link_page em{color:#38a9a5;}
-	.login_info .link_coupon{display:inline-block;position:relative;padding-right:24px;margin-right:25px;background:url(../images/common/ico_coupon_on.png) no-repeat right 1px;}
+	.login_info .link_coupon{display:inline-block;position:relative;padding-right:24px;margin-right:25px;background:url(/KokoFarm_project/Kokofarm_Main/shop/web/images/common/load_logo.png) no-repeat right 1px;}
 	.login_info .link_coupon .udline em{position:absolute;right:-16px;bottom:0;display:block;text-align:center;font-size:11px;line-height:18px;width:18px;height:18px;border-radius:50%;color:#fff;background:#e2704b;}
 	.login_info .link_point{padding-left:20px;background:url(../images/common/ico_point.png) no-repeat left 0px;}
 	.login_info .link_ord_dev{padding-left:23px;background:url(../images/common/ico_delivery.png) no-repeat left 1px;color:#e2704b;}
@@ -122,7 +122,7 @@
 	.cart_cnt_box .cart_cnt{position:absolute;right:0;top:5px;display:block;text-align:center;font-size:11px;line-height:18px;width:18px;height:18px;border-radius:50%;color:#fff;background:#e2704b;}
 
 	.gnb{z-index:11;position:absolute;left:0;width:150px;background:#352f29;}
-	.main_logo a{overflow:hidden;display:block;height:150px;text-indent:-100%;background:#38a9a5 url(../images/common/logo.png) no-repeat center;}
+	.main_logo a{overflow:hidden;display:block;height:150px;text-indent:-100%;background:#38a9a5 url(/KokoFarm_project/Kokofarm_Main/shop/web/images/common/load_logo.png) no-repeat center;}
 	.search_area{position:relative;}
 	.search_area .btn_box{position:relative;height:64px;background:#352f29;}
 	.search_area .open_search{position:absolute;left:15px;top:15px;width:118px;height:33px;color:#f3f3f3;border:1px solid #231a12;outline:0;
@@ -287,7 +287,7 @@
 	.menu_category .cate_list11 .cate_list{background:url(../images/category/wide_cate_071.jpg) no-repeat;}
 
 
-	/* º£ÀÌºñ Å°Ä£ Ãß°¡ 2016. 12.06 ¿äÃ»ÀÚ ÀÌÁöÀº */
+	/* 쨘짙��쨘챰 �째�짙 ��째징 2016. 12.06 쩔채�쨩�� ���철�쨘 */
 	.menu_category .menu_cate_wrap.menu_cate_babyfood{display:none;}
 
 	.plans_list_wrap{height:2000px;}
@@ -329,7 +329,7 @@
 	.prod_item .top_box .prod_anchor{display:block;width:100%;height:100%;}
 	.prod_item .top_box .img_box{position:relative;height:100%;}
 	.prod_item .top_box .img_box>div{position:absolute;transition:opacity 0.4s;}
-	/* »óÇ°¸®½ºÆ® hover ±â´É »èÁ¦ ³ëÀçÈÆ ¿äÃ». 2016.05.09*/
+	/* 쨩처�째쨍짰쩍쨘�짰 hover 짹창쨈� 쨩챔�짝 쨀챘�챌�� 쩔채�쨩. 2016.05.09*/
 	/*.prod_item .top_box .img_box .back{width:100%;height:100%;top:0;left:0;opacity:0;transition:left 6s, opacity 0.4s;}*/
 	.prod_item .top_box .img_box .back{width:100%;height:100%;top:0;left:0;opacity:0;}
 	.prod_item .top_box .img_box .back img{position:absolute;top:50%;left:50%;width:180px;height:180px;margin:-90px 0 0 -90px;}
@@ -343,7 +343,7 @@
 	.prod_item .top_box .soldout_con{position:absolute;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.45) url(../images/common/soldout_txt.png) no-repeat center;}
 	.prod_item .top_box .soldout_option{position:absolute;left:0;bottom:0;width:90%;padding:18px 5%;background:rgba(0,0,0,0.4);color:#fff;font-size:12px;line-height:1;font-family:YG76;white-space:nowrap;text-align:center;}
 
-	/* ÀÔ°íÀÏ¸² ¼³Á¤ 2016.10.17 ±ÇÇõ±â */
+	/* ��째챠��쨍짼 쩌쨀�짚 2016.10.17 짹��천짹창 */
 	.prod_item .top_box .stock_alert{position:absolute;bottom:10px;right:10px;background:url(../images/common/btn_stock_alert_off.png) no-repeat center;width:45px;height:45px;z-index:50;text-indent:-9998em;}
 	.prod_item .top_box .stock_alert:hover{background:url(../images/common/btn_stock_alert_on.png) no-repeat center;}
 
@@ -373,7 +373,7 @@
 
 	.prod_item.item_type1{width:275px;}
 	.prod_item.item_type1 .top_box{height:181px;}
-	/* »óÇ°¸®½ºÆ® hover ±â´É »èÁ¦ ³ëÀçÈÆ ¿äÃ». 2016.05.09*/
+	/* 쨩처�째쨍짰쩍쨘�짰 hover 짹창쨈� 쨩챔�짝 쨀챘�챌�� 쩔채�쨩. 2016.05.09*/
 	/*.prod_item.item_type1 .top_box .img_box .front img{width:200px;height:200px;margin:-100px 0 0 -100px;}*/
 	.prod_item.item_type1 .top_box .img_box .front img{width:100%;}
 	.prod_item.item_type1 .bot_box{height:105px;}
@@ -841,7 +841,7 @@
 			.sub_tab_table td.on a{color:#fff;}
 			.sub_tab_table td.on:hover a{text-decoration:none;}
 
-			/*  Ä«Å×°í¸® ¸®´º¾ó ±ÇÇõ±â 2016.05.19*/
+			/*  �짬��째챠쨍짰 쨍짰쨈쨘쩐처 짹��천짹창 2016.05.19*/
 			.sub_tab_table{margin:0px auto;}
 			.sub_tab_table .line{border-bottom:1px solid #ddd;}
 			.sub_visual{margin-bottom:50px;position:relative;}
@@ -899,12 +899,12 @@
 			.prod_status_box .amount_table_box{position:absolute;bottom:120px;left:0;padding:0 30px;}
 			.prod_status_box .amount_table_box2{text-align:center;height:140px;margin:0 30px;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;overflow:hidden;position:relative;}
 
-			/* ÀÔ°í¾Ë¸² ¹öÆ° Ãß°¡ 2016.10.17 ±ÇÇõ±â */
+			/* ��째챠쩐�쨍짼 쨔철�째 ��째징 2016.10.17 짹��천짹창 */
 			.prod_status_box .amount_table_box2 .soldout_tit{position:absolute;top:50%;left:50%;width:100%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);text-align:center;}
 			.prod_status_box .amount_table_box2 .soldout_tit p{color:#38a9a5;font-family:YG76;font-size:20px;}
 			.prod_status_box .amount_table_box2 .viewbtn_stock_alert{display:inline-block;width:190px;background: #7a6c5e;color:#fff;font-size:16px;height:57px;line-height:57px;margin-top:10px;text-align:center;border-radius:5px;text-decoration:none;}
 			.prod_status_box .amount_table_box2 .viewbtn_stock_alert img{margin-left:7px;width:22px;vertical-align:middle;margin-bottom:4px;}
-			/* ÀÔ°í¾Ë¸² ¹öÆ° Ãß°¡ ³¡ 2016.10.17 ±ÇÇõ±â  */
+			/* ��째챠쩐�쨍짼 쨔철�째 ��째징 쨀징 2016.10.17 짹��천짹창  */
 
 			.prod_status_box .prod_amount_table{width:100%;}
 			.prod_status_box .prod_amount_table th{color:#333;text-align:left;font-size:13px;width:120px;padding:12px 5px 10px;border-top:1px solid #d9d9d9;vertical-align:bottom;}
@@ -1191,7 +1191,7 @@
 		.order_amount_info .deli_guide_box .ban_list > div p{font-size:14px;line-height:19px;}
 		.order_amount_info .deli_guide_box .ban_list > div p.last{font-size:12px;line-height:24px;color:#777;}
 
-		/* sold_out_option ±ÇÇõ±â 2016.04.12 */
+		/* sold_out_option 짹��천짹창 2016.04.12 */
 		.sold_out_option .order_amount_info{border:none;background:none;height:auto;}
 		.sold_out_option .sold_out_table{margin:0 -1px;text-align:center;}
 		.sold_out_option .sold_out_content{padding:30px;}
@@ -1395,7 +1395,7 @@
 		/*.cs_menu_box1{width:1224px;}*/
 
 		.cs_menu_box1 .cs_menu{width:152px;}
-		/*¾ÈÀü¼º °Ë»ç »èÁ¦ ³ëÀçÈÆ 2016.11.03*/
+		/*쩐��체쩌쨘 째�쨩챌 쨩챔�짝 쨀챘�챌�� 2016.11.03*/
 		/*.cs_menu_box1 .cs_menu{width:152px;}*/
 
 		.sub_in_top_box{position:relative;margin-bottom:50px;text-align:center;}
@@ -2101,9 +2101,9 @@
 
 
 /*  layer popup */
-/* ·¹ÀÌ¾þÆË¾÷ ÇÔ¼ö - frmMake»ý¼º 2016.08.25 ±ÇÇõ±â*/
-/* À¥¹öÀüÀÌ±â ¶§¹®¿¡ ÀÌ¹ÌÁö¿Í µ¿¿µ»ó¸¸ ·¹ÀÌ¾îÆËÀ¸·Î »ç¿ëÇÒ °ÍÀÌ¸ç, µ¿¿µ»óÀº ±âÁ¸¼Ò½º·Î »ç¿ëÇÏ°í Ãß°¡½Ã¿¡ ÅëÇÕÀ¸·Î »ç¿ëÇÑ´Ù. */
-/* ±âº»Àº ÀÌ¹ÌÁö·¹ÀÌ¾î ÆË¾÷ ¿ëµµ¿Í DOMÀ» ±âº»À¸·Î Á¦ÀÛÇÔ  */
+/* 쨌쨔��쩐첸��쩐첨 ��쩌철 - frmMake쨩첵쩌쨘 2016.08.25 짹��천짹창*/
+/* �짜쨔철�체��짹창 쨋짠쨔짰쩔징 ��쨔��철쩔� 쨉쩔쩔쨉쨩처쨍쨍 쨌쨔��쩐챤���쨍쨌� 쨩챌쩔챘�� 째���쨍챌, 쨉쩔쩔쨉쨩처�쨘 짹창�쨍쩌�쩍쨘쨌� 쨩챌쩔챘��째챠 ��째징쩍�쩔징 �챘���쨍쨌� 쨩챌쩔챘��쨈�. */
+/* 짹창쨘쨩�쨘 ��쨔��철쨌쨔��쩐챤 ��쩐첨 쩔챘쨉쨉쩔� DOM�쨩 짹창쨘쨩�쨍쨌� �짝����  */
 	.layer_pop{position:fixed;left:50%;top:50%;z-index:101;}
 
 /* loading */
@@ -2243,12 +2243,12 @@
 		.menu_category .menu_cate_wrap:hover .menu_cate_box{position:absolute;top:75px;}
 		.in_head.scSetS2 .menu_category .menu_cate_wrap:hover .menu_cate_box{position:absolute;top:75px;}
 
-		/* º£ÀÌºñ Å°Ä£ Ãß°¡ 2016. 12.06 ¿äÃ»ÀÚ ÀÌÁöÀº */
+		/* 쨘짙��쨘챰 �째�짙 ��째징 2016. 12.06 쩔채�쨩�� ���철�쨘 */
 		.menu_category .menu_cate_wrap.menu_cate_babyfood{display:inline-block;}
 
 		.plans_list{display:none;}
 
-		/* Ä«Å×°í¸® ¸®´º¾ó && Çì´õ ·¹ÀÌ¾Æ¿ô ¼öÁ¤ ±ÇÇõ±â 2016.05.25 */
+		/* �짬��째챠쨍짰 쨍짰쨈쨘쩐처 && �챙쨈천 쨌쨔��쩐�쩔척 쩌철�짚 짹��천짹창 2016.05.25 */
 		.gnb_wrap .main_logo{display:none;}
 		.gnb_wrap .search_area{display:none;}
 		.header.scSetS2{height:151px;border-bottom:none;}
@@ -2267,7 +2267,7 @@
 		.header_mid .hm_left .menu_Hand{bottom:0;left:192px;background:url(../images/plans/Hand/go_Hand.png) no-repeat 0 0/100%;}
 		.header_mid .hm_left .menu_Hand:hover{background:url(../images/plans/Hand/go_Hand_on.png) no-repeat 0 0/100%;}
 
-		/* Å©¸®½º¸¶½º ±âÈ¹Àü*/
+		/* �짤쨍짰쩍쨘쨍쨋쩍쨘 짹창�쨔�체*/
 		.header_mid .hm_left .menu_christmas{width:142px;bottom:0;left:46px;background:url(../images/plans/popstore/main_christmas.png) no-repeat 0 0/100%;}
 		.header_mid .hm_left .menu_christmas:hover{background:url(../images/plans/popstore/main_christmas_on.png) no-repeat 0 0/100%;}
 
@@ -2283,13 +2283,13 @@
 
 /*		.menu_category .menu_cate_box{width:1039px;height:227px;padding:26px 30px;}*/
 
-		/* ±âÈ¹ÇÒÀÎ ¿î¿µ±â°£ Áß ÀÓ½Ã ³ôÀÌ Á¶Àý 2016.07.19 ±ÇÇõ±â, ÀÌÁöÀº ¿äÃ»*/
+		/* 짹창�쨔���� 쩔챤쩔쨉짹창째짙 �� ��쩍� 쨀척�� �쨋�첵 2016.07.19 짹��천짹창, ���철�쨘 쩔채�쨩*/
 		/*.menu_all .category_all{height:360px;width:1228px;}*/
 		.menu_all .category_all{height:382px;width:1228px;}
 
 		.menu_all .category_all_inner{position:relative;}
 
-		/* ±âÈ¹ÇÒÀÎ ¿î¿µ±â°£ Áß ÀÓ½Ã ³ôÀÌ Á¶Àý 2016.07.19 ±ÇÇõ±â, ÀÌÁöÀº ¿äÃ»*/
+		/* 짹창�쨔���� 쩔챤쩔쨉짹창째짙 �� ��쩍� 쨀척�� �쨋�첵 2016.07.19 짹��천짹창, ���철�쨘 쩔채�쨩*/
 		/*.menu_all .menu_box{height:318px;}*/
 		.menu_all .menu_box{height:335px;}
 
@@ -2311,7 +2311,7 @@
 		.menu_all .category_all .category_in_menu_plans .menu_box li{margin-bottom:5px;}
 		.menu_all .category_in_menu_plans .ico_hot{vertical-align:middle;margin-left:3px;margin-bottom:2px;}
 
-		/* ±âÈ¹ÇÒÀÎ ¿î¿µ±â°£ Áß ÀÓ½Ã ³ôÀÌ Á¶Àý 2016.07.19 ±ÇÇõ±â, ÀÌÁöÀº ¿äÃ»*/
+		/* 짹창�쨔���� 쩔챤쩔쨉짹창째짙 �� ��쩍� 쨀척�� �쨋�첵 2016.07.19 짹��천짹창, ���철�쨘 쩔채�쨩*/
 		.menu_all .category_in_menu_plans .menu_box{height:122px;}
 		.menu_all .category_in_menu_plans .menu_box{height:139px;}
 

@@ -26,9 +26,8 @@ public class loginCheckAction1 implements Action {
 		String member_id = request.getParameter("member_id");
 		String member_password = request.getParameter("member_password");
 		
-		MemberDTO member = dao.selectMember(member_id);
-		String seller_No = member.getSeller_no();
-		String cart_No = member.getCart_No();
+		
+		
 		
 		
 		HashMap<String, String> map = 
@@ -42,6 +41,9 @@ public class loginCheckAction1 implements Action {
 		String message ="";
 		
 		if(re==1){
+			MemberDTO member = dao.selectMember(member_id);
+			String seller_No = member.getSeller_no();
+			String cart_No = member.getCart_No();
 			message = member_id+"님 환영 합니다.";
 			session.setAttribute("member_id", member_id);
 			request.setAttribute("message", message);
@@ -51,12 +53,11 @@ public class loginCheckAction1 implements Action {
 			session.setAttribute("cart_No",cart_No);	
 			
 			ActionForward forward = new ActionForward();
-			forward.setRedirect(true);
+			forward.setRedirect(false);
 			forward.setPath("mainAction.member");
 			return forward;
 			
-			
-					
+								
 		}else{
 		
 			message = "로그인을 할 수 없습니다.";

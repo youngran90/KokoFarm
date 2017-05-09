@@ -16,9 +16,7 @@
 <html>
 <head>
 
-<script type="text/javascript"
-	src=http://code.jquery.com/jquery-1.10.2.js></script>
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
+<script type="text/javascript"	src=http://code.jquery.com/jquery-1.10.2.js></script>
 <script type="text/javascript">
 
 	 function eaup() {
@@ -28,16 +26,12 @@
 			var num = parseInt($("#ea").val());
 			var ea = num + 1;
 			$("#ea").val(ea);
-			
-			alert(price);
 			$("#aa").text(price * ea + "원");
 		}
 
 		function eadown() {
 			
 			var price = $('#price').val();
-			
-			alert(price);
 			var num = $("#ea").val();
 			var ea = parseInt(num);
 			
@@ -116,6 +110,12 @@ td {
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div id="header">
+			<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"/>	
+		</div>
+		
+	<div id="body">		
 	<h2>상품상세리스트 출력</h2>
 	<input type="hidden" id="price" value="${product.product_price}"/>
 	<table border="1" cellpadding="0" cellspacing="0">
@@ -134,10 +134,10 @@ td {
 			<td>수량</td>
 			<td>
 				<div>
-					<button type="button" onclick="eadown()">-</button>
+					<button type="button" onclick="eadown()"; ><img src="./css/image/minu.bt.png"  width="20px;"></button>
 					<input id="ea" name="ea" value="1" readonly="" type="text" size="1"
 						style="text-align: center;">
-					<button type="button" onclick="eaup()">+</button>
+					<button type="button" onclick="eaup()"><img src="./css/image/plus_bt.png"  width="20px;"></button>
 				</div>
 			</td>
 		</tr>
@@ -191,7 +191,7 @@ td {
 	<h4 class="cont_tit">배송정보</h4>
 	<div class="content_box">
 		<div class="deli_img">
-			<img src="/shop/web/images/content/deli_content.png" alt="">
+			<img src="./css/image/deli_content.png" alt="">
 		</div>
 		<div class="deli_inner">
 			<div class="deli_inner_L">
@@ -264,7 +264,7 @@ td {
 							<td class="pd">
 								<div class="run_time">
 									<strong class="num"> <img
-										src="/shop/web/images/content/main_ico_csc_g.png" alt="">
+										src="./css/image/main_ico_csc_g.png" alt="">
 										1644-4339
 									</strong>
 									<p>
@@ -311,9 +311,9 @@ td {
 	
 	<h2>댓글</h2>		  
 	<form action="InsertPostAction.product" method="post">
-		 <input type="hidden" name="product_no" value="${product.product_no}" placeholder="로그인하시면 작성가능합니다"></input>
+		 <input type="hidden" name="product_no" value="${product.product_no}" ></input>
 		<input type="hidden" name="member_id" size="10"></input>
-		글내용:<input type="text" name="post_content" size="50"></input>
+		글내용:<input type="text" name="post_content" size="50" placeholder="로그인하시면 작성가능합니다"></input>
 		 <input type="submit" value="작성 완료" >
 	</form>
 	
@@ -360,6 +360,13 @@ td {
 	<br>
 	<br>
 	<br>
+	</div>
+	
+	
+	<div id="footer">
+					<jsp:include page="../Kokofarm_Main/mainfooter.jsp" flush="false"/>
+	</div>	 
+	
 </body>
 
 </html>

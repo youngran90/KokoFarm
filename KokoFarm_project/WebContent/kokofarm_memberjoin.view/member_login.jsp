@@ -5,6 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
+<style type="text/css">
+#loginForm{
+position: relative;
+top : 100px;
+left: 20%;
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -86,26 +94,40 @@
 <body>
 <!-- 로그인 관련 -->
 <jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
-<form name = "loginForm" action="loginCheck1.member" method="post">
-	<table border="1">
+<hr>
+<div class="wrapper">
+      
+      <div class="container" id="hn_container">
+      
+            <div class="content_area">
+         
+        
+               
+<form name = "loginForm" action="loginCheck1.member" method="post" id = "loginForm">
+	<table border="1" width="350px">
 		<tr>
-			<td>아이디</td>
-			<td><input type="text" id ="member_id" name="member_id"></td>
+			<td width="100px">아이디</td>
+			<td width="200px;"><input type="text" id ="member_id" name="member_id"></td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
 			<td><input type="password" id ="member_password" name="member_password"></td>
 		</tr>	
 		<tr>
-			<td>
-				<input type = "button" id ="btnidcheck" value="아이디중복확인">
-			</td>
-			<td >
-			<input type="submit" id ="btnLogin" value="로그인">
+			<td colspan="2" align="center">
+			<input type="submit" id ="btnLogin" value="로그인" >
 			</td>
 		</tr>
 	</table>
 </form>
 	<div id = "loginResult"></div>
+	    </div>   <!-- content_area  -->
+	    </div>
+	    
+	<jsp:include page="../Kokofarm_Main/mainfooter.jsp" flush="false"></jsp:include>
+<hr>
+	
+</div>
+
 </body>
 </html>

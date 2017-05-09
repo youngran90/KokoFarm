@@ -70,7 +70,7 @@ function send(){
 			<tr height="30">
 				<td colspan="4" align="center">
 				<input type="button"value="문의글보내기" onclick="send();">&nbsp;&nbsp; 
-				<input type="reset" value="취소">
+				<input type="button" value="취소" onclick="self.close();">
 				</td>
 			</tr>
 		</table>
