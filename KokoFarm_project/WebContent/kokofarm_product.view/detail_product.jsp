@@ -100,7 +100,7 @@
 
 		$.ajax({
 			type : "get",
-			url : "",
+			url : "ActionCartListInsert.cart",
 			data : {
 				"product_no" : product_no,
 				"ea" : ea
