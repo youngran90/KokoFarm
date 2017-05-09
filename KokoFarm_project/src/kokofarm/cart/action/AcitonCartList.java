@@ -24,10 +24,11 @@ public class AcitonCartList implements CartAction {
 		System.out.println("장바구니 리스트 출력 세션 : "+member_id);
 		
 		List<CartListDTO>list = service.cart_list(member_id);
-		request.setAttribute("cartlist", list);
+		
+		session.setAttribute("listcart", list);
 		
 		CartActionForward forward = new CartActionForward();
-		forward.setPath("/KokoFarm_project/kokofarm.cart/list_cart.jsp");
+		forward.setPath("/KokoFarm_project/kokofarm_cart.view/list_cart.jsp");
 		forward.setRedirect(true);
 		return forward;
 	}

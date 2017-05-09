@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     
@@ -9,7 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="list_cart.css">
+<link rel="stylesheet" href="css/list_cart.css">
+<style type="text/css">
+table{table-layout:fixed;border-collapse:collapse;}
+</style>
 <script type="text/javascript">
 	$(function() {
 		$("input:checkbox[name=order]").on("click",function(){ // 숨겨진 체크박스 같이 선택
@@ -273,6 +276,44 @@
 				var total_casting = numberFormat(result_total); // 총 결제금액 변환
 				$("#result_total").text(total_casting + " 원"); // 총 예상 결제금액 (로딩)
 				
+				
+			///////////////////////////////////////////////////////////////////////////////
+			var sum = 0;
+			$('label[name=total]').each(function(i) {
+				var index = i + 1;
+				var cnt = $(this).attr("value");
+				var product_price = $("label[id="+index+"]").text();
+				var product_price_casting = product_price.replace(/[^0-9]/g,"");
+				var price = parseInt(product_price_casting);
+				
+				var product_amount = $("input[name="+index+"]").val();
+				var product_amount_casting = product_amount.replace(/[]^0-9]/g,"");
+				var amount = parseInt(product_amount_casting);
+				
+				if(index == cnt){
+					sum = price * amount;
+					var total_price = numberFormat(sum);
+					$("label[class="+index+"]").text(total_price+" 원");
+				}
+			})
+			
+			var t_sum=0;
+			$('label[id=total]').each(function(i) {
+				var index = i + 1;
+				var cnt = $(this).attr("class");
+				var total_price = $("label[class="+index+"]").text();
+				var total_price_casting = total_price.replace(/[^0-9]/g,"");
+				var total = parseInt(total_price_casting);
+				
+				if(index <= size){
+					t_sum += total;
+				}
+			})
+			
+			var rt_price = numberFormat(t_sum);
+			$("#result_price").text(rt_price+" 원");
+			//////////////////////////////////////////////////////////////////////////////////
+				
 			// 각 수량 구하기(로딩)
 			$(".product_amount").each(function(i){
 				var index = i+1;
@@ -312,102 +353,103 @@
 					$("input[id="+index+"amount]").val(amount);
 				}
 			}
-				
+			
 	}); //윈도우 로딩 종료 
 	
 </script>
 
 </head>
 <body>
-
-	<%-- <div id = "header">
-		<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
-	</div> --%>
-		
-	<h3>장바구니</h3>
-	<h2><span>장바구니 상품</span>&nbsp;&nbsp;&nbsp;<span id="count" name="count"></span></h2>
+	<header>
+		<div id = "header">
+			<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
+		</div>
+	</header>
 	
-	<a href="ActionList.cart?member_id=${member_id }">회원 번호  : ${member_id }</a>&nbsp;&nbsp;
-	<table border="1" cellpadding="3">
-	<thead align="center"> 
-		<tr>
-			<td width="80"><button id="all" name="all" >전체 선택</button></td>
-			<td width="80" style="display: none">숨길항목</td>
-			<td width="150">상품명</td>
-			<td width="200">배송종류</td>
-			<td width="300">배송비</td>
-			<td width="200">가격</td>
-			<td width="180" colspan="2">수량</td>
-			<td width="130">주문금액</td>
-			<td width="100">삭제하기</td>
-		</tr>
-	</thead>
-	<thead align="center" id="cart">
-		<form action="ActionRoutingCart.cart" method="post" name="list_cart">
-			<input type="button" name="delete" onclick="location.href='ActionCartDeleteALL.cart?m_id=${member_id}'" value="전체삭제">
-			&nbsp;&nbsp;
-			
-		<c:forEach var="cart_list" items="${cartlist }" varStatus="status">
-			<tr>
-					<td><input type="checkbox" id="${status.count }ac" name="order" value ="${cart_list.product_no }"></td> <!-- 체크박스 -->
-					<td style="display: none"><input type="hidden" id="product_no" value="${cart_list.product_no }"></td> <!-- 상품번호(숨김) -->
-					<td><label id="product_name">${cart_list.product_name }</label></td> <!-- 제품명 -->
-					<td><label id="delivery">테스트용~</label></td> <!-- 배송유형 -->
-					<td><label id="${status.count }a" name="delivery_price" class="delivery_price" value="0"></label></td> <!-- 배송비 -->
-					<td><label id="${status.count}" value="${cart_list.product_price }" name="price" class="price">${cart_list.product_price }</label></td> <!-- 제품가격 -->
-					<td><input type="text" name="${status.count}" class="product_amount" name="product_amount" value="1" type="text"  style="text-align: center;"></td> <!-- 수량 -->
-					<td style="display: none;"><input type="checkbox" id="${status.count}amount" name="amount" value="0"></td>
-			<td>
-					<span id="button_amount">
-						<button id="up" name="up" type="button" value="${status.count}" alt="증가"></button>
-						<button id="down" name="down"  type="button" value="${status.count}" alt="감소"></button>
-					</span>
-						<button id="change" name="change" type="button" value="${status.count }" alt="수량변경"></button>
-			</td>
-			<td>
-					<label id="total" name="total" class="${status.count}" value="${status.count}"></label> <!-- 총 금액 -->
-			</td>
-					<td style="display: none;"><input type="checkbox" id="${status.count}t" name="total" value="0"></td>
-			<td>
-					<input type="button" name="delete" onclick="location.href='ActionCartDelete.cart?product_no=${cart_list.product_no }'" value="삭제">
-			</td>
-			</tr>
-			</c:forEach>	
-		</thead>
-	</table>
-	<br><br>
-	<div class = "cart_total">
-				<table border="1" width="1150" height="200">
-					<thead align="center">
+	<section>
+		<div id="container" class="container" style="margin-left: 5%; margin-right: 5%;">
+		<div id="top_img" class="top_img"></div>
+				<h2><span>장바구니 상품</span>&nbsp;&nbsp;&nbsp;<span id="count" name="count"></span></h2>
+				
+				<a href="http://localhost:8081/KokoFarm_project/kokofarm_product.view/listproductAction.product">회원 번호  : ${member_id }</a>&nbsp;&nbsp; 
+				<table border="1" cellpadding="3">
+				<thead align="center"> 
+					<tr>
+						<td width="80"><button id="all" name="all" >전체 선택</button></td>
+						<td width="80" style="display: none">숨길항목</td>
+						<td width="150">상품명</td>
+						<td width="200">배송종류</td>
+						<td width="180">배송비</td>
+						<td width="200">가격</td>
+						<td width="180" colspan="2">수량</td>
+						<td width="130">주문금액</td>
+						<td width="100">삭제하기</td>
+					</tr>
+				</thead>
+				<thead align="center" id="cart">
+					<form action="ActionRoutingCart.cart" method="post" name="list_cart">
+						<input type="button" name="delete" onclick="location.href='ActionCartDeleteALL.cart'" value="전체삭제">
+						&nbsp;&nbsp;
+						
+					<c:forEach var="cart_list" items="${listcart }" varStatus="status">
 						<tr>
-							<td>주문금액</td>
-							<td>배송비</td>
-							<td>예상 결제 금액</td>
+								<td><input type="checkbox" id="${status.count }ac" name="order" value ="${cart_list.product_no }"></td> <!-- 체크박스 -->
+								<td style="display: none"><input type="hidden" id="product_no" value="${cart_list.product_no }"></td> <!-- 상품번호(숨김) -->
+								<td><label id="product_name">${cart_list.product_name }</label></td> <!-- 제품명 -->
+								<td><label id="delivery">테스트용~</label></td> <!-- 배송유형 -->
+								<td><label id="${status.count }a" name="delivery_price" class="delivery_price" value="0"></label></td> <!-- 배송비 -->
+								<td><label id="${status.count}" value="${cart_list.product_price }" name="price" class="price">${cart_list.product_price }</label></td> <!-- 제품가격 -->
+								<td ><input type="text" name="${status.count}" class="product_amount" name="product_amount" value="${cart_list.product_unit }" type="text"  style="text-align: center;"></td> <!-- 수량 -->
+								<td style="display: none;"><input type="checkbox" id="${status.count}amount" name="amount" value="0"></td>
+						<td>
+								<span id="button_amount">
+									<button id="up" name="up" type="button" value="${status.count}" alt="증가"></button>
+									<button id="down" name="down"  type="button" value="${status.count}" alt="감소"></button>
+								</span>
+									<button id="change" name="change" type="button" value="${status.count }" alt="수량변경"></button>
+						</td>
+						<td style="display: none;"><input type="checkbox" id="${status.count}amount" name="amount" value="0"></td>
+						<td>
+								<label id="total" name="total" class="${status.count}" value="${status.count}"></label> <!-- 총 금액 -->
+						</td>
+								<td style="display: none;"><input type="checkbox" id="${status.count}t" name="total" value="0"></td>
+						<td>
+								<input type="button" name="delete" onclick="location.href='ActionCartDelete.cart?product_no=${cart_list.product_no }'" value="삭제">
+						</td>
 						</tr>
-					</thead>
-					<thead>
-						<tr>
-							<th><span id="result_price" name="result_price" >0</span></th> <!-- 주문금액 -->
-							<th><span id="result_delivery" name="result_delivery" >0</span></th> <!-- 배송비 -->
-							<th><span id="result_total" name="result_total" >0</span></th> <!-- 예상 결제 금액 -->
-						</tr>
+						</c:forEach>	
 					</thead>
 				</table>
-	</div>
-	<input type = "button"  value="예약주문"> 
-	<input type = "submit" value="주문하기" id="submit_order"><br><br>
-   </form>
-   
-	 <div class="cart_area" id="cart_area">
-		<div class="cart_wrap">
-		   <div class="cart_head">
-		   		<button class="open_cart" id="open_cart" type="button">장바구니 열기 / 닫기</button>
-		   		<button class="btn_top" id="btn_top" type="button">go to Top</button>
-		   </div>
-		   <div class="crat_container">
-		   
-		   </div>
-	 </div>
-   </div>
+				<br><br>
+				<div class="price_info_box" id="price_info_box"/>
+				<div class = "cart_total">
+								<div calss="info_box" name="info_box">
+									<span id="result_price" name="result_price" >0</span> <!-- 주문금액 -->
+									<span id="result_delivery" name="result_delivery" >0</span> <!-- 배송비 -->
+									<span id="result_total" name="result_total" >0</span><!-- 예상 결제 금액 -->
+								</div>
+					<input type = "button"  value="예약주문"> 
+					<input type = "submit" value="주문하기" id="submit_order"><br><br>
+			   </form>
+			   
+				<!--  <div class="cart_area" id="cart_area">
+					<div class="cart_wrap">
+					   <div class="cart_head">
+					   		<button class="open_cart" id="open_cart" type="button">장바구니 열기 / 닫기</button>
+					   		<button class="btn_top" id="btn_top" type="button">go to Top</button>
+					   </div>
+					   <div class="crat_container">
+					   
+					   </div>
+				 </div>
+			   </div> -->
+   		</div>
+   </section>
+	<footer>
+		<div id = "footer">
+	   	<jsp:include page="../Kokofarm_Main/mainfooter.jsp"></jsp:include>
+	   	</div>
+   </footer> 
+
 </body>
 </html> 

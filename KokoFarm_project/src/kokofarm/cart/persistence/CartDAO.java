@@ -10,8 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import kokofarm.cart.domain.CartDTO;
 import kokofarm.cart.domain.CartListDTO;
-import kokofarm.cart.domain.ProductDTO;
 import kokofarm.cart.mapper.CartMapper;
+import kokofarm.product.domain.ProductDTO;
 
 public class CartDAO {
 	public static CartDAO dao = new CartDAO();
@@ -32,7 +32,7 @@ public class CartDAO {
 	}
 	
 	
-	
+	/*
 	public int product_insert(ProductDTO product){
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
@@ -49,7 +49,7 @@ public class CartDAO {
 			session.close();
 		}
 		return re;
-	}
+	}*/
 	
 	
 	public List<ProductDTO> product_list(){
@@ -130,4 +130,31 @@ public class CartDAO {
 		return re;
 	}
 	
+	public int update(CartDTO cart){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CartMapper.class).cart_update(cart);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 }
+
+
+
+
+
+
+
+
+
+

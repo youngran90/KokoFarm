@@ -30,7 +30,6 @@ public class ListproductAction implements Action {
 		//forward.setRedirect(true);
 		forward.setRedirect(false);
 		forward.setPath("list_Product.jsp");
-		//forward.setPath("/KokoFarm_project/kokofarm_cart.view/list_product.jsp");
 		return forward;
 	}
 

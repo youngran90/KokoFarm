@@ -32,7 +32,7 @@
 		<c:forEach var="inquiry" items="${inquirylist}" varStatus="status">
 				<tr align="center">			
 					<td>${status.count}</td>
-					<td id="product"><a href="detailInquiry.Inquiry">${inquiry.product_name}</a></td>
+					<td id="product">${inquiry.product_name}</td>
 					<td>${inquiry.member_id}</td>
 					<td><fmt:formatDate value="${inquiry.inquiry_date}" pattern="yyyy년MM월dd일"/></td>
 					
@@ -50,7 +50,7 @@
 
 			<tr height="30">
 				<td colspan="5" align="center">
-				<input type="button" value="메인페이지" onclick="history.go(-1)">&nbsp;&nbsp; 
+				<input type="button" value="상품리스트" onclick="location.href='listproductAction.product'">&nbsp;&nbsp; 
 				<input type="button" value="취소">&nbsp;&nbsp; 
 				</td>
 			</tr>

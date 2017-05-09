@@ -4,16 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.sun.corba.se.impl.orb.ParserActionBase;
-
-import kokofarm.cart.domain.ProductDTO;
-import kokofarm.cart.service.CartService;
 import kokofarm.orderproduct.domain.OrderProductDTO;
 import kokofarm.orderproduct.domain.OrderProductListDTO;
 import kokofarm.orderproduct.persistence.OrderProductDao;
+import kokofarm.product.domain.ProductDTO;
+import kokofarm.product.service.ProductService;
 
 public class OrderProductService {
 	private static OrderProductService service = new OrderProductService();
+	private static ProductService service_product = ProductService.getInstance(); //영란이 누나꺼
 	private static OrderProductDao dao;
 	
 	public static OrderProductService getInstance(){
@@ -28,16 +27,18 @@ public class OrderProductService {
 	
 	
 	public int OrderProduct(String order_no,String[] product_no, String member_id, String[] product_amount, String[] total_price	){
-		
 		OrderProductDTO orderproduct = new OrderProductDTO();
-		List<ProductDTO> list = CartService.getInstance().product_list(); 
+		List<ProductDTO> list = service_product.list_ProductService(); 
 		List<OrderProductDTO> checklist = new ArrayList<OrderProductDTO>(); //체크한값을 저장하기 위한 리스트
 		List<OrderProductListDTO> orderlist = OrderProductListDTO(member_id);
-				
+		
+		for(int i=0; i<list.size(); i++){
+			System.out.println(list.get(i).toString());
+		}
+		
 		int delivery_price=0;
 		
 		if( orderlist.size()== 0){
-			System.out.println("111111111111");
 			for (int i = 0; i < product_no.length; i++) { // product_no = 체크박스배열 / list = 물품 객체
 				for (int j = 0; j < list.size(); j++) {
 					if ( product_no[i].equals(list.get(j).getProduct_no())  ) { 
@@ -78,11 +79,8 @@ public class OrderProductService {
 			}
 			return dao.Order(checklist);
 		}else{
-			System.out.println("@22222");
 			checklist.clear();
 			dao.deleteorder(member_id);
-			System.out.println("@333333333");
-			
 			for (int i = 0; i < product_no.length; i++) { // product_no = 체크박스배열 / list = 물품 객체
 				for (int j = 0; j < list.size(); j++) {
 					if ( product_no[i].equals(list.get(j).getProduct_no())  ) { 
@@ -123,6 +121,7 @@ public class OrderProductService {
 			}
 			return dao.Order(checklist);
 		}
+		
 	}
 	
 	public List<OrderProductListDTO> OrderProductListDTO(String member_id){

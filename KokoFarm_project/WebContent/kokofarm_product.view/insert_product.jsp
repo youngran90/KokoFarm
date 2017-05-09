@@ -17,11 +17,14 @@ height: 30px;
 input:not(.buttons){
 width: 80%;
 height: 50%;
+font-size: 20px;
 }
 
 td{
 text-align: center;
+font-size: 20px;
 }
+
 </style>
 <script type="text/javascript"> 
 
@@ -78,25 +81,28 @@ function submit1(){
 </script>
 </head>
 <body>
-
+	<div id="header">
+			<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"/>	
+		</div>
+		
 <div id="body" style="margin: 5%">
 	<form action="InsertProductAction.product" name="product_form" method="post" enctype="multipart/form-data">
 	
-<table border="1" cellpadding="0" cellspacing="0" style="border: solid #eaeaea 1px; height: 500px; width: 500px;">
-			<tr>
+<table border="1" cellpadding="0" cellspacing="0" style="border: solid #eaeaea 1px; height: 500px; width: 1000px;">
+			<tr >
 				<td >상품이름</td>
 				<td >
-				<input type="text" id="product_name" name="product_name" ></td>
+				<input type="text" id="product_name" name="product_name" placeholder="상품이름입력"></td>
 			</tr>
 
 			<tr>
 				<td >상품단위</td>
-				<td ><input type="text"  id="product_unit" name="product_unit"></td>
+				<td ><input type="text"  id="product_unit" name="product_unit" placeholder="상품단위입력 ex)1kg"></td>
 			</tr>
 
 			<tr >
 				<td>상품가격</td>
-				<td><input type="text"  id="product_price" name="product_price"></td>
+				<td><input type="text"  id="product_price" name="product_price" placeholder="상품가격입력 ex)5000"></td>
 			</tr>
 
 		<tr>
@@ -121,17 +127,22 @@ function submit1(){
 			</tr>
 
 			<tr>
-				<td colspan="4" align="center">
+				<td colspan="2">
 				<input class="buttons" type="button" value="상품저장" onclick="submit1()">&nbsp;&nbsp; 
 				<input class="buttons" type="reset" value="취소" >
 				</td>
 			</tr>
 		</table>
 
-				<a href="list_Product.jsp">리스트</a>
+				<a href="listproductAction.product">리스트</a>
 
 	</form>
 </div>
+
+	<div id="footer">
+					<jsp:include page="../Kokofarm_Main/mainfooter.jsp" flush="false"/>
+	</div>	
+	  
 </body>
 
   
