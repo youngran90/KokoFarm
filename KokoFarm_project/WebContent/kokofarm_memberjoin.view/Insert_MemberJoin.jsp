@@ -29,7 +29,7 @@ $(function(){
 		
 		var id = $("#member_id").val();
 		var reg_uid = /^[a-z0-9_]{5,12}$/;
-	
+		
 		if(id == ""|| !reg_uid.test(id)){
 			alert("아이디를 입력하세요");
 			$("#member_id").focus();

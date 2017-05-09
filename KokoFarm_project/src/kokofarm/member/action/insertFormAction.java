@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kokofarm.member.domain.MemberDTO;
 import kokofarm.member.service.MemberService;
@@ -26,6 +27,9 @@ public class insertFormAction implements Action {
 		MemberService service = MemberService.getInstance();
 		MemberDTO member = new MemberDTO(); 
 		
+		
+		
+		
 		member.setMember_id(request.getParameter("member_id"));
 		member.setMember_password(request.getParameter("member_password"));
 		member.setMember_name(request.getParameter("member_name"));
@@ -37,18 +41,15 @@ public class insertFormAction implements Action {
 		member.setMember_account(request.getParameter("member_account"));
 		
 		member.setCartNo(cartno);
-		int re = -1;
-		re = service.insertMemberService(member);
+		
+		service.insertMemberService(member);
 	
-		if(re>0){
+	
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(true);
 			forward.setPath("List_member.jsp");
 			return forward;
-		}else{
-			return null;
-		}
-		
+	
 			
 	}
 }
