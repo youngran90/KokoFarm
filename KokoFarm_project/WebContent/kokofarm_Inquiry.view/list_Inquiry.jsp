@@ -7,7 +7,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <% 
  InquiryService service = InquiryService.getInstance();
- String seller_no = (String)session.getAttribute("m_id");
+ String seller_no = (String)session.getAttribute("member_id");
  System.out.println("jsp seller_no : "+seller_no);
  List<InquiryDTO> list = service.listInquiryService(seller_no);
  request.setAttribute("inquirylist", list);

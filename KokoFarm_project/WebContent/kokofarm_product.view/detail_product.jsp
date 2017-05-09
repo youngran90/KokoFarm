@@ -8,13 +8,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	String id = (String) session.getAttribute("member_id");
-	request.setAttribute("id", id);
-	System.out.print(id);
+	String member_id = (String) session.getAttribute("member_id");
+	request.setAttribute("member_id", member_id);
+	System.out.print(member_id);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <script type="text/javascript"
 	src=http://code.jquery.com/jquery-1.10.2.js></script>
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
@@ -96,10 +97,16 @@
 	}
 	
 	function cart(product_no){
-		var num = $("#ea").val();
+	 <% 
+	 if(member_id==null){ %>
+		alert("로그인이 필요합니다.");
+		return;
+	 <%}else{%>
+	 var num = $("#ea").val();
 		var ea = parseInt(num);
 		location.href="gocartAaction.product?ea=" + ea + "&product_no="+ product_no;
-	}
+		<%}%>
+		}
 </script>
 <style type="text/css">
 td {
@@ -300,6 +307,47 @@ td {
 				<p>* 자세한 상담은 고객센터(1644-4339),카카오톡(ID:헬로네이처)을 이용해주세요.</p>
 			</div>
 		</div>
+	</div>
+	
+	<h2>댓글</h2>		  
+	<form action="InsertPostAction.product" method="post">
+		 <input type="hidden" name="product_no" value="${product.product_no}" placeholder="로그인하시면 작성가능합니다"></input>
+		<input type="hidden" name="member_id" size="10"></input>
+		글내용:<input type="text" name="post_content" size="50"></input>
+		 <input type="submit" value="작성 완료" >
+	</form>
+	
+	
+	
+	
+       
+     <div class="board_comment" id="commentListArea">  
+		<table id="commentList" style="border: solid #eaeaea 3px; ">
+		
+			<tr>
+				<td style="width: 50px;" align="center">글번호</td>
+				<td style="width: 100px;" align="center">작성자</td>
+				<td style="width: 500px;" >글내용</td>
+				<td style="width: 145px;" align="center">작성일</td>
+			</tr>
+			
+		
+				<c:if test="${not empty postlist}">
+					<c:forEach var="postlist" items="${postlist}" varStatus="status">
+					<tr>
+						<td>${status.count}</td>
+							<td class="comment_name"><span class="txt strong" id="member_id">${postlist.member_id}</span></td>
+			                  <td class="comment_txt"><span>${postlist.post_content}</span></td>
+			                  <td class="comment_date"><fmt:formatDate value="${postlist.post_date}" pattern="yyyy년 MM월 dd일"/></td>
+			                 
+			                  <c:set var="id" value="${id}"></c:set>
+			                   <c:if test="${postlist.member_id eq member_id}">
+			                  <td><button id="deletePost" value="${postlist.post_no}" onclick="deletpost('${postlist.post_no}')">삭제</button></td>
+			              		</c:if>
+			               </tr>
+			        </c:forEach>
+				</c:if>
+       </table>
 	</div>
 
 	<a href="list_Product.jsp">리스트</a>

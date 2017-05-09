@@ -17,8 +17,9 @@ public class ListInquiryAction implements Action {
 		List<InquiryDTO> inquirylist = null;
 		System.out.println("************inquirylistAction");
 		HttpSession session = request.getSession();
-		String m_id = (String)session.getAttribute("m_id");
-		inquirylist = service.listInquiryService(m_id);
+		String member_id = (String)session.getAttribute("member_id");
+		String seller_no = member_id;
+		inquirylist = service.listInquiryService(seller_no);
 		
 		request.setAttribute("inquirylist", inquirylist);
 		

@@ -20,7 +20,7 @@ public class doInquiryAction implements Action {
 		String product_name = request.getParameter("product_name");
 		String product_no = request.getParameter("product_no");
 		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("m_id");
+		String member_id = (String)session.getAttribute("member_id");
 		String seller_no = request.getParameter("seller_no");
 		
 		System.out.println("--------------------------------");
@@ -30,7 +30,7 @@ public class doInquiryAction implements Action {
 		System.out.println(seller_no);
 		System.out.println("--------------------------------");
 		
-		request.setAttribute("member_id", member_id);
+		
 		request.setAttribute("product_name", product_name);
 		request.setAttribute("product_no", product_no);
 		request.setAttribute("seller_no", seller_no);

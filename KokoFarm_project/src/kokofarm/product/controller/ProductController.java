@@ -47,7 +47,6 @@ public class ProductController extends HttpServlet {
 		
 		if (path.equals("InsertProductAction.product")) {
 			System.out.println("insert!!");
-			// insertForm.jsp�� �̵��ϱ� ���� ����
 			action = new InsertProductAction();
 
 			try {
@@ -107,6 +106,15 @@ public class ProductController extends HttpServlet {
 			}
 			
 		}else if(path.equals("gocartAaction.product")){
+			action = new gocartAaction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else if(path.equals("InsertFormAction.product")){
 			action = new gocartAaction();
 			
 			try {

@@ -1,5 +1,7 @@
 package kokofarm.product.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,7 +18,10 @@ public class gocartAaction implements Action {
 		HttpSession session = request.getSession();
 		session.setAttribute("product_no", product_no);
 		session.setAttribute("product_unit", product_unit);
-	
+		request.setAttribute("product_no", product_no);
+		
+		String member_id = (String)session.getAttribute("member_id");
+		
 		
 		System.out.println("--------------------------------");
 		System.out.println(product_no);
@@ -25,7 +30,9 @@ public class gocartAaction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		
-		forward.setPath("ActionCartListInsert.cart");
+	
+			forward.setPath("ActionCartListInsert.cart");
+	
 		forward.setRedirect(true);
 		
 		return forward;
