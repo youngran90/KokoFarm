@@ -14,22 +14,17 @@
 
 
 
-<script src="shop/web/lib/jquery-1.11.3.min.js"></script>
-<script src="shop/web/lib/jquery-ui.js"></script>
+
 <script src="shop/web/lib/isotope.pkgd.min.js"></script>
 <script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
-<script
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
 <script src="shop/web/lib/script.js"></script>
 <script src="shop/web/lib/prefixfree.min.js"></script>
 <script src="shop/web/lib/cart.js"></script>
-<script src="shop/web/lib/dashboard.js"></script>
 <script src="shop/web/lib/osinfo.js"></script>
 <script src="shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
-<script src="shop/data/skin/renew/jquery.slides.js"></script>
 <script src="shop/data/skin/renew/common.js"></script>
 <script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
-<script src="shop/web/lib/countdown.js"></script>
 
 
 <script type="text/javascript">

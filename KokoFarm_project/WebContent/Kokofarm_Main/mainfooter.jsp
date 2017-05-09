@@ -7,34 +7,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
 
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/favicon.ico" rel="shortcut icon">
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css" rel="stylesheet">
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css"	rel="stylesheet">
+<link	href="/KokoFarm_project/Kokofarm_Main/shop/web/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
 
 
-<script src="shop/web/lib/jquery-1.11.3.min.js"></script>
-<script src="shop/web/lib/jquery-ui.js"></script>
-<script src="slider/jquery.flexslider.js"></script>
+
+
 <script src="shop/web/lib/isotope.pkgd.min.js"></script>
 <script src="shop/web/lib/jquery.mCustomScrollbar.min.js"></script>
-<script
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
 <script src="shop/web/lib/script.js"></script>
 <script src="shop/web/lib/prefixfree.min.js"></script>
 <script src="shop/web/lib/cart.js"></script>
-<script src="shop/web/lib/dashboard.js"></script>
 <script src="shop/web/lib/osinfo.js"></script>
 <script src="shop/web/lib/IE9_fix_for_imagesLoaded_plugin_issue.js"></script>
-<script src="shop/data/skin/renew/jquery.slides.js"></script>
 <script src="shop/data/skin/renew/common.js"></script>
 <script src="shop/data/skin/renew/cart_tab/godo.cart_tab.js"></script>
-<script src="shop/web/lib/countdown.js"></script>
-<!-- 카카오 API링크 -->
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<!--// 카카오 API링크 -->
 
 
 </head>
