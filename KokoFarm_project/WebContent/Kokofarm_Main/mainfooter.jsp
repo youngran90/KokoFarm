@@ -6,9 +6,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="jquery.js" type="text/javascript"></script>
+
 
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/images/common/favicon.ico" rel="shortcut icon">
 <link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css" rel="stylesheet">
@@ -23,6 +21,10 @@
 		});
 	});
 </script>
+
+<!-- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="jquery.js" type="text/javascript"></script> -->
 
 <script src="shop/web/lib/jquery-1.11.3.min.js"></script>
 <script src="shop/web/lib/jquery-ui.js"></script>

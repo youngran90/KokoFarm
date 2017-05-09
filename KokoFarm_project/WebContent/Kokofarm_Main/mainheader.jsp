@@ -18,7 +18,7 @@
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
 <!-- <script src="jquery.js" type="text/javascript"></script> -->
-	
+
 
 	
 	<script src="shop/web/lib/jquery-1.11.3.min.js"></script>	

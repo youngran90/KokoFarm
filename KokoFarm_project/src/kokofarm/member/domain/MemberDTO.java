@@ -15,15 +15,11 @@ public class MemberDTO implements Serializable{
 	private String member_grade;
 	private String join_date;
 	private String cart_No;
-	
-	public MemberDTO(){
-		
-	}
-	
+	private String seller_no;
 	
 	public MemberDTO(String member_id, String member_password, String member_name, String member_email,
 			String member_phoneNum, String member_zipcode, String member_address1, String member_address2,
-			String member_account, String member_grade, String join_date, String cart_No) {
+			String member_account, String member_grade, String join_date, String cart_No, String seller_no) {
 		super();
 		this.member_id = member_id;
 		this.member_password = member_password;
@@ -36,6 +32,27 @@ public class MemberDTO implements Serializable{
 		this.member_account = member_account;
 		this.member_grade = member_grade;
 		this.join_date = join_date;
+		this.cart_No = cart_No;
+		this.seller_no = seller_no;
+	}
+
+
+	public MemberDTO(){
+		
+	}
+	
+
+	public String getSeller_no() {
+		return seller_no;
+	}
+
+
+	public void setSeller_no(String seller_no) {
+		this.seller_no = seller_no;
+	}
+
+
+	public void setCart_No(String cart_No) {
 		this.cart_No = cart_No;
 	}
 

@@ -6,19 +6,12 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>KokoFarm</title>
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css"
-	rel="stylesheet">
-<link
-	href="/KokoFarm_project/Kokofarm_Main/shop/web/css/jquery.mCustomScrollbar.css"
-	rel="stylesheet">
-<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css"
-	type="text/css">
+<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/font2.css"	rel="stylesheet">
+<link	href="/KokoFarm_project/Kokofarm_Main/shop/web/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+<link href="/KokoFarm_project/Kokofarm_Main/shop/web/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/KokoFarm_project/Kokofarm_Main/slider/flexslider.css" type="text/css">
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="jquery.js" type="text/javascript"></script>
 
 <script src="shop/web/lib/jquery-1.11.3.min.js"></script>
@@ -47,26 +40,42 @@
 <script type="text/javascript">
 
 <%String member_id = (String) session.getAttribute("member_id");
+	
 			System.out.println("세션아이디 :" + member_id);
-
+			System.out.println("장바구니번호 :" + (String)session.getAttribute("cart_No"));
+			System.out.println("셀러번호 :" + (String)session.getAttribute("seller_No"));
+	
 			if (member_id != null) {%>
 $(function(){
 	 $("#login_welcome").text("${member_id}"+ "님 환영합니다.");
 	 $(".user_info a").eq(1).attr("href","logout.member?member_id=${member_id}");
 	$(".user_info .udline").eq(1).text("로그아웃");
-	 
-	 
-	 
-/* 	 
-	 var x= $(".user_info>a").eq(1).attr();
-	 alert(x);
-	 $(".user_info .udline").eq(1).attr() */
-		
+	$(".user_menu1 .udline1").eq(0).text("물품 등록");
+	$(".user_menu1 .udline1").eq(1).text("경매 물품 등록");
+	
+	 	 	
 })
 <%}%>
 
 </script>
+<style type="text/css">
 
+.user_menu1:FIRST-CHILD{
+position: absolute;
+margin-top : 10px;
+
+left : 34%;
+}
+.user_menu1:nth-child(2){
+position: absolute;
+margin-top : 10px;
+
+left : 40%;
+}
+
+
+
+</style>
 
 </head>
 
@@ -329,16 +338,18 @@ stroke-dashoffset
 		<div class="in_head">
 			<div class="utile_area">
 				<div class="utile_area_wrap">
-					<span id="login_welcome"></span>
+				<a class="user_menu1" href="InsertFormAction.product"><span class ="udline1"></span></a>
+				<a class="user_menu1" href="reg_list.reg"><span class ="udline1"></span></a>
+				
+					<span id="login_welcome"></span>&nbsp;
 					<div class="login_info">
 						<!-- <article class="headerbanner">
 						<img src="/shop/web/images/banner/header_banner.jpg" alt="header banner" usemap="#">
 					</article> -->
-						<a class="link_page link_coupon"
-							href="/shop/mypage/mypage_coupon.php"><span class="udline">쿠폰
-								<em>0</em>
-						</span></a> &nbsp; <a class="link_page link_ord_dev"
-							href="/shop/mypage/mypage_orderlist.php"><span class="udline">주문배송조회</span></a>
+						<a class="link_page link_coupon" href="/shop/mypage/mypage_coupon.php">
+						<span class="udline">쿠폰<em>0</em></span></a> &nbsp; 
+						<a class="link_page link_ord_dev" href="/shop/mypage/mypage_orderlist.php">
+						<span class="udline">주문배송조회</span></a>
 					</div>
 
 					<div class="user_info">
@@ -4333,7 +4344,7 @@ stroke-dashoffset
 
 							<div class="bot_box">
 								<div class="prod_name">
-									<a href="/shop/goods/goods_view.php?&amp;goodsno=17459">안중원님의
+									<a href="#">안중원님의
 										제주 구좌 유기농 당근</a>
 								</div>
 								<div class="prod_option">
@@ -4357,7 +4368,7 @@ stroke-dashoffset
 						<li class="prod_item item_type2 ">
 							<div class="top_box">
 								<a class="prod_anchor"
-									href="/shop/goods/goods_view.php?&amp;goodsno=16927">
+									href="#">
 									<div class="img_box">
 										<div class="back">
 											<img
@@ -4391,7 +4402,7 @@ stroke-dashoffset
 
 							<div class="bot_box">
 								<div class="prod_name">
-									<a href="/shop/goods/goods_view.php?&amp;goodsno=16927">[만두공방]
+									<a href="#">[만두공방]
 										프리미엄, 고소한 고기만두</a>
 								</div>
 								<div class="prod_option">
@@ -4417,7 +4428,7 @@ stroke-dashoffset
 						<li class="prod_item item_type1 ">
 							<div class="top_box">
 								<a class="prod_anchor"
-									href="/shop/goods/goods_view.php?&amp;goodsno=13838">
+									href="#">
 									<div class="img_box">
 										<div class="back">
 											<img
@@ -4451,7 +4462,7 @@ stroke-dashoffset
 
 							<div class="bot_box">
 								<div class="prod_name">
-									<a href="/shop/goods/goods_view.php?&amp;goodsno=13838">신혜남님의
+									<a href="#">신혜남님의
 										깨끗한 물로 키운 무농약 콩나물</a>
 								</div>
 								<div class="prod_option">
@@ -4477,7 +4488,7 @@ stroke-dashoffset
 						<li class="prod_item item_type1 ">
 							<div class="top_box">
 								<a class="prod_anchor"
-									href="/shop/goods/goods_view.php?&amp;goodsno=17747">
+									href="#">
 									<div class="img_box">
 										<div class="back">
 											<img
@@ -4516,7 +4527,7 @@ stroke-dashoffset
 
 							<div class="bot_box">
 								<div class="prod_name">
-									<a href="/shop/goods/goods_view.php?&amp;goodsno=17747">[묶음][배나무골]
+									<a href="#">[묶음][배나무골]
 										연잎오리 슬라이스3팩</a>
 								</div>
 								<div class="prod_option">

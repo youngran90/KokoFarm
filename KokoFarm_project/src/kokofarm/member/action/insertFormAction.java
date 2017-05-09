@@ -24,6 +24,8 @@ public class insertFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		String cartno = create_UUID();
+		String seller_no = create_UUID();
+		
 		MemberService service = MemberService.getInstance();
 		MemberDTO member = new MemberDTO(); 
 		
@@ -39,8 +41,8 @@ public class insertFormAction implements Action {
 		member.setMember_address1(request.getParameter("member_address1"));
 		member.setMember_address2(request.getParameter("member_address2"));
 		member.setMember_account(request.getParameter("member_account"));
-		
 		member.setCartNo(cartno);
+		member.setSeller_no(seller_no);
 		
 		service.insertMemberService(member);
 	

@@ -26,6 +26,11 @@ public class loginCheckAction1 implements Action {
 		String member_id = request.getParameter("member_id");
 		String member_password = request.getParameter("member_password");
 		
+		MemberDTO member = dao.selectMember(member_id);
+		String seller_No = member.getSeller_no();
+		String cart_No = member.getCart_No();
+		
+		
 		HashMap<String, String> map = 
 					new HashMap<String,String>();
 		map.put("member_id",member_id);
@@ -42,7 +47,8 @@ public class loginCheckAction1 implements Action {
 			request.setAttribute("message", message);
 			
 			request.setAttribute("message", message);
-			
+			session.setAttribute("seller_No",seller_No);
+			session.setAttribute("cart_No",cart_No);	
 			
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(true);

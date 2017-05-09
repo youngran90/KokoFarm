@@ -26,13 +26,16 @@ public class logincheckAction implements Action {
 		String member_id = request.getParameter("member_id");
 		String member_password = request.getParameter("member_password");
 		
+		MemberDTO member = dao.selectMember(member_id);
+		String seller_No = member.getSeller_no();
+		String cart_No = member.getCart_No();
 		HashMap<String, String> map = 
 					new HashMap<String,String>();
 		map.put("member_id",member_id);
 		map.put("member_password", member_password);
 		
 		int re = dao.logincheck(map);
-		
+	
 		
 		String message ="";
 		
@@ -40,8 +43,9 @@ public class logincheckAction implements Action {
 			message = member_id+"님 환영 합니다.";
 			session.setAttribute("member_id", member_id);
 			request.setAttribute("message", message);
+			session.setAttribute("seller_No",seller_No);
+			session.setAttribute("cart_No",cart_No);	
 			
-					
 		}else{
 			message = "로그인을 할 수 없습니다.";
 			
