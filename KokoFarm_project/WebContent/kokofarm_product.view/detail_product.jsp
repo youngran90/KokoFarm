@@ -94,51 +94,7 @@
 	function question(product_name, product_no, seller_no) {
 		window.open("doInquiry.Inquiry?product_name=" + product_name + "&product_no=" + product_no + "&seller_no=" + seller_no, "", "width=500,height=400");
 	}
-	function cart(product_no) {
-		var num = $("#ea").val();
-		var ea = parseInt(num);
 
-		$.ajax({
-			type : "get",
-			url : "ActionCartListInsert.cart",
-			data : {
-				"product_no" : product_no,
-				"ea" : ea
-			},
-
-			success : function(data) {
-				alert("장바구니이동");
-			},
-			error : function(data) {
-				console.log('Error:', data);
-				alert("오류");
-			}
-		})
-	}
-
-	function buy(product_no) {
-		var num = $("#ea").val();
-		var ea = parseInt(num);
-		alert(ea);
-		alert(product_no);
-		$.ajax({
-			type : "get",
-			url : "",
-			data : {
-				"product_no" : product_no,
-				"ea" : ea
-			},
-
-			success : function(data) {
-				alert("구매이동");
-			},
-			error : function(data) {
-				console.log('Error:', data);
-				alert("오류");
-			}
-		})
-
-	}
 </script>
 <style type="text/css">
 td {
@@ -180,8 +136,8 @@ td {
 
 		<tr>
 			<td></td>
-			<td><input type="button" value="장바구니"
-				onclick="cart('${product.product_no}')" /> <input type="button"
+			<td><input type="button" value="장바구니"	 onclick="location.href='ActionCartListInsert.cart?product_no=${product.product_no}'" /> 
+			<input type="button"
 				value="즉시구매" onclick="buy('${product.product_no}')" /></td>
 		</tr>
 
