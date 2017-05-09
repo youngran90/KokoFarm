@@ -10,19 +10,15 @@
 			product_mainimage, product_detailimage , product_sellerimage 
 		)
 		values(
-		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate, #{product_harvestdate}, 0,
+		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, 0, sysdate, #{product_harvestdate}, 0,
 		#{product_mainimage}, #{product_detailimage}, #{product_sellerimage}
 		)	
 	</insert>
 	
 	<select id="listProduct" resultType="Product">
 		select * from product
-		<if test="area != null">
-			<where>
-				<foreach collection="area" item="item" separator="OR" open="(" close=")">
-				${item} LIKE #{seachKey}
-				</foreach>
-			</where>
+		<if test="searchText != null">
+				where ${searchOption} LIKE #{searchText}
 		</if>
 		order by product_uploaddate	
 	</select>
@@ -34,14 +30,9 @@
 	
 	<select id="countProduct" resultType="int" parameterType="Search">
 	select count(*) from product
-	<if test="area !=null">
-				<where>
-					<foreach collection="area" item="item" separator="OR" 
-					open="(" close=")">
-					${item} LIKE #{searchKey}
-					</foreach>
-				</where>
-			</if>
+		<if test="searchText !=null">
+			where ${searchOption} LIKE #{searchText}
+		</if>
 	</select>
 	
 	<insert id="InsertPost" parameterType="Post">
@@ -64,5 +55,6 @@
 	set post_content = #{post_content}
 	where post_no = #{post_no} 
 	</update>
+	
 	
 	</mapper>

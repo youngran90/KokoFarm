@@ -66,7 +66,7 @@ public class ProductController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(path.indexOf("detailProdutAction.product") != -1){
+		}else if(requestURI.indexOf("detailProdutAction.product") != -1){
 			System.out.println("detail");
 			action = new detailProdutAction();
 			

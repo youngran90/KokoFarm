@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+.view_btn_submit{
+	background-image: url("./image/view_btn_submit.gif")
+}
+.delivery_content .content_box{padding:30px 29px 29px 31px;}
+			.delivery_content .deli_img{margin-bottom:30px;}
+			.deli_inner:after{clear:both;content:"";display:block;}
+			.deli_inner_L{float:left;}
+			.deli_inner_R{float:right;}
+			.deli_inner_T{float:left;padding-top:8px;width:1168px;}
+			.deli_inner_table{width:554px;height:345px;border-top:1px solid #d9d9d9;}
+			.deli_inner p{position:relative;line-height:18px;color:#666;}
+			.deli_inner h5{margin-bottom:11px;font-family:YG77;font-size:15px;color:#352f29;}
+			.deli_inner h6{margin-bottom:4px;font-size:11px;line-height:17px;font-family:YG77;}
+			.deli_inner_table span{color:#e2704b;}
+			.deli_inner_table tr{border-bottom:1px solid #d9d9d9;}
+			.deli_inner_table th{width:150px;font-family:YG76;line-height:18px;color:#555;background-color:#f3f3f3;}
+			.deli_inner_table td{padding:8px 0 8px 30px;}
+			.deli_inner_table td.pd{padding:20px 0 20px 30px;}
+			.deli_inner_R .deli_inner_table td.pd{padding:13px 0 10px 30px;}
+			.deli_inner_table td p.fir{margin-bottom:5px;}
+			.deli_inner_table td p.last{margin-bottom:5px;}
+			.deli_inner_R .deli_inner_table td p.last{margin-bottom:7px;}
+			.deli_inner_L .deli_inner_table td p.fir span{font-family:YG77;}
+			.deli_inner_L .deli_inner_table span.abs{position:absolute;top:0;left:172px;font-family:YG77;}
+			.deli_inner_L .deli_inner_table span.abs:before{display:inline-block;margin-right:5px;content: "-"; color:#666;}
+			.deli_inner_R .deli_inner_table span.cle{display:block;margin-left:15px;color:#666;font-weight:normal;}
+			.deli_inner_R .deli_inner_table p.cle{margin:0 0 6px 54px;}
+			.deli_inner_R .deli_inner_table p.word_wrap{margin:0 0 5px 20px;}
+			.deli_inner_R .deli_inner_table span.nor{display:inline-block;width:40px;color:#666;}
+		 	.deli_inner_table td strong{display:block;margin-bottom:20px;font-size:21px;line-height:24px;}
+			.deli_inner_table td strong img{margin-right:5px;vertical-align:top;}
+			.deli_inner_table td div{margin-bottom:18px;}
+			.deli_inner_table td div.last{margin-bottom:0px;}
+			.deli_inner .deli_inner_T p{color:#888;font-size:11px;}

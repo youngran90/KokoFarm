@@ -1,7 +1,7 @@
 <%@page import="kokofarm.product.domain.ListProductPage"%>
 <%@page import="kokofarm.product.service.ProductService"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -24,17 +24,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript" src=http://code.jquery.com/jquery-1.10.2.js></script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<h2>»óÇ°¸®½ºÆ® Ãâ·Â</h2>
+<h2>ìƒí’ˆë¦¬ìŠ¤íŠ¸ ì¶œë ¥</h2>
 <%-- <table border="1" cellpadding="0" cellspacing="0">
 			<tr height="80" align="center">
-				<td width="200">¸ÞÀÎ»çÁø</td>
-				<td width="200">»óÇ°ÀÌ¸§</td>
-				<td width="200">»óÇ°´ÜÀ§</td>
-				<td width="200">»óÇ°°¡°Ý</td>
+				<td width="200">ë©”ì¸ì‚¬ì§„</td>
+				<td width="200">ìƒí’ˆì´ë¦„</td>
+				<td width="200">ìƒí’ˆë‹¨ìœ„</td>
+				<td width="200">ìƒí’ˆê°€ê²©</td>
 			</tr>
 	
 		<c:forEach var="product" items="${listModel.list}">
@@ -59,12 +60,12 @@
 		</tr>
 			</c:forEach>
 			
-			<!-- ÀÌÀü -->
+			<!-- ì´ì „ -->
 	<c:if test="${listModel.startPage > 5}">
-		<a href="list.jsp?pageNum=${listModel.startPage -5 }">[ÀÌÀü]</a>
+		<a href="list.jsp?pageNum=${listModel.startPage -5 }">[ì´ì „]</a>
 	</c:if>
 	
-	<!-- ÆäÀÌÁö¸ñ·Ï , ¼±ÅÃÆäÀÌÁö ±½°Ô -->
+	<!-- íŽ˜ì´ì§€ëª©ë¡ , ì„ íƒíŽ˜ì´ì§€ êµµê²Œ -->
 		<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
 			<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
 		<a href="list_Product.jsp?pageNum=${pageNo}">[${pageNo}]</a>
@@ -72,27 +73,30 @@
 		</c:forEach>
 	
 	
-	<!-- ÀÌÈÄ -->
+	<!-- ì´í›„ -->
 	<c:if test="${listModel.endPage < listModel.totalPageCount}">
-		<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }">[ÀÌÈÄ]</a>
+		<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }">[ì´í›„]</a>
 	</c:if>	
 			
 			
 			<tr height="30">
 				<td colspan="4" align="center">
-				<input type="button" value="¸ÞÀÎÆäÀÌÁö" onclick="history.go(-1)">&nbsp;&nbsp; 
-				<input type="button" value="Ãë¼Ò">
+				<input type="button" value="ë©”ì¸íŽ˜ì´ì§€" onclick="history.go(-1)">&nbsp;&nbsp; 
+				<input type="button" value="ì·¨ì†Œ">
 				</td>
 			</tr>
 		</table> --%>
 		
 				<div style="margin-left: 50%">
-				<form action="listproductAction.product" method="post">
+				<form action="listproductAction.product" method="post" name="searchForm">
 					 <input type="hidden" name="temp" value="temp"></input>
-					 <input type="checkbox" name="area" value="b_title">Á¦¸ñ
-					 <input type="checkbox" name="area" value="b_name">ÀÛ¼ºÀÚ
-					 <input type="text" name="searchKey" size="10"></input>
-					 <input type="submit" value="°Ë»ö">
+					 <select id="searchOption" name="searchOption" style="height: 20px; width: 80px;" s>
+					 	<option  value="product_name">ì œëª©</option>
+					 	<option  value="seller_no">ìž‘ì„±ìž</option>
+					 </select>
+					 <input type="text" id="searchText" name="searchText" size="20" value="${listModel.searchText }">
+					 <input type="submit" value="ê²€ìƒ‰">
+					<!--  <input type="button" value="ì „ì²´ë³´ê¸°"> -->
 				</form>
 			</div>
 			
@@ -118,14 +122,14 @@
 						<td><a href="detailProdutAction.product?product_no=${product.product_no}" style="text-decoration: none; margin-left: 10px; color: #352f29;font-size: 19px; font-family: Tahoma; ">${product.product_name}</a></td>
 					</tr>
 					<tr>
-						<td><span style="margin-left: 10px;color: #38a9a5; font-weight: bold;font-size: 19px; font-family: Tahoma;">¡Ú¡Ú¡Ú¡Ú¡Ú  65°Ç</span></td>
+						<td><span style="margin-left: 10px;color: #38a9a5; font-weight: bold;font-size: 19px; font-family: Tahoma;">â˜…â˜…â˜…â˜…â˜…  65ê±´</span></td>
 					</tr>
 					<tr>
 						<td><span style="margin-left: 10px;color: #403324; font-weight: bold;font-size: 13px; font-family: Tahoma;">${product.product_unit}</span></td>
 					</tr>
 					<tr>
 						<td><span style="margin-left: 10px;color: #403324; font-weight: bold;font-size: 13px; font-family: Tahoma;">
-						<fmt:formatNumber value="${product.product_price}" pattern="###,###,###"/>¿ø</span></td>
+						<fmt:formatNumber value="${product.product_price}" pattern="###,###,###"/>ì›</span></td>
 					</tr>
 				</table>
 			</c:forEach>
@@ -133,12 +137,12 @@
 	</div>
 	
 			<div style="clear: both; margin-left: 50%; margin-top: 36%; " >
-					<!-- ÀÌÀü -->
+					<!-- ì´ì „ -->
 				<c:if test="${listModel.startPage > 5}">
-					<a href="list.jsp?pageNum=${listModel.startPage -5 }" style="text-decoration: none; font: black">[ÀÌÀü]</a>
+					<a href="list.jsp?pageNum=${listModel.startPage -5 }" style="text-decoration: none; font: black">[ì´ì „]</a>
 				</c:if>
 				
-				<!-- ÆäÀÌÁö¸ñ·Ï , ¼±ÅÃÆäÀÌÁö ±½°Ô -->
+				<!-- íŽ˜ì´ì§€ëª©ë¡ , ì„ íƒíŽ˜ì´ì§€ êµµê²Œ -->
 					<c:forEach var="pageNo" begin="${listModel.startPage}" end="${listModel.endPage}">
 						<c:if test="${listModel.requestPage == pageNo}"><b></c:if>
 					<a href="list_Product.jsp?pageNum=${pageNo}"  style="text-decoration: none; font: black">[${pageNo}]</a>
@@ -146,11 +150,11 @@
 					</c:forEach>
 				
 				
-				<!-- ÀÌÈÄ -->
+				<!-- ì´í›„ -->
 				<c:if test="${listModel.endPage < listModel.totalPageCount}">
-					<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }"  style="text-decoration: none; font: black">[ÀÌÈÄ]</a>
+					<a href="list_Product.jsp?pageNum=${listModel.startPage+5 }"  style="text-decoration: none; font: black">[ì´í›„]</a>
 				</c:if>	
 			</div>
-				<a href="list_Product.jsp">¸®½ºÆ®</a>			  
-	
+				<a href="list_Product.jsp">ë¦¬ìŠ¤íŠ¸</a>			  
 </html>
+

@@ -8,16 +8,20 @@ public class ListProductPage {
 	 private int totalPageCount; 
 	 private int startPage;
 	 private int endPage;  
+	 private String searchOption;
+	 private String searchText;
 	 
 	 public ListProductPage(){}
 
-	public ListProductPage(List<ProductDTO> list, int requestPage, int totalPageCount, int startPage, int endPage) {
+	public ListProductPage(List<ProductDTO> list, int requestPage, int totalPageCount, int startPage, int endPage, String searchOption, String searchText) {
 		super();
 		this.list = list;
 		this.requestPage = requestPage;
 		this.totalPageCount = totalPageCount;
 		this.startPage = startPage;
 		this.endPage = endPage;
+		this.searchOption = searchOption;
+		this.searchText= searchText;
 	}
 
 	public List<ProductDTO> getList() {
@@ -59,6 +63,24 @@ public class ListProductPage {
 	public void setEndPage(int endPage) {
 		this.endPage = endPage;
 	}
+
+	public String getSearchOption() {
+		return searchOption;
+	}
+
+	public void setSearchOption(String searchOption) {
+		this.searchOption = searchOption;
+	}
+
+	public String getSearchText() {
+		return searchText;
+	}
+
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
+	}
+	
+	
 	 
 	 
 }

@@ -1,11 +1,13 @@
 package kokofarm.product.action;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -43,7 +45,14 @@ public class InsertProductAction implements Action {
 		product.setProduct_name(multi.getParameter("product_name"));
 		product.setProduct_unit(multi.getParameter("product_unit"));
 		product.setProduct_price(Integer.parseInt(multi.getParameter("product_price")));
-		product.setSeller_no(multi.getParameter("seller_no"));
+//		product.setSeller_no(multi.getParameter("seller_no"));
+		
+		//세션
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		System.out.println("member_id : "+ member_id);
+		product.setSeller_no(member_id);
 		//product.setProduct_harvestdate(multi.getParameter("product_harvestdate"));
 	
 		System.out.println("날짜"+multi.getParameter("product_harvestdate"));
@@ -73,11 +82,13 @@ public class InsertProductAction implements Action {
 		product.setProduct_detailimage(Name1);
 		product.setProduct_sellerimage(Name2);
 		
-		if(file2 == null){
-			product.setProduct_sellerimage("");
-		}else if(file1 == null){
-			product.setProduct_mainimage("");
-
+		if(Name2 == null || Name1 == null || Name3 == null){
+			System.out.println("사진없음");
+			 response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+            out.println("<script>alert('사진을 적어도 1장이상 등록하세요'); location.href='insert_product.jsp'; </script>");
+			out.flush();
+			out.close();
 		}
 		
 		//작은 이미지 만들기

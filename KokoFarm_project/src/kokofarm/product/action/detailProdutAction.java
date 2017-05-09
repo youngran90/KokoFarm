@@ -30,7 +30,7 @@ public class detailProdutAction implements Action {
 	
 		//세션가져오기
 		HttpSession session = request.getSession();
-		System.out.println("detail_mid는"+session.getAttribute("m_id"));
+		System.out.println("detail_mid는"+session.getAttribute("member_id"));
 		
 		
 

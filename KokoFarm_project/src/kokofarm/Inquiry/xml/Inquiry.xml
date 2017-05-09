@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kokofarm.Inquiry.mapper.InquiryMapper">
+	<cache />
+	
+	<insert id="insertInquiry" parameterType="Inquiry">
+	Insert into Inquiry(
+	inquiry_no, product_no, product_name, member_id, inquiry_content, inquiry_date)
+	values(
+	#{inquiry_no}, #{product_no}, #{product_name}, #{member_id}, #{inquiry_content}, SYSDATE)
+	</insert>
+	
+	<select id="listInquiry" resultType="Inquiry" parameterType="String">
+	select * from Inquiry
+	where seller_no = #{seller_no}
+	</select>
+	
+	<select id="detailInquiry" parameterType="String" resultType="Inquiry">
+	select * from Inquiry
+	where inquiry_no = #{inquiry_no}
+	</select>
+	
+	<update id="insertInquiryReply" parameterType="Inquiry">
+	update Inquiry 
+	set inquiry_reply = #{inquiry_reply}, inquiry_replydate = SYSDATE 
+	where inquiry_no = #{inquiry_no}
+	</update>
+	
+	</mapper>

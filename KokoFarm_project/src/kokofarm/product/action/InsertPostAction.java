@@ -21,9 +21,9 @@ public class InsertPostAction implements Action {
 		
 		//세션가져오기
 		HttpSession session = request.getSession();
-		String m_id = (String)session.getAttribute("m_id");
-		post.setMember_id(m_id);
-		System.out.println("postinsert_mid는"+m_id);
+		String member_id = (String)session.getAttribute("member_id");
+		post.setMember_id(member_id);
+		System.out.println("postinsert_mid는"+member_id);
 		
 		
 		service.InsertPostService(post);

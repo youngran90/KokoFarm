@@ -2,26 +2,27 @@ package kokofarm.product.domain;
 
 public class ProductSearch {
 
-		private String[] area;
-		private String searchKey;
-		
-		
-		
-		public String[] getArea() {
-			return area;
+		private String searchOption;
+		private String searchText;
+		public String getSearchOption() {
+			return searchOption;
+		}
+		public void setSearchOption(String searchOption) {
+			this.searchOption = searchOption;
+		}
+		public String getSearchText() {
+			return searchText;
+		}
+		public void setSearchText(String searchText) {
+			this.searchText = searchText;
+		}
+		@Override
+		public String toString() {
+			return "ProductSearch [searchOption=" + searchOption + ", searchText=" + searchText + "]";
 		}
 		
-		public void setArea(String[] area) {
-			this.area = area;
-		}
 		
-		public String getSearchKey() {
-			return searchKey;
-		}
 		
-		public void setSearchKey(String searchKey) {
-			this.searchKey = searchKey;
-		}
 		
 		
 	}

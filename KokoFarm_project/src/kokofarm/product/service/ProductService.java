@@ -30,23 +30,31 @@ public class ProductService {
   //상품등록
   public int insertProdectService(ProductDTO product){
 	String uuid = create_UUID();
-	product.setProduct_no("P"+uuid);
+	product.setProduct_no("P-"+uuid);
 	return  productDao.insertProcut(product);
   }
   
   //상품리스트, 페이징처리
   public ListProductPage listProductService(HttpServletRequest request, int requestPage){
 	 HttpSession session = request.getSession();
+	  String searchOption = request.getParameter("searchOption");
+		String searchText = request.getParameter("searchText");
+		
+		System.out.println("searchOption : " + searchOption);
+		System.out.println("searchText : " + searchText);
+		
 	 ProductSearch search = new ProductSearch();
 	 
-		if(request.getParameterValues("area") != null){
-			search.setArea(request.getParameterValues("area"));
-			search.setSearchKey("%"+request.getParameter("searchKey")+"%");
+		if(searchOption != null && searchText != null){
+			search.setSearchOption(searchOption);
+			search.setSearchText("%"+searchText+"%");
 			session.setAttribute("search", search);
 			
-		}else if((ProductSearch)session.getAttribute("search") != null){ //寃��깋 �썑 �럹�씠吏� 泥섎━ �겢由�
-			search = (ProductSearch)session.getAttribute("search");
 		}
+		
+		/*else if((ProductSearch)session.getAttribute("search") != null){ //寃��깋 �썑 �럹�씠吏� 泥섎━ �겢由�
+			search = (ProductSearch)session.getAttribute("search");
+		}*/
 		
 		int totalCount = productDao.countProduct(search); 
 		//총 상품갯수
@@ -64,7 +72,7 @@ public class ProductService {
 		 int startRow = (requestPage-1) * PAGE_SIZE;
 		 List<ProductDTO> list = productDao.listProduct(startRow, search);
 	  
-	  return new ListProductPage(list, requestPage, totalPageCount, startPage, endPage);
+	  return new ListProductPage(list, requestPage, totalPageCount, startPage, endPage,searchOption,searchText );
   }
 
   //상품상세
@@ -76,7 +84,7 @@ public class ProductService {
   //댓글 입력
   public int InsertPostService(PostDTO post){
 	  String uuid = create_UUID();
-		post.setPost_no("PO"+uuid);
+		post.setPost_no("PO-"+uuid);
 		return  productDao.InsertPost(post);
   }
   

@@ -8,6 +8,21 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+<style type="text/css">
+.buttons{
+width: 80px;
+height: 30px;
+}
+
+input:not(.buttons){
+width: 80%;
+height: 50%;
+}
+
+td{
+text-align: center;
+}
+</style>
 <script type="text/javascript"> 
 
 $(function() {
@@ -26,64 +41,51 @@ $(function() {
 </head>
 <body>
 
-
+<div id="body" style="margin: 5%">
 	<form action="InsertProductAction.product" method="post" enctype="multipart/form-data">
 	
-<table border="1" cellpadding="0" cellspacing="0" style="border: solid #eaeaea 1px;">
-			<tr height="30" align="center">
-				<td width="200">상품이름</td>
-				<td width="170">
-				<input type="text" name="product_name"
-					size="10"></td>
+<table border="1" cellpadding="0" cellspacing="0" style="border: solid #eaeaea 1px; height: 500px; width: 500px;">
+			<tr>
+				<td >상품이름</td>
+				<td >
+				<input type="text" name="product_name" ></td>
 			</tr>
 
-			<tr height="30" align="center">
-				<td width="200">상품단위</td>
-				<td width="170"><input type="text" name="product_unit"
-					size="10"></td>
+			<tr>
+				<td >상품단위</td>
+				<td ><input type="text" name="product_unit"></td>
 			</tr>
 
-			<tr height="30" align="center">
-				<td width="200">상품가격</td>
-				<td width="170"><input type="text" name="product_price"
-					size="10"></td>
+			<tr >
+				<td>상품가격</td>
+				<td><input type="text" name="product_price"></td>
 			</tr>
 
-			<tr height="30" align="center">
-				<td width="200">판매자코드</td>
-				<td width="170"><input type="text" name="seller_no" size="10">
-				</td>
-			</tr>
-
-	
-		<tr height="30" align="center">
-				<td width="200">수확일</td>
-				<td width="170"><input type="text" id="testDatepicker"  name="product_harvestdate" class="text" placeholder="날짜선택"/></td>
+		<tr>
+				<td>수확일</td>
+				<td><input type="text" id="testDatepicker"  name="product_harvestdate" class="text" placeholder="날짜선택"/></td>
 			</tr>
 	
 	
-			<tr height="30" align="center">
-				<td width="200">메인사진</td>
-				<td width="170"><input type="file" name="product_mainimage"
-					size="10"></td>
+			<tr>
+				<td >메인사진</td>
+				<td><input type="file" name="product_mainimage"></td>
 			</tr>
 
-			<tr height="30" align="center">
-				<td width="200">상세사진</td>
-				<td width="170"><input type="file" name="product_detailimage"
-					size="10"></td>
+			<tr>
+				<td>상세사진</td>
+				<td><input type="file" name="product_detailimage"></td>
 			</tr>
 
-			<tr height="30" align="center">
-				<td width="200">제조업자사진</td>
-				<td width="170"><input type="file" name="product_sellerimage"
-					size="10"></td>
+			<tr>
+				<td>제조업자사진</td>
+				<td ><input type="file" name="product_sellerimage"></td>
 			</tr>
 
-			<tr height="30">
+			<tr>
 				<td colspan="4" align="center">
-				<input type="submit"value="상품저장">&nbsp;&nbsp; 
-				<input type="reset" value="취소">
+				<input class="buttons" type="submit" value="상품저장">&nbsp;&nbsp; 
+				<input class="buttons" type="reset" value="취소" >
 				</td>
 			</tr>
 		</table>
@@ -91,6 +93,8 @@ $(function() {
 				<a href="list_Product.jsp">리스트</a>
 
 	</form>
-
+</div>
 </body>
+
+  
 </html>
