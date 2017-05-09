@@ -1,10 +1,8 @@
-package kokofarm.customercenter.model;
+package kokofarm.customercenter.domain;
 
-public class Search {
+public class SearchCustomer {
 	private String[] area;
 	private String searchKey;
-	
-	
 	
 	public String[] getArea() {
 		return area;

@@ -7,17 +7,31 @@
 <mapper namespace="kokofarm.customercenter.mapper.BoardMapper">
 	<cache />
 	
-	<insert id="insertBoard" parameterType="Board">
-		insert into board(
-			seq, title, writer, contents, regdate, hitcount
+
+	<insert id="insertBoard" parameterType="BoardDTO">
+		insert into customercenter(
+			customer_no, customer_title, member_id, customer_content, customer_date, customer_hitcount, 
+			customer_ref, customer_step, customer_level, customer_fname, customer_pwd
 		)
 		values(
-			board_seq.nextval, #{title} , #{writer}, #{contents}, sysdate, 0
+		<!-- CUSTOMERCENTER_customer_no_seq.nextval -->
+		#{customer_no}, #{customer_title} , #{member_id}, #{customer_content} , sysdate, 0,
+	 	#{customer_ref}, #{customer_step}, #{customer_level}, 0, #{customer_pwd} 
+	<!--  	#{customer_ref}, #{customer_step}, #{customer_level}, #{customer_fname}, #{customer_pwd} -->
+	<!-- 	0 , 0 , 0 , 0, 0   -->
 		)	
 	</insert>
 	
-	<select id="listBoard" parameterType="Search" resultType="Board">
-	   select * from board
+	<select id = "selectcustomer_no" resultType="Integer">
+		select max(customer_no) from customercenter
+	</select>
+	
+	
+	
+	<select id="listBoard" resultType="BoardDTO" parameterType="SearchCustomer">
+	   select * from customercenter <!-- order by customer_ref desc, customer_step asc -->
+	   <!-- order by customer_date desc -->
+	   
 			<if test="area !=null">
 			   <where>	
 			 	  <foreach collection="area" item="item" separator="or" open="(" close=")">
@@ -26,26 +40,61 @@
 			 	  </foreach>
 			 	</where>
 			</if>
-
+			order by customer_ref desc, customer_step asc
 	</select>
 	
-	<select id="detailBoard"  resultType="Board">
-	select * from board
-	where seq = #{seq}
+	
+	<select id="selectBoard" parameterType="int" resultType="BoardDTO">
+		select * from customercenter where customer_no = #{customer_no}		
 	</select>
 	
-	<update id="updateBoard" parameterType="Board">
-		 update board
-         set title = #{title} , contents = #{contents}
-         where seq= #{seq}
-		
+	
+	
+	<!-- 조회수 증가 -->
+	<update id="updatecustomer_hitcount" parameterType="BoardDTO">
+		update customercenter set customer_hitcount = #{customer_hitcount}+1
+		where customer_no = #{customer_no}
 	</update>
 	
-	<delete id="delete" parameterType="Board">
-		 delete from board
-        where seq=#{seq}
-		
-	</delete>
+	
+	<update id = "updateStep" parameterType="java.util.HashMap">
+		update customercenter set customer_step = customer_step+1
+		where customer_ref = #{customer_ref} and customer_step > #{customer_step}	
+	</update>
+	
+
+	<update id="updateBoard" parameterType="BoardDTO">
+		 update customercenter
+         set customer_title = #{customer_title} , customer_content = #{customer_content}, member_id = #{member_id}
+         where customer_no= #{customer_no}	
+	</update>
+	
+	<delete id="delete" parameterType="BoardDTO">
+		 delete from customercenter
+        where customer_no=#{customer_no}		
+	</delete>	
+	
+	<select id="detailBoard"  resultType="BoardDTO">
+	select * from customercenter
+	where customer_no = #{customer_no}
+	</select>
+	
+	
+	<!-- 검색한 애들 페이징처리 -->	
+	<select id = "countBoard" resultType="int" parameterType="SearchCustomer">
+	select count(*) from customercenter
+		<if test="area != null">
+			<where>
+			<!-- b_title LIKE %자바% OR b_writer LIKE %자바% -->
+				<foreach collection="area" item="item" separator="OR"
+					open="(" close=")">
+						${item} LIKE #{searchKey}	<!-- ${지정된값} #{우리가 선택한?값} -->						
+				</foreach>
+			</where>
+		</if>
+	
+	</select>
+	 
 	
 	
 </mapper>

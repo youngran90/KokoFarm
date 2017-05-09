@@ -3,8 +3,8 @@ package kokofarm.customercenter.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kokofarm.customercenter.model.Board;
-import kokofarm.customercenter.model.BoardDao;
+import kokofarm.customercenter.domain.BoardDTO;
+import kokofarm.customercenter.persistence.BoardDao;
 
 public class deleteAction implements Action {
 
@@ -13,16 +13,16 @@ public class deleteAction implements Action {
 	
 	  	BoardDao dao = BoardDao.getInstance();
 	  	
-		String num = request.getParameter("seq");
-		int seq = Integer.parseInt(num);
+		String num = request.getParameter("customer_no");
+		int customer_no = Integer.parseInt(num);
 		
      
-        Board board = dao.detailBoard(seq);
-        dao.delete(board);
+        BoardDTO boarddto = dao.detailBoard(customer_no);
+        dao.delete(boarddto);
 	 
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("listAction.do");
+		forward.setPath("listAction.gogo");
 		
 		return forward;
 	}
