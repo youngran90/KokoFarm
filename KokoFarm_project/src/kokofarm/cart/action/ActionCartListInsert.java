@@ -12,7 +12,8 @@ import kokofarm.cart.domain.CartDTO;
 import kokofarm.cart.service.CartService;
 
 public class ActionCartListInsert implements CartAction{
-	 private static String cart_no;
+	 private static CartService service = CartService.getInstance();
+	 private static String cart_no = service.create_UUID();
 	@Override
 	public CartActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
@@ -25,17 +26,12 @@ public class ActionCartListInsert implements CartAction{
 		System.out.println("장바구니 리스트 입력 세션 : "+member_id);
 		
 		CartDTO cart = new CartDTO();
-		cart_no = service.create_UUID();
 		
-		cart.setMember_id("aaaa");
+		cart.setMember_id(member_id);
 		cart.setCart_no(cart_no);
-		cart.setProduct_no(request.getParameter("product_no"));
-		cart.setProduct_unit(request.getParameter("ea"));
-		
-		
-		System.out.println(request.getParameter("@@@@@@@@@@@@@@@ "+"product_no"));
-		System.out.println(request.getParameter("@@@@@@@@@@@@@@@ "+"ea"));
-		//service.cart_insert(cart);
+		cart.setProduct_no((String)session.getAttribute("product_no"));
+		cart.setProduct_unit((String)session.getAttribute("product_unit"));
+		service.cart_insert(cart);
 		
 		
 		CartActionForward forward = new CartActionForward();

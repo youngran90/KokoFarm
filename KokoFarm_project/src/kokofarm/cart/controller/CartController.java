@@ -13,8 +13,6 @@ import kokofarm.cart.action.AcitonCartList;
 import kokofarm.cart.action.ActionCartDelete;
 import kokofarm.cart.action.ActionCartDeleteALL;
 import kokofarm.cart.action.ActionCartListInsert;
-import kokofarm.cart.action.ActionInsert;
-import kokofarm.cart.action.ActionList;
 import kokofarm.cart.action.ActionRoutingCart;
 import kokofarm.cart.action.CartAction;
 import kokofarm.cart.action.CartActionForward;
@@ -37,21 +35,7 @@ public class CartController extends HttpServlet {
     	CartActionForward forward = null;
     	CartAction action = null;
     	
-    	if(path.equals("insert.cart")){
-    		action = new ActionInsert();
-    		try {
-				forward = action.excute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(path.equals("ActionList.cart")){
-    		action = new ActionList();
-    		try {
-				forward = action.excute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(path.equals("ActionCartListInsert.cart")){
+    	 if(path.equals("ActionCartListInsert.cart")){
     		action = new ActionCartListInsert();
     		try {
 				forward = action.excute(request, response);
@@ -86,7 +70,6 @@ public class CartController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		
     	}
     		
     	

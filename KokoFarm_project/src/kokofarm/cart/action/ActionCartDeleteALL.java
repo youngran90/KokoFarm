@@ -19,18 +19,16 @@ public class ActionCartDeleteALL implements CartAction{
 		String member_id = (String)session.getAttribute("member_id");
 		session.setAttribute("member_id", member_id); //세션
 		
-		
-		
-		String m_id = request.getParameter("m_id");
+		System.out.println(member_id);
 		
 		CartDTO cart_delete_all = new CartDTO();
-		cart_delete_all.setMember_id(m_id);
+		cart_delete_all.setMember_id(member_id);
 		
 		service.cart_delte_all(cart_delete_all); // 장바구니 전체 목록 삭제
 		
 		CartActionForward forward = new CartActionForward();
 		forward.setPath("AcitonCartList.cart");
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		return forward;
 	}
 	

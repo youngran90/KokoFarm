@@ -7,20 +7,6 @@
 <mapper namespace="kokofarm.cart.mapper.CartMapper">
 	<cache />
 	
-	<!-- <insert id="product_insert" parameterType="ProductDTO">
-		insert into product(
-			product_no, product_name, product_unit, product_price, seller_no, product_date
-		)
-		values(
-		#{product_no}, #{product_name},  #{product_unit}, #{product_price}, #{seller_no}, sysdate
-		)	
-	</insert>
-	
-	
-	<select id="product_list" resultType="ProductDTO">
-		select * from product
-	</select> -->
-	
 	<insert id="cart_insert" parameterType="CartDTO">
 		insert into cart(
 			cart_no, product_no, member_id, product_unit
@@ -39,7 +25,7 @@
 	</insert>
 	
 	<select id="cart_list" resultType="CartListDTO">
-		select p.product_name, p.product_price, p.product_no
+		select p.product_name, p.product_price, p.product_no, c.product_unit
 		from cart c, product p 
 		where c.product_no = p.product_no
   		and member_id = #{member_id}
@@ -53,6 +39,10 @@
 	<delete id="cart_delte_all" parameterType="CartDTO">
 		delete from cart where member_id = #{member_id}
 	</delete>
+	
+	<update id="cart_update" parameterType="CartDTO">
+		update cart set product_unit = #{product_unit} where member_id = #{member_id}
+	</update>
 </mapper>
 
 

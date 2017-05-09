@@ -10,12 +10,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header><table border="1"  width="100%">헤더</table></header>
-	<nav><table border="1" width="100%">네비</table></nav>
+	<header>
+		<div id = "header">
+		<jsp:include page="../Kokofarm_Main/mainheader.jsp" flush="false"></jsp:include>
+		</div>
+	</header>
+	
 	<section>
 	
 	<h4>주문내역</h4>
-	<form action="ActionRoutingOrderProduct.orderproduct" method="post">
+	<form action="AcitonCartList.cart" method="post">
 		<input type="hidden" name="member_id" value="<%=session.getAttribute("member_id")%>">
 		<input type="submit" value="제품목록">
 	</form>
@@ -47,21 +51,14 @@
 		</c:forEach>
 	</thead>
 	</table><br>
-	
-		
-	
-	
-	
-	
 	</section>
-	
-<%-- 	<footer>
-		<div id = "footer">
+
+	<footer>
+		<div id="footer">
 	   	<jsp:include page="../Kokofarm_Main/mainfooter.jsp"></jsp:include>
 	   	</div>
    </footer>
- --%>
-	
+   
 </body>
 </html>
 

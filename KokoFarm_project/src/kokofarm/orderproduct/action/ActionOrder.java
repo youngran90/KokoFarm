@@ -28,6 +28,12 @@ public class ActionOrder implements OrderProductAction{
 		String[] product_amount = (String[])session.getAttribute("product_amount");
 		String[] total_price = (String[])session.getAttribute("total_price");
 		
+		/*for(int i=0; i<product_no.length; i++){
+			System.out.println(product_no[i].toString()+"******************");
+			System.out.println(product_amount[i].toString());
+			System.out.println(total_price[i].toString());
+		}*/
+		
 		service.OrderProduct(order_no,product_no, member_id, product_amount, total_price);
 		
 		OrderProductActionFoward foward = new OrderProductActionFoward();
