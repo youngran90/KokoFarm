@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel = "stylesheet" href = "../kokofarm_customercenter.css/all.css" type="text/css"/>
 </head>
 <body>
 <header>
@@ -17,11 +18,16 @@
 </div>
 </header>
 	
+	
+<div class = "container" id="center_container">
+
+
+	
 	<h3>문의수정</h3>
 	
 	<form action="updateAction.gogo?customer_no=${boarddto.customer_no} " method="post">
 	
-		<table border="1" cellpadding="0" cellspacing="0">
+		<table border="1" id="table3" cellpadding="0" cellspacing="0">
 		<tr height="30">
 			<td width="150">작성자</td>
 			<td width="150">
@@ -38,11 +44,12 @@
 			<td align="left" colspan="3">
 				<input type="text" name="customer_title" value="${boarddto.customer_title }" size="50">		
 			</td>			
-		</tr>		
+		</tr>	
+<!-- 	파일나중에 추가하기 _ 0509	
 		<tr height="30">
 			<td width="150">파일</td>
 		</tr>
-		
+	 -->	
 		<tr height="30">
 			<td width="150">내용</td>		
 			<td colspan="4">
@@ -52,11 +59,16 @@
 	</table>
 	
 
-	
+	<div id = "updatemenu">
 	<input type="submit" value="수정완료">
 	<input type="reset" value="수정취소">
 	<input type="button" value="목록보기" onclick="location.href='listAction.gogo'">
+	</div>
+	
 	</form>
+
+</div>
+
 
 <footer>
 <div id = "footer">

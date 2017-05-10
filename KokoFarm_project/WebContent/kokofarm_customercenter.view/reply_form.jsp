@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>문의하기</title>
+<link rel = "stylesheet" href = "../kokofarm_customercenter.css/all.css" type="text/css"/>
 </head>
 
 
@@ -17,6 +18,11 @@
 <jsp:include page="../Kokofarm_Main/mainheader.jsp"></jsp:include>
 </div>
 </header>
+
+
+
+<div class = "container" id="center_container">
+
 
 <h3>문의하기</h3>
 <hr>
@@ -70,6 +76,9 @@
 	<input type="reset" value="작성취소">
 	<input type="button" value="목록보기" onclick="location.href='listAction.gogo'">
 </form>
+
+
+</div>
 
 
 <footer>

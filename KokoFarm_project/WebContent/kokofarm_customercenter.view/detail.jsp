@@ -12,6 +12,8 @@
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel = "stylesheet" href = "../kokofarm_customercenter.css/all.css" type="text/css"/>
+
 </head>
 <body>
 <header>
@@ -20,8 +22,13 @@
 </div>
 </header>
 
+
+<div class = "container" id="center_container">
+
+
 	<h3>문의내용</h3>
-	<table border ="1" cellpadding="0" cellspacing="0">
+	<table border ="1" id="table3" cellpadding="0" cellspacing="0">
+		
 		<tr height ="30">
 			<td width = "150">번호</td>
 			<td width = "150">${boarddto.customer_no}</td>
@@ -38,32 +45,40 @@
 			<td width = "150">제목</td>
 			<td colspan="3">${boarddto.customer_title}</td>
 		</tr>
+<%-- 	나중에 추가하기// 파일 _ 0509	
 		<tr height ="30">
 			<td width = "150">파일</td>
 			<td colspan="3">
 			<a href="download.jsp?filename=${boarddto.customer_fname }">${boarddto.customer_fname }</a>
 			</td>
 		</tr>
+		 --%>
+		
 		<tr height ="30">
 			<td width = "150">내용</td>
 			<td colspan="3">${boarddto.customer_content}</td>
 		</tr>
 	</table>
 	
+	
+	<div id = "selectmenu">
 	<a href = "UpdateFormAction.gogo?customer_no=${boarddto.customer_no}">수정</a>
 	<a href = "deleteAction.gogo?customer_no=${boarddto.customer_no}">삭제</a>
 
+	<%-- 나중에 수정하기_0509!!! 답변달기
 
 	<a href = "replyAction.gogo?customer_no=${boarddto.customer_no}">reply진짜답변달기</a>	
 	
 	<a href = "InsertAction.gogo?customer_no=${boarddto.customer_no}">insert답변달기</a>	
 	<a href = "/kokofarm_customercenter.view/insert_form.jsp?customer_no=${boarddto.customer_no}">insertjsp답변달기2</a>
 		
- 
+ 	 --%>
  
 	<a href="listAction.gogo">목록보기</a>
+   </div>
    
    
+  </div> 
 
 
 <footer>

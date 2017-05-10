@@ -13,6 +13,7 @@ import kokofarm.customercenter.action.Action;
 import kokofarm.customercenter.action.ActionForward;
 import kokofarm.customercenter.action.DetailAction;
 import kokofarm.customercenter.action.InsertAction;
+import kokofarm.customercenter.action.InsertFormAction;
 //import kokofarm.customercenter.action.InsertFormAction;
 import kokofarm.customercenter.action.ListAction;
 import kokofarm.customercenter.action.ReplyAction;
@@ -20,6 +21,7 @@ import kokofarm.customercenter.action.ReplyOkAction;
 import kokofarm.customercenter.action.UpdateFormAction;
 import kokofarm.customercenter.action.deleteAction;
 import kokofarm.customercenter.action.updateAction;
+import kokofarm.member.action.insertFormAction;
 
 
 @WebServlet("*.gogo")
@@ -125,6 +127,14 @@ public class BoardController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("insertform.gogo")){
+			action = new InsertFormAction();
+			try{
+				forward = action.execute(request, response);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}
     	
     	if(forward != null){

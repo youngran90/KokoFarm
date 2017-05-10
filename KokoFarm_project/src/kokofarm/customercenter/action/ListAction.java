@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kokofarm.customercenter.domain.BoardDTO;
 import kokofarm.customercenter.domain.ListModel;
@@ -15,6 +16,10 @@ public class ListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		request.setAttribute("member_id", member_id);
 
 		//****//
 		request.setCharacterEncoding("utf-8");

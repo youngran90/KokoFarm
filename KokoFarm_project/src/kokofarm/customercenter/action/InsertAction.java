@@ -2,6 +2,7 @@ package kokofarm.customercenter.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
 import kokofarm.customercenter.action.Action;
@@ -16,6 +17,9 @@ public class InsertAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception{		
 
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");	
+		
 		request.setCharacterEncoding("utf-8");
 		String no = request.getParameter("customer_no");		
 		int customer_ref = 0;
@@ -43,7 +47,7 @@ public class InsertAction implements Action {
 		
 		
 		boarddto.setCustomer_title(request.getParameter("customer_title"));
-		boarddto.setMember_id(request.getParameter("member_id"));
+		boarddto.setMember_id(member_id);
 		boarddto.setCustomer_pwd(request.getParameter("customer_pwd"));
 		boarddto.setCustomer_content(request.getParameter("customer_content"));
 		boarddto.setCustomer_ref(customer_ref);	////여기부터 댓글~~ 값받기
