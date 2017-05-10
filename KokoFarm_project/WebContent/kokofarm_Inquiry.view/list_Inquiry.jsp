@@ -50,7 +50,7 @@
 
 			<tr height="30">
 				<td colspan="5" align="center">
-				<input type="button" value="상품리스트" onclick="location.href='listproductAction.product'">&nbsp;&nbsp; 
+				<input type="button" value="상품리스트" onclick="location.href='golistproductAction.product'">&nbsp;&nbsp; 
 				<input type="button" value="취소">&nbsp;&nbsp; 
 				</td>
 			</tr>
