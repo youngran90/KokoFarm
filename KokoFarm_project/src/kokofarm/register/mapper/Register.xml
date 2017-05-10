@@ -19,7 +19,7 @@
 		)
 	</insert>
 	<select id="regList" resultType="regDto">
-		select * from auction
+		select * from auction order by auction_no desc 
 	</select>
 	<select id="regDetail" resultType="regDto">
 		select * from auction where auction_no=#{auction_no}

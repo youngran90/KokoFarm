@@ -1,20 +1,21 @@
 @CHARSET "UTF-8";
 
 	#reg_form{
-		/* border: 1px solid red; */
+		/*border: 1px solid red;*/
 		display: inline-block;
 		padding: 20px;
 		width: 80%;
+		height: 600px;
 		text-align: center;
 		text-decoration: none;
-		margin-left: 5%;
+		margin-left: 8%;
 		margin-right: 5%;
 	}
 	#reg_form > #reg_title{
 		/* border: 1px solid blue; */
 		background: #287A78;
 		margin-bottom: 15px;
-		margin-top: 0;
+		margin-top: 80px;
 		width: 100%;
 		height: 25px;
 		
@@ -22,6 +23,7 @@
 	#reg_form > #reg_title > h1{
 		/* border: 1px solid lime; */
 		background: #FFFFFF;
+		margin-top: 20px;
 		display: inline-block;
 		font-size: 30px;
 		padding:0 12px;
@@ -50,6 +52,12 @@
 	}
 	#reg_form #reg_form_table .auction_detailImg{
 		border: 1px solid #287A78;
+		width: 100%;
+		height: 25px;
+	}
+	#reg_form #reg_form_table .auction_detailImg2{
+		border: 1px solid #287A78;
+		width: 100%;
 		height: 25px;
 	}
 	#reg_form #reg_form_table .date{
@@ -59,7 +67,7 @@
 	}
 	#reg_form #reg_form_table textarea{
 		border: 1px solid #287A78;
-		width: 99.6%;
+		width: 100%;
 		height: 200px;
 	}
 	#reg_form #reg_form_table .reg_form_submit{
@@ -71,5 +79,5 @@
 		width: 100px;
 		height: 30px;
 		position: absolute;
-		right: 13.9%;
+		right: 10.3%;
 	}

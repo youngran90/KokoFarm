@@ -29,13 +29,14 @@ public class RegController extends HttpServlet {
     	String requestURI = request.getRequestURI();
     	String contextPath = request.getContextPath();
     	String command = requestURI.substring(contextPath.length()+1);
+    	System.out.println(command);
     	int le = command.indexOf("/");
     	String path = command.substring(le+1, command.length());
-    	
+    	System.out.println(path);
     	ActionForward forward = null;
     	Action action = null;
     	
-    	if(path.equals("start.reg")){
+    	if(requestURI.indexOf("start.reg")!=-1){
     		System.out.println(command);
     		System.out.println(path);
     		action = new RegStart();
@@ -44,14 +45,14 @@ public class RegController extends HttpServlet {
     		} catch (Exception e){
     			e.printStackTrace();
     		}
-    	}else if(path.equals("reg_form.reg")){
+    	}else if(requestURI.indexOf("reg_form.reg")!=-1){
     		action = new RegAction();
     		try {
 			forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}else if(path.equals("reg_list.reg")){
+    	}else if(requestURI.indexOf("reg_list.reg")!=-1){
     		System.out.println("넘어오십시요,,,");
     		action = new RegListAction();
     		try {
@@ -59,7 +60,7 @@ public class RegController extends HttpServlet {
     		} catch (Exception e){
     			e.printStackTrace();
     		}
-    	}else if(command.equals("reg_detail.reg")){
+    	}else if(requestURI.indexOf("reg_detail.reg")!=-1){
     		System.out.println("제발 넘어오세여,,");
     		action = new RegDetailAction();
     		try {

@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>코코팜::상품입찰</title>
 <script src="jquery.js" type="text/javascript"></script>
-<link href="kokofarm.tender.view/css/tender.css" rel="stylesheet" type="text/css">
+<link href="../kokofarm.tender.view/css/tender.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 
@@ -50,10 +50,10 @@
         })
         
  })
- 
 </script>
 </head>
 <body>
+<%@include file="../Kokofarm_Main/mainheader.jsp"%>
    <section class="productView">
      <article class="photoPart">
       
@@ -65,7 +65,7 @@
        </div> --%>
        <div class="photoPart1">
          <%-- <img id="product_pic" src="kokofarm.tender.image/${auction.auction_file}" width=520px height=320px/> --%>
-         <img id="product_pic" src="${auction.auction_file}" width=520px height=320px/>
+         <img id="product_pic" src="../${auction.auction_file}" width=520px height=290px/>
           <br>
        </div>
       
@@ -73,7 +73,8 @@
     
     <article class="productData">
     <div class="productWhole">
-     <h3 class="title"> ${seller_name}님의 ${auction.auction_name} </h3>
+     <%-- <h3 class="title"> ${seller_name}님의 ${auction.auction_name} </h3> --%>
+     <h3 class="title"> ${auction.auction_name} </h3>
       <div class="product">
        <form action="tenderAction.te" method="post">
        <input type="hidden" name="visitingTime" value="${visitingTime}">
@@ -181,30 +182,30 @@
       <br>
       <div id="detail">
         <p id="detailtitleP">${auction.auction_name}</p>      
-        <img id="detailImg" src="${auction.auction_file}" width="1000">
+        <img id="detailImg" src="../${auction.auction_file}" width="1000">
         <%-- <img src="kokofarm.tender.image/${auction.auction_file}"> --%>
         <br>
         <p id="detailcontentP">${auction.auction_content}</p>
         <div id="detailImgs">
-          <img id="detail1" src="${auction.auction_detailImg }" width="480" height="500">
-          <img id="detail2" src="${auction.auction_detailImg2 }" width="480" height="500">
+          <img id="detail1" src="../${auction.auction_detailImg }" width="480" height="400">
+          <img id="detail2" src="../${auction.auction_detailImg2 }" width="480" height="400">
         </div>
       </div>
       
       <h4 id="deliveryH">배송정보</h4>
       <!-- <img id="deliveryImg" src="kokofarm.tender.image/delivery.png" alt="delivery" width="1000"> -->
-      <img id="deliveryHead" src="kokofarm.tender.image/deliveryHead.png">
+      <img id="deliveryHead" src="../kokofarm.tender.image/deliveryHead.png">
       <div id="deliveryInfo1">
-      <h5>배송관련 안내</h5>
-      <table width="550" class="deliveryTable">
+      <h4 class="tableH">배송관련 안내</h4>
+      <table class="deliveryTable">
         <tbody>  
           <tr class="trs">
             <th>배송비 안내</th>
             <td>
-              <p>4만원 이상 주문 시
+              <p class="detailTableP">4만원 이상 주문 시
                 <span class="deliverySpan">무료배송</span>
               </p>
-              <p>4만원 미만 주문 시
+              <p class="detailTableP">4만원 미만 주문 시
                 <span class="deliverySpan">2,500원</span>
               </p>
             </td>
@@ -213,24 +214,24 @@
           <tr class="trs">
             <th>주문마감시간 및 배송일 안내</th>
             <td>
-              <p>
+              <p class="detailTableP">
               <span class="deliverySpan">묶음배송</span>
               (생상자 직거래 상품을 소포장 단위로 묶음 배송)
               </p>
-              <p>전국 전 지역</p>
-              <p>-주중(월~금) 자정까지 결제 시 다음날 배송 완료</p>
-              <p>-주말(토,일) 결제 시 월요일 배송 완료</p>
-              <p>※ 금요일의 경우, 자정마감 지역 중 <span class="deliverySpan">경기와 인천</span>은 토요일 도착 주문 마감시간이 자정까지이며,
+              <p class="detailTableP">전국 전 지역</p>
+              <p class="detailTableP">-주중(월~금) 자정까지 결제 시 다음날 배송 완료</p>
+              <p class="detailTableP">-주말(토,일) 결제 시 월요일 배송 완료</p>
+              <p class="detailTableP">※ 금요일의 경우, 자정마감 지역 중 <span class="deliverySpan">경기와 인천</span>은 토요일 도착 주문 마감시간이 자정까지이며,
               그 외 지역의 주문마감시간은 오후 4시까지 입니다.</p>
-              <p>일부 제한 지역</p>
-              <p>-주중(월~금) 오후 4시까지 결제 시 다음날 배송 완료</p>
-              <p>-금요일 오후 4시~주말(토,일) 결제 시 화요일 배송 완료</p>
-              <p><a id="locationCheck" href="kokofarm.tender.view/popup.html">※ 일부 제한 지역 확인하기</a></p>
-              <p>
+              <p class="detailTableP">일부 제한 지역</p>
+              <p class="detailTableP">-주중(월~금) 오후 4시까지 결제 시 다음날 배송 완료</p>
+              <p class="detailTableP">-금요일 오후 4시~주말(토,일) 결제 시 화요일 배송 완료</p>
+              <p class="detailTableP"><a id="locationCheck" href="kokofarm.tender.view/popup.html">※ 일부 제한 지역 확인하기</a></p>
+              <p class="detailTableP">
               <span class="deliverySpan">개별배송</span>
               (생산자 직접 배송)
               </p>
-              <p>오전 9시 이전 결제 시 당일 수확 후 발송(1~2일 소요 예정)</p>
+              <p class="detailTableP">오전 9시 이전 결제 시 당일 수확 후 발송(1~2일 소요 예정)</p>
             </td>
           </tr>
         </tbody>
@@ -238,13 +239,13 @@
       </div>
       
       <div id="deliveryInfo2">
-      <h5>교환/환불 안내</h5>
-      <table width="550" class="deliveryTable">
+      <h4 class="tableH">교환/환불 안내</h4>
+      <table class="deliveryTable">
         <tbody>
           <tr class="trs">
             <th>신선식품 일부 이상 시</th>
             <td>
-              <p>
+              <p class="detailTableP">
                 <span class="deliverySpan">문제가 생긴만큼 환불</span>
               해 드립니다.
               </p>
@@ -254,7 +255,7 @@
           <tr class="trs">
             <th>신선식품 전체 이상 시</th>
             <td>
-              <p>
+              <p class="detailTableP">
               <span class="deliverySpan">100% 환불</span>
              해 드리거나 <span class="deliverySpan">재배송</span>을 해드립니다.
               </p>
@@ -264,19 +265,19 @@
             <tr class="trs">
             <th>고객센터 안내</th>
             <td>
-              <p><img src="kokofarm.tender.image/main_ico_csc_g.png">1644-8888</p>
-              <p>평일 10:00 ~ 18:00
+              <p class="detailTableP"><img src="../kokofarm.tender.image/main_ico_csc_g.png">1644-8888</p>
+              <p class="detailTableP">평일 10:00 ~ 18:00
               (점심시간 12:30 ~ 13:30)
               </p>
-              <p>토요일 10:00 ~ 13:00</p>
-              <p>상품 문제가 있다면 신선식품의 특성상 반드시 1~2일 이내 연락을 부탁드립니다.</p>
-              <p>문제가 있는 상품의 사진을 찍어 주시면 저희가 상품 상태를 쉽게 확인하여 빠른 처리 도와드립니다.</p>
-              <p>단순 변심에 의한 교환/환불 배송비 안내</p>
-              <p>-교환: 왕복배송비(5000원) 박스 동봉 후 발송</p>
-              <p>-환불: 환불 상품 및 쿠폰 적용 금액 제외한 금액 기준으로 차등적용</p>
-              <p>4만원 이상:3,000원</p>
-              <p>4만원 미만:5,000원</p>
-              <p>※단, 포장이 훼손되어 상품 가치가 현저히 상실된 경우 반품지원이 어려울 수 있습니다. 참고 부탁드립니다.</p>
+              <p class="detailTableP">토요일 10:00 ~ 13:00</p>
+              <p class="detailTableP">상품 문제가 있다면 신선식품의 특성상 반드시 1~2일 이내 연락을 부탁드립니다.</p>
+              <p class="detailTableP">문제가 있는 상품의 사진을 찍어 주시면 저희가 상품 상태를 쉽게 확인하여 빠른 처리 도와드립니다.</p>
+              <p class="detailTableP">단순 변심에 의한 교환/환불 배송비 안내</p>
+              <p class="detailTableP">-교환: 왕복배송비(5000원) 박스 동봉 후 발송</p>
+              <p class="detailTableP">-환불: 환불 상품 및 쿠폰 적용 금액 제외한 금액 기준으로 차등적용</p>
+              <p class="detailTableP">4만원 이상:3,000원</p>
+              <p class="detailTableP">4만원 미만:5,000원</p>
+              <p class="detailTableP">※단, 포장이 훼손되어 상품 가치가 현저히 상실된 경우 반품지원이 어려울 수 있습니다. 참고 부탁드립니다.</p>
             </td>
           </tr>
           
@@ -286,6 +287,6 @@
       <a id="move_top" href="#">TOP ▲</a>
  
     </section>
-    
+<%@include file="../Kokofarm_Main/mainfooter.jsp"%>   
 </body>
 </html>

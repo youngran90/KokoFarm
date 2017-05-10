@@ -2,6 +2,8 @@ package kokofarm.tender.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import kokofarm.tender.domain.TenderDto;
 import kokofarm.tender.persistence.AuctionDao;
 
@@ -19,6 +21,9 @@ public class TenderAction implements Action {
 		
 		request.setAttribute("tender_price", tender_price);
 		
+		HttpSession session = request.getSession();
+		String member_id= (String)session.getAttribute("member_id");
+		
 		if(tender_price <= auction_down || tender_price <= current_price){
 			System.out.println("가격을 다시 입력하세요.");
 			
@@ -29,7 +34,8 @@ public class TenderAction implements Action {
 			
 		}else{
 			tender.setTender_price(tender_price);
-			tender.setMember_id("cc");
+			tender.setMember_id(member_id);
+			/*tender.setMember_id("koskos");*/
 			tender.setAuction_no(auction_no);
 	
 			dao.insertTender(tender);

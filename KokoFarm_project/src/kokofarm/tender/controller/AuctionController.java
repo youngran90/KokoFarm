@@ -33,7 +33,7 @@ public class AuctionController extends HttpServlet {
 		ActionForward forward =null;
 		Action action =null;
 		
-		if(command.equals("tenderform.te")){
+		if(requestURI.indexOf("tenderform.te")!=-1){
 			action= new TenderFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -41,7 +41,7 @@ public class AuctionController extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-		}else if(command.equals("tenderAction.te")){
+		}else if(requestURI.indexOf("tenderAction.te")!=-1){
 			action = new TenderAction();
 			try {
 				forward = action.execute(request, response);

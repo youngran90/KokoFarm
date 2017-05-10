@@ -4,15 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../reg_view/css/timepicker.css">
+<link href="../reg_view/css/reg_form.css" rel="stylesheet" type="text/css" >
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  <!-- jQuery UI 라이브러리 js파일 --> 
-<link rel="stylesheet" href="//mugifly.github.io/jquery-simple-datetimepicker/jquery.simple-dtpicker.css">
-<script src="http://mugifly.github.io/jquery-simple-datetimepicker/jquery.simple-dtpicker.js"></script>
-<link href="reg_view/css/reg_form.css" rel="stylesheet" type="text/css" >
+<script src="../reg_view/timepicker.js"></script>
 <title>코코팜::상품등록</title>
 <script type="text/javascript">
-function tolist(){
-	location.href = "consumer_auction_list.jsp?";
-};
+
 $(function(){
 	$(".date").appendDtpicker({
 		locale:"ko",
@@ -20,11 +18,10 @@ $(function(){
 		});
 });
 </script>
-
 </head>
 
 <body>
-	
+<%@include file="../Kokofarm_Main/mainheader.jsp"%>	
 	<div id="reg_form">
 		<div id="reg_title"><h1>상품 등록</h1></div>
 	<form action="reg_form.reg" method="POST" enctype="multipart/form-data">
@@ -59,7 +56,7 @@ $(function(){
 				<th>상세이미지1</th>
 				<td><input type="file" name="auction_detailImg" class="auction_detailImg"></td>
 				<th>상세이미지2</th>
-				<td><input type="file" name="auction_detailImg2" class="auction_detailImg"></td>
+				<td><input type="file" name="auction_detailImg2" class="auction_detailImg2"></td>
 			</tr>
 			<tr>
 				<th>상세내용</th>
@@ -71,6 +68,6 @@ $(function(){
 		</table>
 	</form>
 	</div>
-	
+<%@include file="../Kokofarm_Main/mainfooter.jsp"%>
 </body>
 </html>

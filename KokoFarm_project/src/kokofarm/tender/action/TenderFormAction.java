@@ -31,7 +31,6 @@ public class TenderFormAction implements Action {
 		int current_price= dao.selectCurrentPrice(auction1.getAuction_no());
 		request.setAttribute("current_price", current_price);
 		
-		
 		String start_time = auction.getStart_date();
 		System.out.println("시작시간"+start_time);
 		int s_year= Integer.parseInt(start_time.substring(0, 4));

@@ -12,111 +12,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="reg_view/css/reg_list.css" rel="stylesheet" type="text/css">
+<link href="../reg_view/css/reg_list.css" rel="stylesheet" type="text/css">
 <title>코코팜::상품 리스트</title>
-<style>
-	#reg_list{
-		/* border: 1px solid red; */
-		display: inline-block;
-		padding: 20px;
-		width: 90%;
-		text-align: left;
-		text-decoration: none;
-		margin-left: 5%;
-		margin-right: 5%;
-	}
-	#reg_list > #reg_list_title{
-		/* border: 1px solid blue; */
-		background: #287A78;
-		margin-bottom: 20px;
-		margin-top: 0;
-		width: 100%;
-		height: 25px;
-		text-align: center;
-		
-	}
-	#reg_list > #reg_list_title > h1{
-		/* border: 1px solid lime; */
-		background: #FFFFFF;
-		display: inline-block;
-		font-size: 30px;
-		padding:0 12px;
-		position: relative;
-		top: -30px;
-	}
-	.reg_ul{
-		/* border: 1px solid red; */
-		padding: 0;
-		margin-top: 10%;
-		list-style: none;
-	}
-	.reg_ul img{
-		width: 280px;
-		height: auto;
-	}
-	.reg_li{
-		/* border: 1px solid blue; */
-		display: inline-block;
-		margin-left: 10px;
-		margin-bottom: 25px;
-		text-align: center;
-	}
-	.list_con{
-		/* border: 1px solid purple; */
-		text-align: right;
-		margin-top: 10px;
-	}
-	.list_con > p{
-		margin: 0;
-		/* border: 1px solid skyblue; */
-		margin-bottom: 5px;
-		font-size: 14px;
-	}
-	.list_con > p:FIRST-CHILD{
-		/* border: 2px solid blue; */
-		font-weight: bold;
-		font-size: 18px;
-		color: #111111;
-	}
-	.list_con > p > a{
-		text-decoration: none;
-		color: #111111;
-	}
-	.list_con > p > a:hover{
-		background: #3FBFBB;
-		color: #FFFFFF;
-	}
-	#reg_list #into_reg {
-		border: 1px solid #FFFFFF;
-		background-color: #287A78;
-		color: #FFFFFF;
-		font-size: 15px;
-		font-weight: bold;
-		width: 110px;
-		height: 35px;
-		position: absolute;
-		right: 3.9%;
-	}
-	.reg_paging{
-		width: 200px;
-		position: relative;
-		left: 500px;
-		text-align: center;
-		background: #3FBFBB;
-		font-weight: bold;
-		font-size: 15px;
-	}
-	.reg_paging a{
-		text-decoration: none;
-		color: #FFFFFF;
-	}
-	.reg_paging a:hover{
-		background: #FFFFFF;
-		color: #000000;
-	}
-</style>
+
 </head>
 <body>
+<%@include file="../Kokofarm_Main/mainheader.jsp"%>
 	<div id="reg_list">
 		<div id="reg_list_title"><h1>채소</h1></div>
 		<input type="button" value="상품등록하기" id="into_reg" onclick="location.href='start.reg'">  <!-- 판매자페이지 -->
@@ -124,8 +25,8 @@
 				<ul class="reg_ul">
 				<c:forEach var="regDto" items="${regList }">
 				<li class="reg_li">
-					<p>TIMER</p>
-					<a href="reg_detail.reg?auction_no=${regDto.auction_no }"><img src="${regDto.auction_file }"></a>
+					<!-- <p>TIMER</p> -->
+					<a href="reg_detail.reg?auction_no=${regDto.auction_no }"><img src="../${regDto.auction_file }"></a>
 					<div class="list_con">
 					<p><a href="reg_detail.reg?auction_no=${regDto.auction_no }">${regDto.auction_name}</a></p>
 					<p>상한가 : ${regDto.auction_up }</p>
@@ -154,6 +55,6 @@
 		</c:if>
 		</div> -->
 	</div>
-
+<%@include file="../Kokofarm_Main/mainfooter.jsp"%>
 </body>
 </html>

@@ -10,14 +10,17 @@
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+    margin-bottom: 20px;
   }
   #secondP{
   	font-weight: bold;
     font-size: 30px;
     text-align: center;
+    margin-bottom: 20px;
   }
   #firstDiv{
     margin-top: 150px;
+    margin-bottom: 150px;
   }
   #btn{
     margin-left: 650px;
@@ -30,6 +33,7 @@
 </style>
 </head>
 <body>
+<%@include file="../Kokofarm_Main/mainheader.jsp"%>
 <div id="firstDiv">
 
 <p id="firstP">경매번호 : ${tender.auction_no } </p>
@@ -37,5 +41,6 @@
 <!-- <input id="btn" type="button" value="돌아가기" onclick="fn_back()"> -->
 <input id="btn" type="button" value="돌아가기" onclick="location.href='reg_list.reg'">
 </div>
+<%@include file="../Kokofarm_Main/mainfooter.jsp"%>
 </body>
 </html>
