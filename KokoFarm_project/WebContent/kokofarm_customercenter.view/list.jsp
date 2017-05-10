@@ -59,14 +59,14 @@
 	<section class = "cs_center">
 	<section class = "top_center">
 		<h2 class="cate_title">
-			<span>목록보기</span>
+			<span>고객센터</span>
 		</h2>
 
 
 	<input type="button" id="ask" value="문의하기" >
 	<!-- onclick="location.href='insertform.gogo'" -->
 	
-	<table border="1" cellpadding="0" cellspacing="0">
+	<table border="1" id="table4" cellpadding="0" cellspacing="0">
 		<thead>   <!-- 스타일 적용하다 중지//// -->
 		<tr height="30">
 			<th width="50">번호</th>

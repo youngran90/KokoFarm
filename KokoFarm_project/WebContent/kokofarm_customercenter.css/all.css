@@ -34,6 +34,8 @@ h3{
 	margin-left: 40%;
 }
  
+ 
+  
 #table3{
 	width: 60%;
 	height: 150px;
@@ -42,7 +44,7 @@ h3{
  
 
  
-table {
+#table4 {
     border-collapse: collapse;
     text-align: center;
     line-height: 1.5;
@@ -90,8 +92,42 @@ table td {
      padding-top: 45px;
  }
  
+.top_section .cate_title {
+    text-align: center;
+    position: relative;
+    height: 60px;
+    margin-bottom: 8px;
+    background: url(../images/common/bg_cate_tit.gif) repeat-x left 24px;
+}
  
- 
- 
+ h2 {
+     font: normal 12px/1.2 YG74, Dotum, sans-serif;
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+h2 span {
+	margin: 0 auto;
+	text-align: center;
+    display: inline-block;
+    line-height: 60px;
+    font-family: YG78;
+    font-size: 23px;
+    color: #352f29;
+    padding: 0 18px;
+    background: #f3f3f3;
+}
+
+.sub_top_section .cate_title {
+    text-align: center;
+}
+
+
+
  
  
